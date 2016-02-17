@@ -14,7 +14,7 @@
     <RootNamespace>HRConcourse.Web</RootNamespace>
     <AssemblyName>HRConcourse.Web</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -2278,7 +2278,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>6234</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://dev.hrconcourse.com</IISUrl>
+          <IISUrl>http://localhost:6234/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

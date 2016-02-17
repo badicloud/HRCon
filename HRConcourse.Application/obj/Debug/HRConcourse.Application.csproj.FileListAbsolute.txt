@@ -70,3 +70,39 @@ C:\exploration\HRCon\HRCon\HRConcourse.Application\bin\Debug\System.Collections.
 C:\exploration\HRCon\HRCon\HRConcourse.Application\obj\Debug\HRConcourse.Application.csprojResolveAssemblyReference.cache
 C:\exploration\HRCon\HRCon\HRConcourse.Application\obj\Debug\HRConcourse.Application.dll
 C:\exploration\HRCon\HRCon\HRConcourse.Application\obj\Debug\HRConcourse.Application.pdb
+F:\Projects\hr latest repo\HRConcourse\HRConcourse.Application\bin\Debug\HRConcourse.Application.dll.config
+F:\Projects\hr latest repo\HRConcourse\HRConcourse.Application\bin\Debug\HRConcourse.Application.dll
+F:\Projects\hr latest repo\HRConcourse\HRConcourse.Application\bin\Debug\HRConcourse.Application.pdb
+F:\Projects\hr latest repo\HRConcourse\HRConcourse.Application\bin\Debug\Abp.AutoMapper.dll
+F:\Projects\hr latest repo\HRConcourse\HRConcourse.Application\bin\Debug\Abp.dll
+F:\Projects\hr latest repo\HRConcourse\HRConcourse.Application\bin\Debug\Abp.Zero.dll
+F:\Projects\hr latest repo\HRConcourse\HRConcourse.Application\bin\Debug\AutoMapper.dll
+F:\Projects\hr latest repo\HRConcourse\HRConcourse.Application\bin\Debug\Castle.Core.dll
+F:\Projects\hr latest repo\HRConcourse\HRConcourse.Application\bin\Debug\Castle.Facilities.Logging.dll
+F:\Projects\hr latest repo\HRConcourse\HRConcourse.Application\bin\Debug\Castle.Windsor.dll
+F:\Projects\hr latest repo\HRConcourse\HRConcourse.Application\bin\Debug\HRConcourse.Core.dll
+F:\Projects\hr latest repo\HRConcourse\HRConcourse.Application\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+F:\Projects\hr latest repo\HRConcourse\HRConcourse.Application\bin\Debug\Newtonsoft.Json.dll
+F:\Projects\hr latest repo\HRConcourse\HRConcourse.Application\bin\Debug\Nito.AsyncEx.Concurrent.dll
+F:\Projects\hr latest repo\HRConcourse\HRConcourse.Application\bin\Debug\Nito.AsyncEx.dll
+F:\Projects\hr latest repo\HRConcourse\HRConcourse.Application\bin\Debug\Nito.AsyncEx.Enlightenment.dll
+F:\Projects\hr latest repo\HRConcourse\HRConcourse.Application\bin\Debug\System.Collections.Immutable.dll
+F:\Projects\hr latest repo\HRConcourse\HRConcourse.Application\bin\Debug\EO.Pdf.dll
+F:\Projects\hr latest repo\HRConcourse\HRConcourse.Application\bin\Debug\EO.Base.dll
+F:\Projects\hr latest repo\HRConcourse\HRConcourse.Application\bin\Debug\HRConcourse.Core.pdb
+F:\Projects\hr latest repo\HRConcourse\HRConcourse.Application\bin\Debug\Abp.xml
+F:\Projects\hr latest repo\HRConcourse\HRConcourse.Application\bin\Debug\Abp.AutoMapper.xml
+F:\Projects\hr latest repo\HRConcourse\HRConcourse.Application\bin\Debug\Abp.Zero.xml
+F:\Projects\hr latest repo\HRConcourse\HRConcourse.Application\bin\Debug\AutoMapper.xml
+F:\Projects\hr latest repo\HRConcourse\HRConcourse.Application\bin\Debug\Castle.Core.xml
+F:\Projects\hr latest repo\HRConcourse\HRConcourse.Application\bin\Debug\Castle.Facilities.Logging.xml
+F:\Projects\hr latest repo\HRConcourse\HRConcourse.Application\bin\Debug\Castle.Windsor.xml
+F:\Projects\hr latest repo\HRConcourse\HRConcourse.Application\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+F:\Projects\hr latest repo\HRConcourse\HRConcourse.Application\bin\Debug\Newtonsoft.Json.xml
+F:\Projects\hr latest repo\HRConcourse\HRConcourse.Application\bin\Debug\Nito.AsyncEx.xml
+F:\Projects\hr latest repo\HRConcourse\HRConcourse.Application\bin\Debug\Nito.AsyncEx.Concurrent.xml
+F:\Projects\hr latest repo\HRConcourse\HRConcourse.Application\bin\Debug\Nito.AsyncEx.Enlightenment.xml
+F:\Projects\hr latest repo\HRConcourse\HRConcourse.Application\bin\Debug\System.Collections.Immutable.xml
+F:\Projects\hr latest repo\HRConcourse\HRConcourse.Application\obj\Debug\HRConcourse.Application.csprojResolveAssemblyReference.cache
+F:\Projects\hr latest repo\HRConcourse\HRConcourse.Application\obj\Debug\HRConcourse.Application.dll
+F:\Projects\hr latest repo\HRConcourse\HRConcourse.Application\obj\Debug\HRConcourse.Application.pdb

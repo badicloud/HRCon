@@ -1,7 +1,13 @@
-define(['plugins/http', 'durandal/app', 'knockout'], function (http, app, ko) {
+define(['plugins/http', 'durandal/app', 'knockout', 'plugins/router'], function (http, app, ko, router) {
+
 
     /** Web Resolution Detector **/
     (function () {
+
+        $(document).ready(function() {
+            $("#screenDialog").hide();
+        });
+
         var documentScreenSize = function () {
             var screenWidth = screen.width;
             var screenHeight = screen.height;
@@ -9,21 +15,47 @@ define(['plugins/http', 'durandal/app', 'knockout'], function (http, app, ko) {
             var dialogOpts = {
                 modal: true,
                 closeOnEscape: false,
-                autoOpen: false
+                autoOpen: false,
+                open: function(event, ui) {
+                    $(".ui-dialog-titlebar-close", ui.dialog | ui).hide();
+                },
+                close: function() {
+                    $("#screenDialog").hide();
+                    $(".ui-dialog-title").removeClass("error-title");
+                }
             }
 
             if (screenWidth < 1024 || screenHeight < 768) {
-                $(".dialog-text").text("Application is not working below 1024 x 768 screen resolution. Please reload the page");
+                $("#screenDialog").show();
+                $(".dialog-text").text("Sorry, but this document can not be viewed on your device.  Please view it with a desktop computer.");
                 $("#screenDialog").dialog(dialogOpts);
                 $("#screenDialog").dialog("open");
+                $(".ui-dialog-title").addClass("error-title");
+
+                $("#screenDialog").dialog("option", "position", { my: "center", at: "center", of: window });
+            } else {
+                if ($(".ui-dialog").is(":visible")) {
+                    $("#screenDialog").hide();
+                    $(".ui-dialog-title").removeClass("error-title");
+                    $("#screenDialog").dialog("close");
+                }
             }
+        };
+
+        var onRouteSuccess = function() {
+            documentScreenSize();
+            
         };
 
         $(window).resize(function () {
             documentScreenSize();
         });
 
-        
+
+        router.on('router:navigation:composition-complete', () => {
+            onRouteSuccess();
+        });
+
     })();
 
     /** eof Web Resolution Detector **/

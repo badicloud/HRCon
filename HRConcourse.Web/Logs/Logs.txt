@@ -31596,3 +31596,319 @@ WARN  2016-02-17 01:28:52,916 [28   ] Default                                  -
 WARN  2016-02-17 01:28:52,916 [28   ] Default                                  - Can not find 'About' in localization source 'HRConcourse'! No default language is defined!
 WARN  2016-02-17 01:29:23,722 [28   ] Default                                  - Can not find 'HomePage' in localization source 'HRConcourse'! No default language is defined!
 WARN  2016-02-17 01:29:23,722 [28   ] Default                                  - Can not find 'About' in localization source 'HRConcourse'! No default language is defined!
+DEBUG 2016-02-17 21:46:05,999 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2016-02-17 21:46:15,028 [1    ] Abp.Modules.AbpModuleManager             - Found 13 ABP modules in total.
+DEBUG 2016-02-17 21:46:15,038 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 21:46:15,043 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 21:46:15,044 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 21:46:15,045 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 21:46:15,045 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 21:46:15,045 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 21:46:15,046 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 21:46:15,046 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 21:46:15,047 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: HRConcourse.HRConcourseApplicationModule, HRConcourse.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 21:46:15,048 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: HRConcourse.HRConcourseCoreModule, HRConcourse.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 21:46:15,048 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: HRConcourse.HRConcourseDataModule, HRConcourse.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 21:46:15,048 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: HRConcourse.Web.HRConcourseWebModule, HRConcourse.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 21:46:15,049 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: HRConcourse.HRConcourseWebApiModule, HRConcourse.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 21:46:15,130 [1    ] Abp.Modules.AbpModuleManager             - 13 modules loaded.
+DEBUG 2016-02-17 21:46:17,460 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2016-02-17 21:46:17,600 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2016-02-17 21:46:17,602 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2016-02-17 21:46:17,602 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: HRConcourse
+DEBUG 2016-02-17 21:46:17,603 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2016-02-17 21:46:18,526 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 9 classes defines auto mapping attributes
+DEBUG 2016-02-17 21:46:18,526 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2016-02-17 21:46:19,094 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Sessions.Dto.UserLoginInfoDto
+DEBUG 2016-02-17 21:46:19,116 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Users.Dto.GetApiKeysOutput
+DEBUG 2016-02-17 21:46:19,117 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Documents.CreateDocumentWithImagesInput
+DEBUG 2016-02-17 21:46:19,121 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Documents.FieldMetadata
+DEBUG 2016-02-17 21:46:19,126 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Documents.Dto.DocumentReadModelDto
+DEBUG 2016-02-17 21:46:19,128 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Documents.Dto.UpdateDocumentInput
+DEBUG 2016-02-17 21:46:19,130 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Documents.Dto.CreateDocumentInput
+DEBUG 2016-02-17 21:46:19,132 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2016-02-17 21:46:19,201 [1    ] Default                                  - Dynamic web api controller is created for type 'HRConcourse.Documents.IDocumentsAppService' with service name 'hrconcourse/documents'.
+DEBUG 2016-02-17 21:46:19,202 [1    ] Default                                  - Dynamic web api controller is created for type 'HRConcourse.Users.IUserAppService' with service name 'hrconcourse/users'.
+DEBUG 2016-02-17 21:46:19,202 [1    ] Default                                  - Dynamic web api controller is created for type 'HRConcourse.Sessions.ISessionAppService' with service name 'hrconcourse/session'.
+WARN  2016-02-17 21:46:34,272 [5    ] Default                                  - Can not find 'HomePage' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 21:46:34,273 [5    ] Default                                  - Can not find 'About' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 21:47:01,358 [12   ] Default                                  - Can not find 'HomePage' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 21:47:01,358 [12   ] Default                                  - Can not find 'About' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 21:59:48,809 [35   ] Default                                  - Can not find 'HomePage' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 21:59:48,809 [35   ] Default                                  - Can not find 'About' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 22:00:57,305 [41   ] Default                                  - Can not find 'HomePage' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 22:00:57,305 [41   ] Default                                  - Can not find 'About' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 22:02:14,035 [44   ] Default                                  - Can not find 'HomePage' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 22:02:14,035 [44   ] Default                                  - Can not find 'About' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 22:02:47,442 [49   ] Default                                  - Can not find 'HomePage' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 22:02:47,442 [49   ] Default                                  - Can not find 'About' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 22:04:24,853 [46   ] Default                                  - Can not find 'HomePage' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 22:04:24,853 [46   ] Default                                  - Can not find 'About' in localization source 'HRConcourse'! No default language is defined!
+DEBUG 2016-02-17 22:15:14,400 [7    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2016-02-17 22:15:16,066 [7    ] Abp.Modules.AbpModuleManager             - Found 13 ABP modules in total.
+DEBUG 2016-02-17 22:15:16,069 [7    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:15:16,073 [7    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:15:16,073 [7    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:15:16,073 [7    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:15:16,073 [7    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:15:16,074 [7    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:15:16,074 [7    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:15:16,074 [7    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:15:16,074 [7    ] Abp.Modules.AbpModuleManager             - Loaded module: HRConcourse.HRConcourseApplicationModule, HRConcourse.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:15:16,074 [7    ] Abp.Modules.AbpModuleManager             - Loaded module: HRConcourse.HRConcourseCoreModule, HRConcourse.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:15:16,074 [7    ] Abp.Modules.AbpModuleManager             - Loaded module: HRConcourse.HRConcourseDataModule, HRConcourse.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:15:16,074 [7    ] Abp.Modules.AbpModuleManager             - Loaded module: HRConcourse.Web.HRConcourseWebModule, HRConcourse.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:15:16,075 [7    ] Abp.Modules.AbpModuleManager             - Loaded module: HRConcourse.HRConcourseWebApiModule, HRConcourse.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:15:16,080 [7    ] Abp.Modules.AbpModuleManager             - 13 modules loaded.
+DEBUG 2016-02-17 22:15:17,070 [7    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2016-02-17 22:15:17,076 [7    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2016-02-17 22:15:17,077 [7    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2016-02-17 22:15:17,077 [7    ] Abp.Localization.LocalizationManager     - Initialized localization source: HRConcourse
+DEBUG 2016-02-17 22:15:17,077 [7    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2016-02-17 22:15:17,801 [7    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 9 classes defines auto mapping attributes
+DEBUG 2016-02-17 22:15:17,801 [7    ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2016-02-17 22:15:17,870 [7    ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Sessions.Dto.UserLoginInfoDto
+DEBUG 2016-02-17 22:15:17,875 [7    ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Users.Dto.GetApiKeysOutput
+DEBUG 2016-02-17 22:15:17,876 [7    ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Documents.CreateDocumentWithImagesInput
+DEBUG 2016-02-17 22:15:17,879 [7    ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Documents.FieldMetadata
+DEBUG 2016-02-17 22:15:17,882 [7    ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Documents.Dto.DocumentReadModelDto
+DEBUG 2016-02-17 22:15:17,884 [7    ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Documents.Dto.UpdateDocumentInput
+DEBUG 2016-02-17 22:15:17,885 [7    ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Documents.Dto.CreateDocumentInput
+DEBUG 2016-02-17 22:15:17,886 [7    ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2016-02-17 22:15:17,931 [7    ] Default                                  - Dynamic web api controller is created for type 'HRConcourse.Documents.IDocumentsAppService' with service name 'hrconcourse/documents'.
+DEBUG 2016-02-17 22:15:17,932 [7    ] Default                                  - Dynamic web api controller is created for type 'HRConcourse.Users.IUserAppService' with service name 'hrconcourse/users'.
+DEBUG 2016-02-17 22:15:17,933 [7    ] Default                                  - Dynamic web api controller is created for type 'HRConcourse.Sessions.ISessionAppService' with service name 'hrconcourse/session'.
+WARN  2016-02-17 22:15:39,193 [43   ] Default                                  - Can not find 'HomePage' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 22:15:39,193 [43   ] Default                                  - Can not find 'About' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 22:17:55,140 [42   ] Default                                  - Can not find 'HomePage' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 22:17:55,140 [42   ] Default                                  - Can not find 'About' in localization source 'HRConcourse'! No default language is defined!
+DEBUG 2016-02-17 22:19:44,991 [7    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2016-02-17 22:19:46,149 [7    ] Abp.Modules.AbpModuleManager             - Found 13 ABP modules in total.
+DEBUG 2016-02-17 22:19:46,153 [7    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:19:46,156 [7    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:19:46,156 [7    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:19:46,156 [7    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:19:46,156 [7    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:19:46,156 [7    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:19:46,157 [7    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:19:46,157 [7    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:19:46,157 [7    ] Abp.Modules.AbpModuleManager             - Loaded module: HRConcourse.HRConcourseApplicationModule, HRConcourse.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:19:46,157 [7    ] Abp.Modules.AbpModuleManager             - Loaded module: HRConcourse.HRConcourseCoreModule, HRConcourse.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:19:46,157 [7    ] Abp.Modules.AbpModuleManager             - Loaded module: HRConcourse.HRConcourseDataModule, HRConcourse.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:19:46,157 [7    ] Abp.Modules.AbpModuleManager             - Loaded module: HRConcourse.Web.HRConcourseWebModule, HRConcourse.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:19:46,157 [7    ] Abp.Modules.AbpModuleManager             - Loaded module: HRConcourse.HRConcourseWebApiModule, HRConcourse.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:19:46,161 [7    ] Abp.Modules.AbpModuleManager             - 13 modules loaded.
+DEBUG 2016-02-17 22:19:46,927 [7    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2016-02-17 22:19:46,933 [7    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2016-02-17 22:19:46,934 [7    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2016-02-17 22:19:46,934 [7    ] Abp.Localization.LocalizationManager     - Initialized localization source: HRConcourse
+DEBUG 2016-02-17 22:19:46,934 [7    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2016-02-17 22:19:47,615 [7    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 9 classes defines auto mapping attributes
+DEBUG 2016-02-17 22:19:47,615 [7    ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2016-02-17 22:19:47,685 [7    ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Sessions.Dto.UserLoginInfoDto
+DEBUG 2016-02-17 22:19:47,689 [7    ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Users.Dto.GetApiKeysOutput
+DEBUG 2016-02-17 22:19:47,689 [7    ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Documents.CreateDocumentWithImagesInput
+DEBUG 2016-02-17 22:19:47,692 [7    ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Documents.FieldMetadata
+DEBUG 2016-02-17 22:19:47,697 [7    ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Documents.Dto.DocumentReadModelDto
+DEBUG 2016-02-17 22:19:47,699 [7    ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Documents.Dto.UpdateDocumentInput
+DEBUG 2016-02-17 22:19:47,701 [7    ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Documents.Dto.CreateDocumentInput
+DEBUG 2016-02-17 22:19:47,702 [7    ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2016-02-17 22:19:47,747 [7    ] Default                                  - Dynamic web api controller is created for type 'HRConcourse.Documents.IDocumentsAppService' with service name 'hrconcourse/documents'.
+DEBUG 2016-02-17 22:19:47,749 [7    ] Default                                  - Dynamic web api controller is created for type 'HRConcourse.Users.IUserAppService' with service name 'hrconcourse/users'.
+DEBUG 2016-02-17 22:19:47,749 [7    ] Default                                  - Dynamic web api controller is created for type 'HRConcourse.Sessions.ISessionAppService' with service name 'hrconcourse/session'.
+WARN  2016-02-17 22:19:54,567 [35   ] Default                                  - Can not find 'HomePage' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 22:19:54,567 [35   ] Default                                  - Can not find 'About' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 22:21:01,560 [42   ] Default                                  - Can not find 'HomePage' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 22:21:01,560 [42   ] Default                                  - Can not find 'About' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 22:21:24,417 [43   ] Default                                  - Can not find 'HomePage' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 22:21:24,417 [43   ] Default                                  - Can not find 'About' in localization source 'HRConcourse'! No default language is defined!
+DEBUG 2016-02-17 22:26:07,136 [31   ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2016-02-17 22:26:08,657 [31   ] Abp.Modules.AbpModuleManager             - Found 13 ABP modules in total.
+DEBUG 2016-02-17 22:26:08,661 [31   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:26:08,664 [31   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:26:08,664 [31   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:26:08,664 [31   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:26:08,664 [31   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:26:08,665 [31   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:26:08,665 [31   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:26:08,665 [31   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:26:08,665 [31   ] Abp.Modules.AbpModuleManager             - Loaded module: HRConcourse.HRConcourseApplicationModule, HRConcourse.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:26:08,665 [31   ] Abp.Modules.AbpModuleManager             - Loaded module: HRConcourse.HRConcourseCoreModule, HRConcourse.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:26:08,665 [31   ] Abp.Modules.AbpModuleManager             - Loaded module: HRConcourse.HRConcourseDataModule, HRConcourse.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:26:08,665 [31   ] Abp.Modules.AbpModuleManager             - Loaded module: HRConcourse.Web.HRConcourseWebModule, HRConcourse.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:26:08,666 [31   ] Abp.Modules.AbpModuleManager             - Loaded module: HRConcourse.HRConcourseWebApiModule, HRConcourse.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:26:08,670 [31   ] Abp.Modules.AbpModuleManager             - 13 modules loaded.
+DEBUG 2016-02-17 22:26:09,451 [31   ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2016-02-17 22:26:09,457 [31   ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2016-02-17 22:26:09,457 [31   ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2016-02-17 22:26:09,457 [31   ] Abp.Localization.LocalizationManager     - Initialized localization source: HRConcourse
+DEBUG 2016-02-17 22:26:09,457 [31   ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2016-02-17 22:26:10,037 [31   ] Abp.AutoMapper.AbpAutoMapperModule       - Found 9 classes defines auto mapping attributes
+DEBUG 2016-02-17 22:26:10,037 [31   ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2016-02-17 22:26:10,101 [31   ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Sessions.Dto.UserLoginInfoDto
+DEBUG 2016-02-17 22:26:10,107 [31   ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Users.Dto.GetApiKeysOutput
+DEBUG 2016-02-17 22:26:10,107 [31   ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Documents.CreateDocumentWithImagesInput
+DEBUG 2016-02-17 22:26:10,111 [31   ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Documents.FieldMetadata
+DEBUG 2016-02-17 22:26:10,114 [31   ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Documents.Dto.DocumentReadModelDto
+DEBUG 2016-02-17 22:26:10,116 [31   ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Documents.Dto.UpdateDocumentInput
+DEBUG 2016-02-17 22:26:10,117 [31   ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Documents.Dto.CreateDocumentInput
+DEBUG 2016-02-17 22:26:10,119 [31   ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2016-02-17 22:26:10,160 [31   ] Default                                  - Dynamic web api controller is created for type 'HRConcourse.Documents.IDocumentsAppService' with service name 'hrconcourse/documents'.
+DEBUG 2016-02-17 22:26:10,160 [31   ] Default                                  - Dynamic web api controller is created for type 'HRConcourse.Users.IUserAppService' with service name 'hrconcourse/users'.
+DEBUG 2016-02-17 22:26:10,161 [31   ] Default                                  - Dynamic web api controller is created for type 'HRConcourse.Sessions.ISessionAppService' with service name 'hrconcourse/session'.
+WARN  2016-02-17 22:30:38,714 [44   ] Default                                  - Can not find 'HomePage' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 22:30:38,715 [44   ] Default                                  - Can not find 'About' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 22:33:58,455 [38   ] Default                                  - Can not find 'HomePage' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 22:33:58,455 [38   ] Default                                  - Can not find 'About' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 22:34:34,320 [44   ] Default                                  - Can not find 'HomePage' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 22:34:34,320 [44   ] Default                                  - Can not find 'About' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 22:42:08,661 [33   ] Default                                  - Can not find 'HomePage' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 22:42:08,661 [33   ] Default                                  - Can not find 'About' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 22:44:07,337 [42   ] Default                                  - Can not find 'HomePage' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 22:44:07,338 [42   ] Default                                  - Can not find 'About' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 22:44:41,286 [37   ] Default                                  - Can not find 'HomePage' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 22:44:41,286 [37   ] Default                                  - Can not find 'About' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 22:45:10,695 [25   ] Default                                  - Can not find 'HomePage' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 22:45:10,695 [25   ] Default                                  - Can not find 'About' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 22:46:11,538 [28   ] Default                                  - Can not find 'HomePage' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 22:46:11,538 [28   ] Default                                  - Can not find 'About' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 22:48:26,406 [33   ] Default                                  - Can not find 'HomePage' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 22:48:26,406 [33   ] Default                                  - Can not find 'About' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 22:49:26,576 [26   ] Default                                  - Can not find 'HomePage' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 22:49:26,576 [26   ] Default                                  - Can not find 'About' in localization source 'HRConcourse'! No default language is defined!
+DEBUG 2016-02-17 22:51:06,404 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2016-02-17 22:51:07,531 [1    ] Abp.Modules.AbpModuleManager             - Found 13 ABP modules in total.
+DEBUG 2016-02-17 22:51:07,534 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:51:07,537 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:51:07,537 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:51:07,537 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:51:07,537 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:51:07,538 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:51:07,538 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:51:07,538 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:51:07,538 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: HRConcourse.HRConcourseApplicationModule, HRConcourse.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:51:07,538 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: HRConcourse.HRConcourseCoreModule, HRConcourse.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:51:07,538 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: HRConcourse.HRConcourseDataModule, HRConcourse.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:51:07,538 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: HRConcourse.Web.HRConcourseWebModule, HRConcourse.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:51:07,538 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: HRConcourse.HRConcourseWebApiModule, HRConcourse.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 22:51:07,542 [1    ] Abp.Modules.AbpModuleManager             - 13 modules loaded.
+DEBUG 2016-02-17 22:51:08,294 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2016-02-17 22:51:08,299 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2016-02-17 22:51:08,300 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2016-02-17 22:51:08,300 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: HRConcourse
+DEBUG 2016-02-17 22:51:08,300 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2016-02-17 22:51:08,952 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 9 classes defines auto mapping attributes
+DEBUG 2016-02-17 22:51:08,952 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2016-02-17 22:51:09,016 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Sessions.Dto.UserLoginInfoDto
+DEBUG 2016-02-17 22:51:09,020 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Users.Dto.GetApiKeysOutput
+DEBUG 2016-02-17 22:51:09,020 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Documents.CreateDocumentWithImagesInput
+DEBUG 2016-02-17 22:51:09,023 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Documents.FieldMetadata
+DEBUG 2016-02-17 22:51:09,027 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Documents.Dto.DocumentReadModelDto
+DEBUG 2016-02-17 22:51:09,029 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Documents.Dto.UpdateDocumentInput
+DEBUG 2016-02-17 22:51:09,030 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Documents.Dto.CreateDocumentInput
+DEBUG 2016-02-17 22:51:09,032 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2016-02-17 22:51:09,072 [1    ] Default                                  - Dynamic web api controller is created for type 'HRConcourse.Documents.IDocumentsAppService' with service name 'hrconcourse/documents'.
+DEBUG 2016-02-17 22:51:09,073 [1    ] Default                                  - Dynamic web api controller is created for type 'HRConcourse.Users.IUserAppService' with service name 'hrconcourse/users'.
+DEBUG 2016-02-17 22:51:09,074 [1    ] Default                                  - Dynamic web api controller is created for type 'HRConcourse.Sessions.ISessionAppService' with service name 'hrconcourse/session'.
+WARN  2016-02-17 22:51:17,280 [33   ] Default                                  - Can not find 'HomePage' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 22:51:17,280 [33   ] Default                                  - Can not find 'About' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 22:52:19,489 [24   ] Default                                  - Can not find 'HomePage' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 22:52:19,489 [24   ] Default                                  - Can not find 'About' in localization source 'HRConcourse'! No default language is defined!
+DEBUG 2016-02-17 23:08:40,376 [23   ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2016-02-17 23:08:41,397 [23   ] Abp.Modules.AbpModuleManager             - Found 13 ABP modules in total.
+DEBUG 2016-02-17 23:08:41,401 [23   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 23:08:41,404 [23   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 23:08:41,405 [23   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 23:08:41,405 [23   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 23:08:41,405 [23   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 23:08:41,405 [23   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 23:08:41,405 [23   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 23:08:41,405 [23   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 23:08:41,405 [23   ] Abp.Modules.AbpModuleManager             - Loaded module: HRConcourse.HRConcourseApplicationModule, HRConcourse.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 23:08:41,405 [23   ] Abp.Modules.AbpModuleManager             - Loaded module: HRConcourse.HRConcourseCoreModule, HRConcourse.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 23:08:41,405 [23   ] Abp.Modules.AbpModuleManager             - Loaded module: HRConcourse.HRConcourseDataModule, HRConcourse.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 23:08:41,406 [23   ] Abp.Modules.AbpModuleManager             - Loaded module: HRConcourse.Web.HRConcourseWebModule, HRConcourse.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 23:08:41,406 [23   ] Abp.Modules.AbpModuleManager             - Loaded module: HRConcourse.HRConcourseWebApiModule, HRConcourse.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 23:08:41,410 [23   ] Abp.Modules.AbpModuleManager             - 13 modules loaded.
+DEBUG 2016-02-17 23:08:42,099 [23   ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2016-02-17 23:08:42,105 [23   ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2016-02-17 23:08:42,106 [23   ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2016-02-17 23:08:42,106 [23   ] Abp.Localization.LocalizationManager     - Initialized localization source: HRConcourse
+DEBUG 2016-02-17 23:08:42,106 [23   ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2016-02-17 23:08:42,675 [23   ] Abp.AutoMapper.AbpAutoMapperModule       - Found 9 classes defines auto mapping attributes
+DEBUG 2016-02-17 23:08:42,675 [23   ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2016-02-17 23:08:42,739 [23   ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Sessions.Dto.UserLoginInfoDto
+DEBUG 2016-02-17 23:08:42,743 [23   ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Users.Dto.GetApiKeysOutput
+DEBUG 2016-02-17 23:08:42,743 [23   ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Documents.CreateDocumentWithImagesInput
+DEBUG 2016-02-17 23:08:42,746 [23   ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Documents.FieldMetadata
+DEBUG 2016-02-17 23:08:42,750 [23   ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Documents.Dto.DocumentReadModelDto
+DEBUG 2016-02-17 23:08:42,752 [23   ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Documents.Dto.UpdateDocumentInput
+DEBUG 2016-02-17 23:08:42,753 [23   ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Documents.Dto.CreateDocumentInput
+DEBUG 2016-02-17 23:08:42,754 [23   ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2016-02-17 23:08:42,795 [23   ] Default                                  - Dynamic web api controller is created for type 'HRConcourse.Documents.IDocumentsAppService' with service name 'hrconcourse/documents'.
+DEBUG 2016-02-17 23:08:42,796 [23   ] Default                                  - Dynamic web api controller is created for type 'HRConcourse.Users.IUserAppService' with service name 'hrconcourse/users'.
+DEBUG 2016-02-17 23:08:42,796 [23   ] Default                                  - Dynamic web api controller is created for type 'HRConcourse.Sessions.ISessionAppService' with service name 'hrconcourse/session'.
+WARN  2016-02-17 23:08:49,108 [37   ] Default                                  - Can not find 'HomePage' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 23:08:49,108 [37   ] Default                                  - Can not find 'About' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 23:09:15,093 [15   ] Default                                  - Can not find 'HomePage' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 23:09:15,093 [15   ] Default                                  - Can not find 'About' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 23:10:16,980 [8    ] Default                                  - Can not find 'HomePage' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 23:10:16,980 [8    ] Default                                  - Can not find 'About' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 23:13:00,839 [32   ] Default                                  - Can not find 'HomePage' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 23:13:00,839 [32   ] Default                                  - Can not find 'About' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 23:14:44,068 [36   ] Default                                  - Can not find 'HomePage' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 23:14:44,068 [36   ] Default                                  - Can not find 'About' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 23:16:27,528 [36   ] Default                                  - Can not find 'HomePage' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 23:16:27,528 [36   ] Default                                  - Can not find 'About' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 23:17:00,639 [33   ] Default                                  - Can not find 'HomePage' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 23:17:00,639 [33   ] Default                                  - Can not find 'About' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 23:23:20,445 [30   ] Default                                  - Can not find 'HomePage' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 23:23:20,445 [30   ] Default                                  - Can not find 'About' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 23:23:32,180 [22   ] Default                                  - Can not find 'HomePage' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 23:23:32,180 [22   ] Default                                  - Can not find 'About' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 23:27:16,858 [21   ] Default                                  - Can not find 'HomePage' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 23:27:16,858 [21   ] Default                                  - Can not find 'About' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 23:28:14,808 [28   ] Default                                  - Can not find 'HomePage' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 23:28:14,808 [28   ] Default                                  - Can not find 'About' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 23:31:18,413 [38   ] Default                                  - Can not find 'HomePage' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 23:31:18,413 [38   ] Default                                  - Can not find 'About' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 23:31:31,993 [26   ] Default                                  - Can not find 'HomePage' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 23:31:31,993 [26   ] Default                                  - Can not find 'About' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 23:32:26,419 [35   ] Default                                  - Can not find 'HomePage' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 23:32:26,419 [35   ] Default                                  - Can not find 'About' in localization source 'HRConcourse'! No default language is defined!
+DEBUG 2016-02-17 23:40:34,185 [11   ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2016-02-17 23:40:35,483 [11   ] Abp.Modules.AbpModuleManager             - Found 13 ABP modules in total.
+DEBUG 2016-02-17 23:40:35,486 [11   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 23:40:35,490 [11   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 23:40:35,490 [11   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 23:40:35,490 [11   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 23:40:35,490 [11   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 23:40:35,491 [11   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 23:40:35,491 [11   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 23:40:35,491 [11   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 23:40:35,491 [11   ] Abp.Modules.AbpModuleManager             - Loaded module: HRConcourse.HRConcourseApplicationModule, HRConcourse.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 23:40:35,491 [11   ] Abp.Modules.AbpModuleManager             - Loaded module: HRConcourse.HRConcourseCoreModule, HRConcourse.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 23:40:35,491 [11   ] Abp.Modules.AbpModuleManager             - Loaded module: HRConcourse.HRConcourseDataModule, HRConcourse.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 23:40:35,491 [11   ] Abp.Modules.AbpModuleManager             - Loaded module: HRConcourse.Web.HRConcourseWebModule, HRConcourse.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 23:40:35,491 [11   ] Abp.Modules.AbpModuleManager             - Loaded module: HRConcourse.HRConcourseWebApiModule, HRConcourse.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-02-17 23:40:35,496 [11   ] Abp.Modules.AbpModuleManager             - 13 modules loaded.
+DEBUG 2016-02-17 23:40:36,337 [11   ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2016-02-17 23:40:36,343 [11   ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2016-02-17 23:40:36,343 [11   ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2016-02-17 23:40:36,343 [11   ] Abp.Localization.LocalizationManager     - Initialized localization source: HRConcourse
+DEBUG 2016-02-17 23:40:36,343 [11   ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2016-02-17 23:40:36,960 [11   ] Abp.AutoMapper.AbpAutoMapperModule       - Found 9 classes defines auto mapping attributes
+DEBUG 2016-02-17 23:40:36,960 [11   ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2016-02-17 23:40:37,032 [11   ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Sessions.Dto.UserLoginInfoDto
+DEBUG 2016-02-17 23:40:37,035 [11   ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Users.Dto.GetApiKeysOutput
+DEBUG 2016-02-17 23:40:37,036 [11   ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Documents.CreateDocumentWithImagesInput
+DEBUG 2016-02-17 23:40:37,039 [11   ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Documents.FieldMetadata
+DEBUG 2016-02-17 23:40:37,043 [11   ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Documents.Dto.DocumentReadModelDto
+DEBUG 2016-02-17 23:40:37,044 [11   ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Documents.Dto.UpdateDocumentInput
+DEBUG 2016-02-17 23:40:37,046 [11   ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Documents.Dto.CreateDocumentInput
+DEBUG 2016-02-17 23:40:37,047 [11   ] Abp.AutoMapper.AbpAutoMapperModule       - HRConcourse.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2016-02-17 23:40:37,092 [11   ] Default                                  - Dynamic web api controller is created for type 'HRConcourse.Documents.IDocumentsAppService' with service name 'hrconcourse/documents'.
+DEBUG 2016-02-17 23:40:37,093 [11   ] Default                                  - Dynamic web api controller is created for type 'HRConcourse.Users.IUserAppService' with service name 'hrconcourse/users'.
+DEBUG 2016-02-17 23:40:37,094 [11   ] Default                                  - Dynamic web api controller is created for type 'HRConcourse.Sessions.ISessionAppService' with service name 'hrconcourse/session'.
+WARN  2016-02-17 23:40:47,891 [42   ] Default                                  - Can not find 'HomePage' in localization source 'HRConcourse'! No default language is defined!
+WARN  2016-02-17 23:40:47,892 [42   ] Default                                  - Can not find 'About' in localization source 'HRConcourse'! No default language is defined!

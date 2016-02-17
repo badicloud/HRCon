@@ -1,0 +1,655 @@
+﻿@{
+    Layout = null;
+}
+@using HRConcourse.Web.Localization.FormBuilder
+
+<!DOCTYPE html>
+<html>
+<head>
+    @Html.MetaAcceptLanguage()
+    <!-- Style sheets -->
+    <link href="@Url.Content("~/Content/formbuilder/jquery.signaturepad.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/formbuilder/jquery.jscrollpane.css?ts=20120513")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/formbuilder/uniform.aristo.css?ts=20120905")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/formbuilder/basic.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/formbuilder/designer.css?ts=20121011")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/formbuilder/jquery-ui-metro-common.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/formbuilder/codemirror.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/formbuilder/Fonts/script.css?ts=20141016")" rel="stylesheet" type="text/css" />
+
+    <!-- Javascript Files -->
+    <script type="text/javascript" src="@Url.Content("~/Scripts/formbuilder/jquery-1.7.1.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/formbuilder/jquery-ui-1.8.16.custom.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/formbuilder/jquery.tools.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/formbuilder/jquery.tools.validator.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/formbuilder/jquery.mousewheel.js?ts=20120513")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/formbuilder/mwheelIntent.js?ts=20120513")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/formbuilder/jquery.jscrollpane.min.js?ts=20120513")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/formbuilder/jquery.ba-resize.min.js?ts=20120513")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/formbuilder/jquery.tmpl.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/formbuilder/jquery.textchange.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/formbuilder/jquery.html5type.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/formbuilder/jquery.uniform.min.js?ts=20120917")"></script>
+    <!--[if lt IE 9]><script src="@Url.Content("~/Scripts/formbuilder/excanvas.js")" type="text/javascript"></script><![endif]-->
+    <script src="@Url.Content("~/Scripts/formbuilder/jquery.signaturepad.min.js?ts=20121004")" type="text/javascript"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/formbuilder/validationSetup.js?ts=20120604")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/formbuilder/formsCommon.js?ts=20140107")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/formbuilder/ttw.formbuilder.js?ts=20130710")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/formbuilder/formDesignerCodes.js?ts=20120910")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/formbuilder/jquery.chained.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/formbuilder/json2.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/formbuilder/codemirror.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/formbuilder/codemirror_javascript.js")"></script>
+    <script type="text/javascript">
+        var initialValueDictionary = new Object(),
+            mergeFieldDefinitionsDictionary = new Object(),
+            mergeFieldPostbackDictionary = new Object(),
+            mergeFieldValuesDictionary = new Object(),
+            comboValuesDictionary = new Object(),
+            @if (ViewBag.IsReadOnly)
+            {
+                <text>isEditable = false;</text>
+            }
+            else
+            {
+                <text>isEditable = true;</text>
+            }
+
+        function getLocalDateTimeNow() {
+
+            var date = new Date(@( System.Convert.ToInt64((DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalMilliseconds)));
+            return date;
+        }
+
+        function getFullyQualifiedURL(action) {
+            var baseUrl = "@Url.Action("/")";
+            return baseUrl + action;
+        }
+
+        var localizationStrings = {
+            'ShowMoreErrors': '@Index.ShowMoreErrors',
+            'ShowLessErrors': '@Index.ShowLessErrors',
+        }
+
+        function checkKey(e) {
+            if (e.keyCode === 8 && (e.target instanceof HTMLBodyElement || e.target instanceof HTMLDivElement)) {
+                return false;
+            }
+        }
+
+        window.onkeydown = checkKey;
+
+    </script>
+    <title>Form Builder</title>
+</head>
+<body>
+
+    <!-- Header section -->
+    <div id="header">
+        <div id="headerTitle">Design Mode</div>
+
+        <!-- Menu Buttons - Preview, Clear image/form, Test submit -->
+        <div id="headerActionButtons">
+            <div id="previewBttn" title="Toggles between page preview and design mode">
+                <img alt="preview-icon" src="@Url.Content("~/Images/Metro/white/preview.png")" />
+            </div>
+            <div id="testSubmitBttn" title="Test submit the page">
+                <img alt="test-submit-icon" src="@Url.Content("~/Images/Metro/white/ff.png")" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Property sections - Main, Validation, Dependency -->
+    <div id="fieldProperties">
+        <ul id="field-settings-tabs">
+            <li><a href="#main-settings">Field</a></li>
+            <li><a href="#validation-settings">Validation</a></li>
+            <li><a href="#dependency-settings">Dependency</a></li>
+            <li><a href="#style-settings">Style</a></li>
+        </ul>
+
+        <!-- Main settings dialog -->
+        <div id="main-settings">
+            <span id="current-field"></span>
+            <div class="main-settings-section setting">
+                <div id="main-id">
+                    <div class="settingName">Field ID</div>
+                    <img alt="help-icon" title="@Index.FieldID_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                    <input type="text" name="fieldID" readonly="readonly" />
+                </div>
+            </div>
+            <div class="main-settings-section setting">
+                <div id="main-group-id">
+                    <div class="settingName">Group ID</div>
+                    <img alt="help-icon" title="@Index.FieldID_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                    <input type="text" name="fieldID" readonly="readonly" />
+                </div>
+            </div>
+
+            <div class="main-settings-section setting">
+                <div id="main-name">
+                    <div class="settingName">Name</div>
+                    <img alt="help-icon" title="@Index.FieldName_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                    <input type="text" name="fieldName" @if (ViewBag.IsReadOnly) { <text> disabled="disabled" </text> } />
+                </div>
+            </div>
+            <div class="main-settings-section setting">
+                <div id="main-outFieldId">
+                    <div class="settingName">Postfill field</div>
+                    <img alt="help-icon" title="@Index.OutField_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                    <select @if (ViewBag.IsReadOnly) { <text> disabled="disabled" </text> }></select>
+                </div>
+            </div>
+
+            <div class="main-settings-section setting">
+                <div id="main-tooltip">
+                    <div class="settingName">Tooltip</div>
+                    <img alt="help-icon" title="@Index.Tooltip_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                    <input type="text" name="fieldTooltip" />
+                </div>
+            </div>
+            <div class="main-settings-section setting">
+                <div id="main-initialvalue">
+                    <div class="settingName">Initial Value</div>
+                    <img alt="help-icon" title="@Index.InitialValue_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                    <input type="text" name="fieldInitialValue" style="width: 90%;" />
+                    <img id="add-initial-value" src="@Url.Content("~/Images/Metro/black/add.png")" title="Add initial value" alt="Add icon" />
+                </div>
+            </div>
+            <div class="main-settings-section setting">
+                <div id="main-href">
+                    <div class="settingName">URL Address</div>
+                    <img alt="help-icon" title="@Index.Href_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                    <input type="text" name="linkhref" />
+                </div>
+            </div>
+            <div class="main-settings-section setting">
+                <div id="main-font-size">
+                    <div class="settingName">Font size</div>
+                    <img alt="help-icon" title="@Index.FontSize_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                    <input type="number" min="0" />
+                </div>
+            </div>
+            <div class="main-settings-section setting">
+                <div id="main-tabindex">
+                    <div class="settingName">TabIndex</div>
+                    <img alt="help-icon" title="@Index.TabIndex_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                    <input type="number" min="0" @if (ViewBag.IsReadOnly) { <text> disabled="disabled" </text> } />
+                </div>
+            </div>
+
+            <div class="main-settings-section setting">
+                <div id="main-current-date">
+                    <div class="settingName">Auto-complete with current date</div>
+                    <img alt="help-icon" title="@Index.CurrentDate_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                    <input type="checkbox" @if (ViewBag.IsReadOnly) { <text> disabled="disabled" </text> } />
+                </div>
+            </div>
+            <div class="main-settings-section setting">
+                <div id="main-read-only">
+                    <div class="settingName">Make field read-only</div>
+                    <img alt="help-icon" title="@Index.ReadOnly_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                    <input type="checkbox" @if (ViewBag.IsReadOnly) { <text> disabled="disabled" </text> } />
+                </div>
+            </div>
+            <div class="main-settings-section setting">
+                <div id="main-select-outField">
+                    <select @if (ViewBag.IsReadOnly) { <text> disabled="disabled" </text> }></select>
+                </div>
+            </div>
+            <div class="main-settings-section setting">
+                <div id="main-grouping">
+                    <div class="settingName">Make field behave as a group</div>
+                    <img alt="help-icon" title="@Index.Grouping_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                    <input type="checkbox" @if (ViewBag.IsReadOnly) { <text> disabled="disabled" </text> } />
+                </div>
+            </div>
+            <div class="main-settings-section setting">
+                <div id="main-select-title">
+                    <div class="settingName">Empty field title</div>
+                    <img alt="help-icon" title="@Index.SelectTitle_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                    <input type="text" name="selectEmptyTitle" />
+                </div>
+            </div>
+            <div class="main-settings-section setting" style="margin-bottom: 7px;">
+                <div id="main-selectfield-source">
+                    <div class="settingName">Source</div>
+                    <img alt="help-icon" title="@Index.Source_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                    <input type="radio" id="setting-combo-premademanual" name="premadeCombo" value="premademanual" @if (ViewBag.IsReadOnly) { <text> disabled="disabled" </text> } />Premade Manual
+                    <input type="radio" id="setting-combo-premadefixed" name="premadeCombo" value="premadefixed" @if (ViewBag.IsReadOnly) { <text> disabled="disabled" </text> } />Premade Fixed
+                </div>
+            </div>
+            <div class="main-settings-section setting">
+                <div id="main-select-prefixed-source">
+                    <select @if (ViewBag.IsReadOnly) { <text> disabled="disabled" </text> }></select>
+                </div>
+            </div>
+            <div class="main-settings-section setting">
+                <div id="input-settings-container">
+                    <div id="setting-selectValues">
+                        <div class="settingName">Values</div>
+                        @if (!ViewBag.IsReadOnly)
+                        {
+                            <img id="add-option-value" src="@Url.Content("~/Images/Metro/white/add.png")" title="Add a new value" alt="Add icon" />
+                        }
+                    </div>
+                    <div id="input-settings">&nbsp;</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Validation settings dialog -->
+        <div id="validation-settings">
+            <div class="val-settings-section setting">
+                <div id="val-required">
+                    <div class="settingName">Required</div>
+                    <img alt="help-icon" title="@Index.Required_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                    <input type="checkbox" checked="checked" @if (ViewBag.IsReadOnly) { <text> disabled="disabled" </text> } />
+                </div>
+            </div>
+            <div class="val-settings-section setting">
+                <div id="val-rangedate-min-current">
+                    <div class="settingName">Minimum date</div>
+                    <img alt="help-icon" title="@Index.MinDate_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                    <input type="checkbox" id="min-date-current" style="clear: both; float: none; top: 0; margin-left: 40px;" />
+                    Use current date
+                </div>
+                <div id="val-rangedate-min">
+                    <input type="datepicker" id="min-date-manual" class="ttw-date" pattern="^(?:(((0[13578])|(1[02]))\/(0[1-9]|[12][0-9]|3[01]))|(((0[469])|(11))\/(0[1-9]|[12][0-9]|30))|(02[\/]?[0-2][0-9]))\/([0-9][0-9]|1[89][0-9][0-9]|20[0-9][0-9])$" @if (ViewBag.IsReadOnly) { <text> disabled="disabled" </text> } />
+                </div>
+            </div>
+            <div class="val-settings-section setting">
+                <div id="val-rangedate-max-current">
+                    <div class="settingName">Maximum date</div>
+                    <img alt="help-icon" title="@Index.MaxDate_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                    <input type="checkbox" id="max-date-current" style="clear: both; float: none; top: 0; margin-left: 36px;" />
+                    Use current date
+                </div>
+                <div id="val-rangedate-max">
+                    <input type="datepicker" id="max-date-manual" class="ttw-date" pattern="^(?:(((0[13578])|(1[02]))\/(0[1-9]|[12][0-9]|3[01]))|(((0[469])|(11))\/(0[1-9]|[12][0-9]|30))|(02[\/]?[0-2][0-9]))\/([0-9][0-9]|1[89][0-9][0-9]|20[0-9][0-9])$" @if (ViewBag.IsReadOnly) { <text> disabled="disabled" </text> } />
+                </div>
+            </div>
+            <div class="val-settings-section setting">
+                <div id="val-data-equals">
+                    <div class="settingName">Equals To</div>
+                    <img alt="help-icon" title="@Index.Equals_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                    <input type="text" @if (ViewBag.IsReadOnly) { <text> disabled="disabled" </text> } />
+                </div>
+            </div>
+            <div class="val-settings-section setting">
+                <div id="val-minimumlength">
+                    <div class="settingName">Minimum Length</div>
+                    <img alt="help-icon" title="@Index.MinLength_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                    <input type="number" min="0" @if (ViewBag.IsReadOnly) { <text> disabled="disabled" </text> } />
+                </div>
+            </div>
+            <div class="val-settings-section setting">
+                <div id="val-maxlength">
+                    <div class="settingName">Maximum Length</div>
+                    <img alt="help-icon" title="@Index.MaxLength_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                    <input type="number" min="0" @if (ViewBag.IsReadOnly) { <text> disabled="disabled" </text> } />
+                </div>
+            </div>
+            <div class="val-settings-section setting">
+                <div id="val-min-selected">
+                    <div class="settingName">Minimum Selected</div>
+                    <img alt="help-icon" title="@Index.MinSelected_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                    <input type="number" min="0" @if (ViewBag.IsReadOnly) { <text> disabled="disabled" </text> } />
+                </div>
+            </div>
+            <div class="val-settings-section setting">
+                <div id="val-min">
+                    <div class="settingName">Minimum Number</div>
+                    <img alt="help-icon" title="@Index.MinNumber_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                    <input type="number" @if (ViewBag.IsReadOnly) { <text> disabled="disabled" </text> } />
+                </div>
+            </div>
+            <div class="val-settings-section setting">
+                <div id="val-max">
+                    <div class="settingName">Maximum Number</div>
+                    <img alt="help-icon" title="@Index.MaxNumber_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                    <input type="number" @if (ViewBag.IsReadOnly) { <text> disabled="disabled" </text> } />
+                </div>
+            </div>
+            <div class="val-settings-section setting">
+                <div id="val-pattern">
+                    <div class="settingName">Pattern</div>
+                    <img alt="help-icon" title="@Index.Pattern_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                    <input type="text" @if (ViewBag.IsReadOnly) { <text> disabled="disabled" </text> } />
+                    <select id="pattern-select" @if (ViewBag.IsReadOnly) { <text> disabled="disabled" </text> }>
+                        <option value="">Custom defined pattern</option>
+                        <option value="(^((?!000|666)[0-8][0-9]{2})(-(?!00)[0-9]{2}-|(?!00)[0-9]{2})(?!0000)[0-9]{4}$)?">Social Security Number</option>
+                        <option value="(\d)*">Numeric Only</option>
+                        <option value="([a-z A-Z])*">Alpha Only</option>
+                        <option value="([a-z A-Z0-9])*">Alpha Numeric Only</option>
+                        <option value="(^[0-9]{5}((-[0-9]{4})|(-[0-9]{6}))?$)?">US Postal Code</option>
+                        <option value="(^\(?([2-9][0-8][0-9])\)?[-. ]?([2-9][0-9]{2})[-. ]?([0-9]{4})$)?">US Phone Number</option>
+                        <option value="(^\+(?:[0-9] ?){6,14}[0-9]$)?">International Phone Number</option>
+                        <option value="(^(?:\d+(\.\d{1,2})?)$)?">Decimal Number</option>
+                        <option value="(^(?:(((0[13578])|(1[02]))\/(0[1-9]|[12][0-9]|3[01]))|(((0[469])|(11))\/(0[1-9]|[12][0-9]|30))|(02[\/]?[0-2][0-9]))\/([0-9][0-9]|1[89][0-9][0-9]|20[0-9][0-9])$)?">Date (mm/dd/yy or mm/dd/yyyy)</option>
+                        @*((([0][1-9]|[12][\d])|[3][01])[-/]([0][13578]|[1][02])[-/][1-9]\d\d\d)|((([0][1-9]|[12][\d])|[3][0])[-/]([0][13456789]|[1][012])[-/][1-9]\d\d\d)|(([0][1-9]|[12][\d])[-/][0][2][-/][1-9]\d([02468][048]|[13579][26]))|(([0][1-9]|[12][0-8])[-/][0][2][-/][1-9]\d\d\d)*@
+                    </select>
+                </div>
+            </div>
+            <div class="val-settings-section setting" style="margin-bottom: 20px; padding-top: 10px;">
+                <div id="val-custom-validation">
+                    @if (!ViewBag.IsReadOnly)
+                    {
+                        <div class="settingName">Add new custom validation</div>
+                        <img id="add-new-custom-val" src="@Url.Content("~/Images/Metro/black/add.png")" title="Add new custom validation" alt="Add icon" />
+                    }
+                    <div id="custom-val-section">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dependency settings dialog -->
+        <div id="dependency-settings">
+            @if (!ViewBag.IsReadOnly)
+            {
+                <div class="setting">
+                    <div class="settingName">Add new dependency</div>
+                    <img id="add-new-dependency" src="@Url.Content("~/Images/Metro/black/add.png")" title="Add new dependency" alt="Add icon" />
+                </div>
+            }
+            <div id="dependency-section">
+            </div>
+        </div>
+
+        <div id="style-settings">
+            @Html.Partial("CSS_StyleProperties")
+        </div>
+
+    </div>
+
+    <!-- Fields and actions toolbox  -->
+    <div id="toolbox">
+        @if (!ViewBag.IsReadOnly)
+        {
+            <!-- Draggable field controls -->
+            <div id="controls">
+                <ul id="form-fields">
+                    <li id="text-field">
+                        <img title="Textbox" alt="text-icon" src="@Url.Content("~/Images/field-types/ui-text-field.png")" />
+                    </li>
+                    <li id="radio-field">
+                        <img title="Radio Button" alt="radio-icon" src="@Url.Content("~/Images/field-types/ui-radio-buttons.png")" />
+                    </li>
+                    <li id="checkbox-field">
+                        <img title="Checkbox" alt="check-icon" src="@Url.Content("~/Images/field-types/ui-check-boxes.png")" />
+                    </li>
+                    <li id="password-field">
+                        <img title="Password" alt="password-icon" src="@Url.Content("~/Images/field-types/ui-text-field-password.png")" />
+                    </li>
+                    <li id="select-field">
+                        <img title="Select" alt="combo-icon" src="@Url.Content("~/Images/field-types/ui-combo-box.png")" />
+                    </li>
+                    <li id="label-field">
+                        <img title="Label" alt="label-icon" src="@Url.Content("~/Images/field-types/ui-label.png")" />
+                    </li>
+                    <li id="link-field">
+                        <img title="Link" alt="link-icon" src="@Url.Content("~/Images/field-types/chain.png")" />
+                    </li>
+                </ul>
+                <ul id="html5-fields">
+                    <li id="email-field">
+                        <img title="Email" alt="mail-icon" src="@Url.Content("~/Images/field-types/mail.png")" />
+                    </li>
+                    <li id="number-field">
+                        <img title="Number" alt="number-icon" src="@Url.Content("~/Images/field-types/counter-count-up.png")" />
+                    </li>
+                    <li id="date-field">
+                        <img title="Date" alt="calendar-icon" src="@Url.Content("~/Images/field-types/calendar.png")" />
+                    </li>
+                    <li id="signature-field">
+                        <img title="Signature" alt="signature-icon" src="@Url.Content("~/Images/field-types/signature.png")" />
+                    </li>
+                </ul>
+            </div>
+            <div class="toolboxDivider">
+            </div>
+        }
+
+        <!-- Multiple fields selection actions-->
+        <div id="actions" class="actions">
+            <ul id="align-actions">
+                <li id="align-top">
+                    <img title="Align Top" alt="align-top-icon" src="@Url.Content("~/Images/field-types/align-top.png")" />
+                </li>
+                <li id="align-bottom">
+                    <img title="Align Bottom" alt="align-bottom-icon" src="@Url.Content("~/Images/field-types/align-bottom.png")" />
+                </li>
+                <li id="align-left">
+                    <img title="Align Left" alt="align-left-icon" src="@Url.Content("~/Images/field-types/align-left.png")" />
+                </li>
+                <li id="align-right">
+                    <img title="Align Right" alt="align-right-icon" src="@Url.Content("~/Images/field-types/align-right.png")" />
+                </li>
+            </ul>
+            <ul id="duplicate-actions">
+                <li id="duplicate-field">
+                    <img title="Duplicate The Selected Field" alt="duplicate-field-icon" src="@Url.Content("~/Images/field-types/duplicate-field.png")" />
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- Actual page designer area -->
+    <div id="designerArea">
+
+        <!-- Errors container section -->
+        <div id="errorContainer">
+            <div id="formErrors" class="errorBox" style="display: none">
+            </div>
+        </div>
+
+        <!-- Page design section -->
+        <div id="work-area">
+            <div id="form-builder">
+                <div id="form-image">
+                </div>
+                <form id="form-preview" action="Index" class="TTWForm" method="post" novalidate="novalidate">
+                    <span id="javascript-warning">@Index.JavaScriptWarningMessage</span>
+                </form>
+                <form id="preview-section" action="Index" class="TTWForm" method="post" novalidate="novalidate"></form>
+            </div>
+            <div id="notification">
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Application Modal Dialogs -->
+<div id="form-builder-dialog" class="modal-box">
+    <div id="confirm-action" title="@Index.ConfirmActionTitle">
+        <p class="warning message"></p>
+        <p>@Index.ConfirmActionMessage</p>
+    </div>
+
+    <div id="add-initial-value-action" title="@Index.AddInitialValueTitle">
+        @Index.FilterInitialValueMessage
+        <input id="filterTextbox" type="text" style="width: 205px; margin-left: 9px;">
+        <select size="15" style="margin-top: 10px; width: 270px;"></select>
+    </div>
+</div>
+
+<!-- jQuery Templates -->
+    <div id="jQueryTemplates">
+        <div id="form-elements">
+        </div>
+
+        <div id="field-actions-template">
+            <script id="field-actions-tmpl" type="text/x-jquery-tmpl">
+                @if (!ViewBag.IsReadOnly)
+                {
+                    <div class="field-actions">
+                        <span id="delete-${id}" class="delete-${actionsType}">&nbsp;</span>
+                    </div>
+                }
+            </script>
+        </div>
+
+        <div id="input-settings-template">
+            <script id="input-settings-tmpl" type="text/x-jquery-tmpl">
+                <div id="${id}" class="inputValueSection clearfix">
+                    <input type="text" name="option-title" class="option-title" @if (ViewBag.IsReadOnly) { <text> disabled="disabled" </text> } />
+                    @if (!ViewBag.IsReadOnly)
+                    {
+                        <img alt="remove-value" title="Remove this value" class="remove-option" src="@Url.Content("~/Images/Metro/black/cancel.png")" />
+                    }
+                </div>
+            </script>
+        </div>
+
+        <div id="dependency-settings-template">
+            <script id="dependency-tmpl" type="text/x-jquery-tmpl">
+                <div id="dep-sett-${count}" class="dependency-setting">
+                    <div class="dep-header">
+                        <span class="expand-collapse-dependency">&nbsp;</span>
+                        <div class="settingName">Dependency ${count}</div>
+                        @if (!ViewBag.IsReadOnly)
+                        {
+                            <img id="delete-dep-${count}" alt="remove-icon" title="Remove this dependency" class="delete-dependency" src="@Url.Content("~/Images/Metro/white/cancel.png")" />
+                        }
+                    </div>
+
+                    <div class="setting-content">
+                        <div id="dep-name-dependency-${count}" class="setting clearfix">
+                            <div class="settingName">When the field named</div>
+                            <select @if (ViewBag.IsReadOnly) { <text> disabled="disabled" </text> }></select>
+                        </div>
+                        <div id="dep-value-dependency-${count}" class="setting clearfix">
+                            <div class="settingName">Takes the following value (regex are allowed)</div>
+                            <input type="text" @if (ViewBag.IsReadOnly) { <text> disabled="disabled" </text> } />
+                        </div>
+                        <div id="dep-type-dependency-${count}" class="setting clearfix" style="margin-bottom: 7px;">
+                            <div class="settingName">Select a type of action for this field</div>
+                            <br />
+                            <input type="radio" id="dep-property-premade-${count}" name="dependencyType-${count}" value="premade" @if (ViewBag.IsReadOnly) { <text> disabled="disabled" </text> } />Premade
+                            <input type="radio" id="dep-property-manual-${count}" name="dependencyType-${count}" value="manual" @if (ViewBag.IsReadOnly) { <text> disabled="disabled" </text> } />Manual
+                            <input type="radio" id="dep-property-function-${count}" name="dependencyType-${count}" value="function" @if (ViewBag.IsReadOnly) { <text> disabled="disabled" </text> } />Function
+                        </div>
+                        <div>
+                            <div id="dep-premade-type-${count}" class="setting clearfix">
+                                <div class="settingName">Select one of the following actions</div>
+                                <select @if (ViewBag.IsReadOnly) { <text> disabled="disabled" </text> }></select>
+                            </div>
+
+                            <div id="dep-manual-type-${count}">
+                                <div id="dep-property-target-${count}" class="setting clearfix">
+                                    <div class="settingName">Change this field's property named</div>
+                                    <select @if (ViewBag.IsReadOnly) { <text> disabled="disabled" </text> }>
+                                        <option value="">- Select a property -</option>
+                                        <option value="align">Align</option>
+                                        <option value="alt">Alt</option>
+                                        <option value="checked">Checked</option>
+                                        <option value="disabled">Disabled</option>
+                                        <option value="maxlength">Max Length</option>
+                                        <option value="minlength">Min Length</option>
+                                        <option value="min-selected">Minimum Selected</option>
+                                        <option value="readonly">Readonly</option>
+                                        <option value="required">Required</option>
+                                        <option value="value">Value</option>
+                                        <option value="tabindex">Tabindex</option>
+                                        <option value="title">Title</option>
+
+                                        <option value="css-background">Background</option>
+                                        <option value="css-background-color">Background Color</option>
+                                        <option value="css-background-image">Background Image</option>
+                                        <option value="css-background-repeat">Background Repeat</option>
+                                        <option value="css-border">Border</option>
+                                        <option value="css-border-bottom">Border Bottom</option>
+                                        <option value="css-border-color">Border Color</option>
+                                        <option value="css-border-left">Border Left</option>
+                                        <option value="css-border-right">Border Right</option>
+                                        <option value="css-border-style">Border Style</option>
+                                        <option value="css-border-top">Border Top</option>
+                                        <option value="css-border-width">Border Width</option>
+                                        <option value="css-color">Color</option>
+                                        <option value="css-display">Display</option>
+                                        <option value="css-font-family">Font Family</option>
+                                        <option value="css-font-style">Font Style</option>
+                                        <option value="css-font-weight">Font Weight</option>
+                                        <option value="css-text-align">Text Align</option>
+                                        <option value="css-text-decoration">Text Decoration</option>
+                                    </select>
+                                </div>
+                                <div id="dep-property-value-${count}" class="setting clearfix">
+                                    <div class="settingName">To the value</div>
+                                    <input type="text" @if (ViewBag.IsReadOnly) { <text> disabled="disabled" </text> } />
+                                </div>
+                                <div id="dep-property-eval-otherwise-${count}" class="setting clearfix" style="margin-bottom: 0px;">
+                                    <div class="settingName">Otherwise:</div>
+                                    <br />
+                                    <input type="radio" id="dep-otherwise-evaluate-${count}" name="depEvalOtherwise-${count}" value="evaluate" @if (ViewBag.IsReadOnly) { <text> disabled="disabled" </text> } />To value
+                                    <input type="radio" id="dep-otherwise-nothing-${count}" name="depEvalOtherwise-${count}" value="nothing" @if (ViewBag.IsReadOnly) { <text> disabled="disabled" </text> } />Do nothing
+                                </div>
+                                <div id="dep-property-otherwise-${count}" class="setting clearfix">
+                                    <input type="text" @if (ViewBag.IsReadOnly) { <text> disabled="disabled" </text> } />
+                                </div>
+                            </div>
+
+                            <div id="dep-function-type-${count}" class="setting clearfix">
+                                <div class="settingName">Use this template to write your function.</div>
+                                <div class="settingName">This field's value will be updated with the returning result.</div>
+                                @*<textarea rows="500" cols="100" style="width: 280px; resize:none;" @if(ViewBag.IsReadOnly){<text>disabled="disabled"</text>} >function (){var res = "value"; return res;}</textarea>*@
+                                <textarea rows="500" cols="100" style="width: 280px; height: 40px; resize: none;" disabled="disabled">function (){var res = "value"; return res;}</textarea>
+                                @if (!ViewBag.IsReadOnly)
+                                {
+                                    <div class="editFunctionButton">Edit function</div>
+                                }
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </script>
+        </div>
+
+        <div id="validation-settings-template">
+            <script id="validation-tmpl" type="text/x-jquery-tmpl">
+                <div id="custom-val-sett-${count}" class="custom-val-setting">
+                    <div class="custom-val-header">
+                        <span class="expand-collapse-validation">&nbsp;</span>
+                        <div class="settingName">Custom validation ${count}</div>
+                        @if (!ViewBag.IsReadOnly)
+                        {
+                            <img id="delete-custom-val-${count}" alt="remove-icon" title="Remove this validation" class="delete-validation" src="@Url.Content("~/Images/Metro/white/cancel.png")" />
+                        }
+                    </div>
+
+                    <div class="setting-content">
+                        <div id="customValidationMessage-${count}" class="setting clearfix">
+                            <div class="settingName">Display error message (optional)</div>
+                            <input type="text" @if (ViewBag.IsReadOnly) { <text> disabled="disabled" </text> } />
+                        </div>
+                        <div id="customValidationFunction-${count}" class="setting clearfix">
+                            <div class="settingName">Use this template to write your function.</div>
+                            <div class="settingName">The element and the value are passed as parameters. The function must return true if the validation succeeds, false to indicate an error, or an error message wich will overwrite the specified <i>Display error message</i>.</div>
+                            <textarea rows="500" cols="100" style="width: 280px; height: 40px; resize: none;" disabled="disabled">function (element, value) { if (value === '1') {return true;} return false; }</textarea>
+                            @if (!ViewBag.IsReadOnly)
+                            {
+                                <div class="editFunctionButton">Edit function</div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </script>
+        </div>
+    </div>
+
+
+    <!-- Javascript editor -->
+    <div id="jsEditor" style="display: none">
+        <textarea></textarea>
+    </div>
+
+    <!-- Loading page indicator -->
+    <div id="loading-indicator">
+        <div class="loading-overlay">&nbsp;</div>
+        <div class="loading-content">Loading...</div>
+    </div>
+</body>
+</html>

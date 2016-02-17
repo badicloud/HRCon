@@ -1,0 +1,75 @@
+﻿
+<!-- Header -->
+<header class="navbar" role="banner">
+    <div class="container">
+        <!-- Logo & mobile collapse button -->
+        <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <i class="fa fa-cog"></i>
+            </button>
+            <a href="#" class="navbar-brand navbar-brand-img">
+                <img src="/images/hr-concourse-logo.png" alt="HR Concourse" height="55px;">
+            </a>
+        </div> <!-- /.navbar-header -->
+
+        <!-- Top Navigation Bar -->
+        <nav class="collapse navbar-collapse" role="navigation">
+            <!-- Left notification buttons -->
+    
+
+            <!-- Right menu buttons -->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#documents">Documents</a>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;">
+                        Settings
+                        <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                     
+                        <li>
+                            <a href="#/apiKeys">
+                                <i class="fa fa-list"></i>
+                                API Keys
+                            </a>
+                        </li>
+                   
+                    </ul>
+                </li>
+                <li class="dropdown navbar-profile">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;">
+                        <img src="/images/avatar.png" class="navbar-profile-avatar" alt="">
+                        <span data-bind="html:userDisplayName">  </span>
+                        <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                            <li class="divider"></li>
+                        <li>
+                            <a href="/Account/Logout">
+                                <i class="fa fa-sign-out"></i>
+                                Logout
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- Main Navigation Menu -->
+<div class="mainnav ">
+    <div class="container">
+        <!-- Mobile collapse button -->
+        <a class="mainnav-toggle" data-toggle="collapse" data-target=".mainnav-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+</div>
+
+<!-- Content -->
+<div class="content page-host" data-bind="router: { transition:'entrance' }"></div>

@@ -1,0 +1,587 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HRConcourseCoreModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="C__RefactorLog">
+    <Key>
+      <PropertyRef Name="OperationKey" />
+    </Key>
+    <Property Name="OperationKey" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ConfigurationValues">
+    <Key>
+      <PropertyRef Name="ConfigurationId" />
+      <PropertyRef Name="OriginId" />
+    </Key>
+    <Property Name="ConfigurationId" Type="Guid" Nullable="false" />
+    <Property Name="OriginId" Type="Guid" Nullable="false" />
+    <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmailAccountDefaults">
+    <Key>
+      <PropertyRef Name="EmailAccountTypeId" />
+    </Key>
+    <Property Name="EmailAccountTypeId" Type="Guid" Nullable="false" />
+    <Property Name="ServerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IncomingPort" Type="Int32" />
+    <Property Name="IncomingServerAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="IncomingUseSSL" Type="Boolean" />
+    <Property Name="OutgoingPort" Type="Int32" />
+    <Property Name="OutgoingServerAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="OutgoingUseSSL" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="EmailTemplateFields">
+    <Key>
+      <PropertyRef Name="EmailTemplateId" />
+      <PropertyRef Name="FieldId" />
+    </Key>
+    <Property Name="EmailTemplateId" Type="Guid" Nullable="false" />
+    <Property Name="FieldId" Type="Guid" Nullable="false" />
+    <Property Name="FieldName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FieldTestValue" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="ObjRoots_EmailTemplate" Relationship="Self.FK_EmailTemplate_EmailTemplateFields" FromRole="EmailTemplateFields" ToRole="ObjRoots_EmailTemplate" />
+  </EntityType>
+  <EntityType Name="Hiers">
+    <Key>
+      <PropertyRef Name="HierId" />
+    </Key>
+    <Property Name="HierId" Type="Guid" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ParentHierId" Type="Guid" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ExternalHierId" Type="Int32" />
+    <Property Name="WebName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="KioskCallbackUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HierTypeId" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="Hiers1" Relationship="Self.FK_HierHier" FromRole="Hiers" ToRole="Hiers1" />
+    <NavigationProperty Name="Hiers2" Relationship="Self.FK_HierHier" FromRole="Hiers1" ToRole="Hiers" />
+    <NavigationProperty Name="ObjRoots" Relationship="Self.FK_HierObjRoot" FromRole="Hiers" ToRole="ObjRoots" />
+    <NavigationProperty Name="HierTypes" Relationship="Self.FK_HierTypeHiers" FromRole="Hiers" ToRole="HierTypes" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_UserHier" FromRole="Hiers" ToRole="Users" />
+    <NavigationProperty Name="UserHierRoles" Relationship="Self.FK_UserHierRoleHier" FromRole="Hiers" ToRole="UserHierRoles" />
+    <NavigationProperty Name="Modules" Relationship="Self.HierModules" FromRole="Hiers" ToRole="Modules" />
+  </EntityType>
+  <EntityType Name="HierTypes">
+    <Key>
+      <PropertyRef Name="HierTypeId" />
+    </Key>
+    <Property Name="HierTypeId" Type="Guid" Nullable="false" />
+    <Property Name="ParentHierTypeId" Type="Guid" />
+    <Property Name="HierTypeName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RoleIdRequiredForUpdates" Type="Guid" />
+    <NavigationProperty Name="Hiers" Relationship="Self.FK_HierTypeHiers" FromRole="HierTypes" ToRole="Hiers" />
+  </EntityType>
+  <EntityType Name="Logger">
+    <Key>
+      <PropertyRef Name="LogId" />
+    </Key>
+    <Property Name="LogId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LogDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LogMsg1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LogMsg2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MiscId1" Type="Guid" />
+    <Property Name="MiscId2" Type="Guid" />
+  </EntityType>
+  <EntityType Name="Modules">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="XapName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="UserModules" Relationship="Self.FK_ModuleUserModule" FromRole="Modules" ToRole="UserModules" />
+    <NavigationProperty Name="Hiers" Relationship="Self.HierModules" FromRole="Modules" ToRole="Hiers" />
+  </EntityType>
+  <EntityType Name="ObjRoots">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="HierId" Type="Guid" Nullable="false" />
+    <Property Name="IsTestData" Type="Boolean" Nullable="false" />
+    <Property Name="PrimaryUserId" Type="Guid" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MigrationId" Type="Guid" />
+  </EntityType>
+  <EntityType Name="ObjRoots_EmailTemplate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="SubjectTemplate" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BodyTemplate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CategoryId" Type="Guid" Nullable="false" />
+    <Property Name="TemplateName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DefaultMailBoxId" Type="Guid" />
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="CC" Type="String" MaxLength="450" FixedLength="false" Unicode="true" />
+    <Property Name="BCC" Type="String" MaxLength="450" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="EmailTemplateFields" Relationship="Self.FK_EmailTemplate_EmailTemplateFields" FromRole="ObjRoots_EmailTemplate" ToRole="EmailTemplateFields" />
+    <NavigationProperty Name="ObjRoots" Relationship="Self.FK_EmailTemplate_inherits_ObjRoot" FromRole="ObjRoots_EmailTemplate" ToRole="ObjRoots" />
+    <NavigationProperty Name="ObjRoots_TemplateCategoryDefaults" Relationship="Self.FK__ObjRoots_TemplateCategoryDefaults_ObjRoots_Mailboxes" FromRole="ObjRoots_EmailTemplate" ToRole="ObjRoots_TemplateCategoryDefaults" />
+  </EntityType>
+  <EntityType Name="ObjRoots_HierVisualProfile">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="StringContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BinaryContent" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="ProfileId" Type="Guid" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="ObjRoots" Relationship="Self.FK_HierVisualProfile_inherits_ObjRoot" FromRole="ObjRoots_HierVisualProfile" ToRole="ObjRoots" />
+  </EntityType>
+  <EntityType Name="ObjRoots_MailBoxes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="UserId" Type="Guid" />
+    <Property Name="Name" Type="String" MaxLength="600" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="600" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="IncomingServerAddress" Type="String" MaxLength="600" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IncomingPort" Type="Int32" Nullable="false" />
+    <Property Name="IncomingUseSSL" Type="Boolean" Nullable="false" />
+    <Property Name="OutgoingServerAddress" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OutgoingPort" Type="Int32" Nullable="false" />
+    <Property Name="OutgoingUseSSL" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="ObjRoots" Relationship="Self.FK_ObjRoots_MailBoxes_ObjRoots" FromRole="ObjRoots_MailBoxes" ToRole="ObjRoots" />
+  </EntityType>
+  <EntityType Name="ObjRoots_SLMessage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="FrameworkElementName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ViewModel" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="ObjRoots" Relationship="Self.FK_SLMessage_inherits_ObjRoot" FromRole="ObjRoots_SLMessage" ToRole="ObjRoots" />
+  </EntityType>
+  <EntityType Name="ObjRoots_TemplateCategoryDefaults">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="CategoryId" Type="Guid" Nullable="false" />
+    <Property Name="TemplateId" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="ObjRoots" Relationship="Self.FK__ObjRoots_TemplateCategoryDefaults_ObjRoots" FromRole="ObjRoots_TemplateCategoryDefaults" ToRole="ObjRoots" />
+    <NavigationProperty Name="ObjRoots_EmailTemplate" Relationship="Self.FK__ObjRoots_TemplateCategoryDefaults_ObjRoots_Mailboxes" FromRole="ObjRoots_TemplateCategoryDefaults" ToRole="ObjRoots_EmailTemplate" />
+  </EntityType>
+  <EntityType Name="ProfileProperties">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="PropertyName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PropertyValueString" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PropertyValueBinary" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_UserProfileProperties" FromRole="ProfileProperties" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="Name" Type="String" MaxLength="450" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IsDefault" Type="Boolean" Nullable="false" />
+    <Property Name="RoleId" Type="Guid" Nullable="false" />
+    <Property Name="IsHierCreateDefault" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="UserHierRoles" Relationship="Self.FK_UserHierRoleRole" FromRole="Roles" ToRole="UserHierRoles" />
+  </EntityType>
+  <EntityType Name="uScriptAllText">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ObjectType" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="ObjectName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="IsCreateLine" Type="Boolean" Nullable="false" />
+    <Property Name="Txt" Type="String" MaxLength="7800" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="UserHierRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="HierId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="HierId" Type="Guid" Nullable="false" />
+    <Property Name="RoleId" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="Hiers" Relationship="Self.FK_UserHierRoleHier" FromRole="UserHierRoles" ToRole="Hiers" />
+    <NavigationProperty Name="Roles" Relationship="Self.FK_UserHierRoleRole" FromRole="UserHierRoles" ToRole="Roles" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_UserHierRoleUser" FromRole="UserHierRoles" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="UserModules">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="ExpirationDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UserUserId" Type="Guid" Nullable="false" />
+    <Property Name="ModuleId" Type="Guid" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Modules" Relationship="Self.FK_ModuleUserModule" FromRole="UserModules" ToRole="Modules" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_UserUserModule" FromRole="UserModules" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="MobileAlias" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="CurrentHierId" Type="Guid" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FriendlyName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="ForceUpdatePassword" Type="Boolean" Nullable="false" />
+    <Property Name="LastPasswordUpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="LastActivityDate" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsTestMode" Type="Boolean" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ViewModeEnum" Type="Int64" Nullable="false" />
+    <Property Name="Username" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IsKiosk" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Hiers" Relationship="Self.FK_UserHier" FromRole="Users" ToRole="Hiers" />
+    <NavigationProperty Name="ObjRoots" Relationship="Self.FK_UserObjRoot" FromRole="Users" ToRole="ObjRoots" />
+    <NavigationProperty Name="ProfileProperties" Relationship="Self.FK_UserProfileProperties" FromRole="Users" ToRole="ProfileProperties" />
+    <NavigationProperty Name="UserHierRoles" Relationship="Self.FK_UserHierRoleUser" FromRole="Users" ToRole="UserHierRoles" />
+    <NavigationProperty Name="UserModules" Relationship="Self.FK_UserUserModule" FromRole="Users" ToRole="UserModules" />
+  </EntityType>
+  <EntityType Name="UserVisitedURLs">
+    <Key>
+      <PropertyRef Name="UserVisitId" />
+    </Key>
+    <Property Name="UserVisitId" Type="Guid" Nullable="false" />
+    <Property Name="PageTitle" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Url" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="VisitDate" Type="DateTime" Nullable="false" Precision="7" />
+  </EntityType>
+  <Association Name="FK_EmailTemplate_EmailTemplateFields">
+    <End Role="ObjRoots_EmailTemplate" Type="Self.ObjRoots_EmailTemplate" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EmailTemplateFields" Type="Self.EmailTemplateFields" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ObjRoots_EmailTemplate">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmailTemplateFields">
+        <PropertyRef Name="EmailTemplateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HierHier">
+    <End Role="Hiers" Type="Self.Hiers" Multiplicity="0..1" />
+    <End Role="Hiers1" Type="Self.Hiers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hiers">
+        <PropertyRef Name="HierId" />
+      </Principal>
+      <Dependent Role="Hiers1">
+        <PropertyRef Name="ParentHierId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HierObjRoot">
+    <End Role="Hiers" Type="Self.Hiers" Multiplicity="1" />
+    <End Role="ObjRoots" Type="Self.ObjRoots" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hiers">
+        <PropertyRef Name="HierId" />
+      </Principal>
+      <Dependent Role="ObjRoots">
+        <PropertyRef Name="HierId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HierTypeHiers">
+    <End Role="HierTypes" Type="Self.HierTypes" Multiplicity="1" />
+    <End Role="Hiers" Type="Self.Hiers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HierTypes">
+        <PropertyRef Name="HierTypeId" />
+      </Principal>
+      <Dependent Role="Hiers">
+        <PropertyRef Name="HierTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserHier">
+    <End Role="Hiers" Type="Self.Hiers" Multiplicity="0..1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hiers">
+        <PropertyRef Name="HierId" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="CurrentHierId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserHierRoleHier">
+    <End Role="Hiers" Type="Self.Hiers" Multiplicity="1" />
+    <End Role="UserHierRoles" Type="Self.UserHierRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hiers">
+        <PropertyRef Name="HierId" />
+      </Principal>
+      <Dependent Role="UserHierRoles">
+        <PropertyRef Name="HierId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ModuleUserModule">
+    <End Role="Modules" Type="Self.Modules" Multiplicity="1" />
+    <End Role="UserModules" Type="Self.UserModules" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Modules">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserModules">
+        <PropertyRef Name="ModuleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ObjRoots_TemplateCategoryDefaults_ObjRoots">
+    <End Role="ObjRoots" Type="Self.ObjRoots" Multiplicity="1" />
+    <End Role="ObjRoots_TemplateCategoryDefaults" Type="Self.ObjRoots_TemplateCategoryDefaults" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ObjRoots">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjRoots_TemplateCategoryDefaults">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmailTemplate_inherits_ObjRoot">
+    <End Role="ObjRoots" Type="Self.ObjRoots" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ObjRoots_EmailTemplate" Type="Self.ObjRoots_EmailTemplate" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ObjRoots">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjRoots_EmailTemplate">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HierVisualProfile_inherits_ObjRoot">
+    <End Role="ObjRoots" Type="Self.ObjRoots" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ObjRoots_HierVisualProfile" Type="Self.ObjRoots_HierVisualProfile" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ObjRoots">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjRoots_HierVisualProfile">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ObjRoots_MailBoxes_ObjRoots">
+    <End Role="ObjRoots" Type="Self.ObjRoots" Multiplicity="1" />
+    <End Role="ObjRoots_MailBoxes" Type="Self.ObjRoots_MailBoxes" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ObjRoots">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjRoots_MailBoxes">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SLMessage_inherits_ObjRoot">
+    <End Role="ObjRoots" Type="Self.ObjRoots" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ObjRoots_SLMessage" Type="Self.ObjRoots_SLMessage" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ObjRoots">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjRoots_SLMessage">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserObjRoot">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="ObjRoots" Type="Self.ObjRoots" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="ObjRoots">
+        <PropertyRef Name="PrimaryUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ObjRoots_TemplateCategoryDefaults_ObjRoots_Mailboxes">
+    <End Role="ObjRoots_EmailTemplate" Type="Self.ObjRoots_EmailTemplate" Multiplicity="1" />
+    <End Role="ObjRoots_TemplateCategoryDefaults" Type="Self.ObjRoots_TemplateCategoryDefaults" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ObjRoots_EmailTemplate">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjRoots_TemplateCategoryDefaults">
+        <PropertyRef Name="TemplateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserProfileProperties">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="ProfileProperties" Type="Self.ProfileProperties" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="ProfileProperties">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserHierRoleRole">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+    <End Role="UserHierRoles" Type="Self.UserHierRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="UserHierRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserHierRoleUser">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="UserHierRoles" Type="Self.UserHierRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="UserHierRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserUserModule">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="UserModules" Type="Self.UserModules" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="UserModules">
+        <PropertyRef Name="UserUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HierModules">
+    <End Role="Hiers" Type="Self.Hiers" Multiplicity="*" />
+    <End Role="Modules" Type="Self.Modules" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="HRConcourseCoreEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__RefactorLog" EntityType="Self.C__RefactorLog" />
+    <EntitySet Name="ConfigurationValues" EntityType="Self.ConfigurationValues" />
+    <EntitySet Name="EmailAccountDefaults" EntityType="Self.EmailAccountDefaults" />
+    <EntitySet Name="EmailTemplateFields" EntityType="Self.EmailTemplateFields" />
+    <EntitySet Name="Hiers" EntityType="Self.Hiers" />
+    <EntitySet Name="HierTypes" EntityType="Self.HierTypes" />
+    <EntitySet Name="Logger" EntityType="Self.Logger" />
+    <EntitySet Name="Modules" EntityType="Self.Modules" />
+    <EntitySet Name="ObjRoots" EntityType="Self.ObjRoots" />
+    <EntitySet Name="ObjRoots_EmailTemplate" EntityType="Self.ObjRoots_EmailTemplate" />
+    <EntitySet Name="ObjRoots_HierVisualProfile" EntityType="Self.ObjRoots_HierVisualProfile" />
+    <EntitySet Name="ObjRoots_MailBoxes" EntityType="Self.ObjRoots_MailBoxes" />
+    <EntitySet Name="ObjRoots_SLMessage" EntityType="Self.ObjRoots_SLMessage" />
+    <EntitySet Name="ObjRoots_TemplateCategoryDefaults" EntityType="Self.ObjRoots_TemplateCategoryDefaults" />
+    <EntitySet Name="ProfileProperties" EntityType="Self.ProfileProperties" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" />
+    <EntitySet Name="uScriptAllText" EntityType="Self.uScriptAllText" />
+    <EntitySet Name="UserHierRoles" EntityType="Self.UserHierRoles" />
+    <EntitySet Name="UserModules" EntityType="Self.UserModules" />
+    <EntitySet Name="Users" EntityType="Self.Users" />
+    <EntitySet Name="UserVisitedURLs" EntityType="Self.UserVisitedURLs" />
+    <AssociationSet Name="FK_EmailTemplate_EmailTemplateFields" Association="Self.FK_EmailTemplate_EmailTemplateFields">
+      <End Role="ObjRoots_EmailTemplate" EntitySet="ObjRoots_EmailTemplate" />
+      <End Role="EmailTemplateFields" EntitySet="EmailTemplateFields" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HierHier" Association="Self.FK_HierHier">
+      <End Role="Hiers" EntitySet="Hiers" />
+      <End Role="Hiers1" EntitySet="Hiers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HierObjRoot" Association="Self.FK_HierObjRoot">
+      <End Role="Hiers" EntitySet="Hiers" />
+      <End Role="ObjRoots" EntitySet="ObjRoots" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HierTypeHiers" Association="Self.FK_HierTypeHiers">
+      <End Role="HierTypes" EntitySet="HierTypes" />
+      <End Role="Hiers" EntitySet="Hiers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserHier" Association="Self.FK_UserHier">
+      <End Role="Hiers" EntitySet="Hiers" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserHierRoleHier" Association="Self.FK_UserHierRoleHier">
+      <End Role="Hiers" EntitySet="Hiers" />
+      <End Role="UserHierRoles" EntitySet="UserHierRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ModuleUserModule" Association="Self.FK_ModuleUserModule">
+      <End Role="Modules" EntitySet="Modules" />
+      <End Role="UserModules" EntitySet="UserModules" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ObjRoots_TemplateCategoryDefaults_ObjRoots" Association="Self.FK__ObjRoots_TemplateCategoryDefaults_ObjRoots">
+      <End Role="ObjRoots" EntitySet="ObjRoots" />
+      <End Role="ObjRoots_TemplateCategoryDefaults" EntitySet="ObjRoots_TemplateCategoryDefaults" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmailTemplate_inherits_ObjRoot" Association="Self.FK_EmailTemplate_inherits_ObjRoot">
+      <End Role="ObjRoots" EntitySet="ObjRoots" />
+      <End Role="ObjRoots_EmailTemplate" EntitySet="ObjRoots_EmailTemplate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HierVisualProfile_inherits_ObjRoot" Association="Self.FK_HierVisualProfile_inherits_ObjRoot">
+      <End Role="ObjRoots" EntitySet="ObjRoots" />
+      <End Role="ObjRoots_HierVisualProfile" EntitySet="ObjRoots_HierVisualProfile" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ObjRoots_MailBoxes_ObjRoots" Association="Self.FK_ObjRoots_MailBoxes_ObjRoots">
+      <End Role="ObjRoots" EntitySet="ObjRoots" />
+      <End Role="ObjRoots_MailBoxes" EntitySet="ObjRoots_MailBoxes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SLMessage_inherits_ObjRoot" Association="Self.FK_SLMessage_inherits_ObjRoot">
+      <End Role="ObjRoots" EntitySet="ObjRoots" />
+      <End Role="ObjRoots_SLMessage" EntitySet="ObjRoots_SLMessage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserObjRoot" Association="Self.FK_UserObjRoot">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="ObjRoots" EntitySet="ObjRoots" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ObjRoots_TemplateCategoryDefaults_ObjRoots_Mailboxes" Association="Self.FK__ObjRoots_TemplateCategoryDefaults_ObjRoots_Mailboxes">
+      <End Role="ObjRoots_EmailTemplate" EntitySet="ObjRoots_EmailTemplate" />
+      <End Role="ObjRoots_TemplateCategoryDefaults" EntitySet="ObjRoots_TemplateCategoryDefaults" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserProfileProperties" Association="Self.FK_UserProfileProperties">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="ProfileProperties" EntitySet="ProfileProperties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserHierRoleRole" Association="Self.FK_UserHierRoleRole">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="UserHierRoles" EntitySet="UserHierRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserHierRoleUser" Association="Self.FK_UserHierRoleUser">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UserHierRoles" EntitySet="UserHierRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserUserModule" Association="Self.FK_UserUserModule">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UserModules" EntitySet="UserModules" />
+    </AssociationSet>
+    <AssociationSet Name="HierModules" Association="Self.HierModules">
+      <End Role="Hiers" EntitySet="Hiers" />
+      <End Role="Modules" EntitySet="Modules" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

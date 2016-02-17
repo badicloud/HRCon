@@ -1,0 +1,29 @@
+﻿@{
+    Layout = null;
+}
+
+<div id="thankyou" style="background-color: white;">
+    @* Header *@
+    <div id="header" class="centerDiv" style="height: 58px"></div>
+
+    @* Messages *@
+    <div style="margin: 50px;">
+        @* Title *@
+        <div style="font-weight: bold; font-size: 24px; text-align: center;">
+            <p>Thank you for completing your documents!</p>
+        </div>
+
+
+        @* Buttons *@
+        <div style="width: 250px; margin: auto;">
+            @*<div class="navButton">
+                    <a href="#" onclick="reviewFromStart()">Review documents</a>
+                </div>*@
+            <div class="navButton" style="margin-left: 85px;">
+                <a href="/@ViewBag.HierName/DocCenter/Kiosk/">Finish</a>
+            </div>
+        </div>
+
+
+    </div>
+</div>

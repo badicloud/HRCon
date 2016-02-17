@@ -1,0 +1,556 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container bs-docs-container">
+    <div class="row">
+        @* Content *@
+        <div class="col-md-9" role="main">
+            @* GetDocuments *@
+            <div class="bs-docs-section">
+                <h1 id="getDocuments" class="page-header">GetDocuments</h1>
+                <h2 id="getDocuments-description">Description</h2>
+                <p>Returns the list of documents in the system that fit the searched criteria</p>
+                <h2 id="getDocuments-input">Input Object</h2>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>OnlyWithWorkingRevision</td>
+                            <td>bool</td>
+                            <td>Indicates whether it should return only the documents that currently have a working revision</td>
+                        </tr>
+                        <tr>
+                            <td>SearchString</td>
+                            <td>string</td>
+                            <td>Search for documents that match the specified string in their name</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2 id="getDocuments-output">Output Object</h2>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Documents</td>
+                            <td>[DocumentReadModelDto]</td>
+                            <td>A list of documents that have the schema specified in the following table</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h3>DocumentReadModelDto</h3>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>TenantId</td>
+                            <td>int</td>
+                            <td>The Id of the tenant</td>
+                        </tr>
+                        <tr>
+                            <td>DocumentId</td>
+                            <td>int</td>
+                            <td>The Id of the document</td>
+                        </tr>
+                        <tr>
+                            <td>Name</td>
+                            <td>string</td>
+                            <td>The name of the document</td>
+                        </tr>
+                        <tr>
+                            <td>CreationDate</td>
+                            <td>date</td>
+                            <td>The creation date of the document</td>
+                        </tr>
+                        <tr>
+                            <td>Packages</td>
+                            <td>string</td>
+                            <td>The packages the document belong to</td>
+                        </tr>
+                        <tr>
+                            <td>RequiresHardSignature</td>
+                            <td>bool</td>
+                            <td>Indicates whether the document requires hard signature or not</td>
+                        </tr>
+                        <tr>
+                            <td>IsReadOnly</td>
+                            <td>bool</td>
+                            <td>Indicates whether the document is read only or not</td>
+                        </tr>
+                        <tr>
+                            <td>ActiveRevisionId</td>
+                            <td>int</td>
+                            <td>The Id of current active revision</td>
+                        </tr>
+                        <tr>
+                            <td>ActiveRevisionNumber</td>
+                            <td>int</td>
+                            <td>The number of current active revision</td>
+                        </tr>
+                        <tr>
+                            <td>WorkingRevisionId</td>
+                            <td>int</td>
+                            <td>The Id of working revision</td>
+                        </tr>
+                        <tr>
+                            <td>WorkingRevisionNumber</td>
+                            <td>int</td>
+                            <td>The number of the working revision</td>
+                        </tr>
+                        <tr>
+                            <td>InstanceCount</td>
+                            <td>int</td>
+                            <td>The number of insantces the document has</td>
+                        </tr>
+                        <tr>
+                            <td>DocumentTypeId</td>
+                            <td>int</td>
+                            <td>The Id of the type this document is</td>
+                        </tr>
+                        <tr>
+                            <td>DocumentTypeName</td>
+                            <td>int</td>
+                            <td>The name of the type this document is</td>
+                        </tr>
+                        <tr>
+                            <td>Languages</td>
+                            <td>[string]</td>
+                            <td>A list of the languages this document is created</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            @* GetDocumentFields *@
+            <div class="bs-docs-section">
+                <h1 id="getDocumentFields" class="page-header">GetDocumentFields</h1>
+                <h2 id="getDocumentFields-description">Description</h2>
+                <p>Returns the list of fields the document has</p>
+                <h2 id="getDocumentFields-input">Input Object</h2>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>DocumentId</td>
+                            <td>int</td>
+                            <td>The Id of the document to query</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2 id="getDocumentFields-output">Output Object</h2>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Fields</td>
+                            <td>[FieldMetadata]</td>
+                            <td>A list of fields that have the schema specified in the following table</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h3>FieldMetadata</h3>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>FieldId</td>
+                            <td>int</td>
+                            <td>The Id of the field</td>
+                        </tr>
+                        <tr>
+                            <td>FieldName</td>
+                            <td>string</td>
+                            <td>The name of the field</td>
+                        </tr>
+                        <tr>
+                            <td>Tooltip</td>
+                            <td>string</td>
+                            <td>The text that will be displayed when the field is hover over</td>
+                        </tr>
+                        <tr>
+                            <td>Html</td>
+                            <td>string</td>
+                            <td>The html of the field as it will be displayed in the document</td>
+                        </tr>
+                        <tr>
+                            <td>FieldType</td>
+                            <td>int</td>
+                            <td>The id of the type of field</td>
+                        </tr>
+                        <tr>
+                            <td>InitialValue</td>
+                            <td>string</td>
+                            <td>The value that the field will initially take in the document</td>
+                        </tr>
+                        <tr>
+                            <td>Href</td>
+                            <td>string</td>
+                            <td>In the case of links, the url the link will point to</td>
+                        </tr>
+                        <tr>
+                            <td>FontSize</td>
+                            <td>int</td>
+                            <td>The css font size property value that the field will have when displayed in the document</td>
+                        </tr>
+                        <tr>
+                            <td>TabIndex</td>
+                            <td>int</td>
+                            <td>The css tab index property value that the field will have when displayed in the document</td>
+                        </tr>
+                        <tr>
+                            <td>Required</td>
+                            <td>bool</td>
+                            <td>Indicates whether or not the field is required in order to submit the document</td>
+                        </tr>
+                        <tr>
+                            <td>Pattern</td>
+                            <td>string</td>
+                            <td>A validation pattern the field should pass in order to submit the document</td>
+                        </tr>
+                        <tr>
+                            <td>MinimumLength</td>
+                            <td>int</td>
+                            <td>The minimum length required for the field in order to submit the document</td>
+                        </tr>
+                        <tr>
+                            <td>MaxLength</td>
+                            <td>int</td>
+                            <td>The maximum length allowed for the field in order to submit the document</td>
+                        </tr>
+                        <tr>
+                            <td>Min</td>
+                            <td>int</td>
+                            <td>The minimum value required for the field in order to submit the document</td>
+                        </tr>
+                        <tr>
+                            <td>Max</td>
+                            <td>int</td>
+                            <td>The maximum value allowed for the field in order to submit the document</td>
+                        </tr>
+                        <tr>
+                            <td>MinSelected</td>
+                            <td>int</td>
+                            <td>The minimum amount of options required for the field in order to submit the document</td>
+                        </tr>
+                        <tr>
+                            <td>UseCurrentDate</td>
+                            <td>bool</td>
+                            <td>Indicates whether or not the fiels will use the current date when displyed in the document</td>
+                        </tr>
+                        <tr>
+                            <td>RangeDateMin</td>
+                            <td>string</td>
+                            <td>The minimum value allowed for the field in order to submit the document</td>
+                        </tr>
+                        <tr>
+                            <td>RangeDateMinUseCurrent</td>
+                            <td>bool</td>
+                            <td>Indicates whether or not the fiels will use the current date as the minimum value allowed</td>
+                        </tr>
+                        <tr>
+                            <td>RangeDateMax</td>
+                            <td>string</td>
+                            <td>The maximum value allowed for the field in order to submit the document</td>
+                        </tr>
+                        <tr>
+                            <td>RangeDateMaxUseCurrent</td>
+                            <td>bool</td>
+                            <td>Indicates whether or not the fiels will use the current date as the maximum value allowed</td>
+                        </tr>
+                        <tr>
+                            <td>DependencyCount</td>
+                            <td>int</td>
+                            <td>The number of dependencies this field has</td>
+                        </tr>
+                        <tr>
+                            <td>SelectTitle</td>
+                            <td>string</td>
+                            <td>The text that will be displayed on a select type of field</td>
+                        </tr>
+                        <tr>
+                            <td>SelectFieldSource</td>
+                            <td>string</td>
+                            <td>The source from where the select options will be populated</td>
+                        </tr>
+                        <tr>
+                            <td>ReadOnly</td>
+                            <td>bool</td>
+                            <td>Whether or not the field is read only</td>
+                        </tr>
+                        <tr>
+                            <td>DependencyData</td>
+                            <td>string</td>
+                            <td>The dependency information</td>
+                        </tr>
+                        <tr>
+                            <td>IsGroup</td>
+                            <td>bool</td>
+                            <td>Indicates if the field should be treated as a group</td>
+                        </tr>
+                        <tr>
+                            <td>CustomValidationCount</td>
+                            <td>int</td>
+                            <td>The number of custom validations this field has</td>
+                        </tr><tr>
+                            <td>CustomValidationData</td>
+                            <td>string</td>
+                            <td>The custom validation information</td>
+                        </tr><tr>
+                            <td>Style</td>
+                            <td>string</td>
+                            <td>The style information for this field to be displayed</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+
+            @* GetEntryFieldValues *@
+            <div class="bs-docs-section">
+                <h1 id="getEntryFieldValues" class="page-header">GetEntryFieldValues</h1>
+                <h2 id="getEntryFieldValues-description">Description</h2>
+                <p>Returns the list of field values for the specified document entry</p>
+                <h2 id="getEntryFieldValues-input">Input Object</h2>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>EntryId</td>
+                            <td>int</td>
+                            <td>The Id of the entry being query</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2 id="getEntryFieldValues-output">Output Object</h2>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>FieldValues</td>
+                            <td>[FieldValueDto]</td>
+                            <td>A list of field values for that have the schema specified in the following table</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h3>FieldValueDto</h3>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>FieldName</td>
+                            <td>string</td>
+                            <td>The name of the field</td>
+                        </tr>
+                        <tr>
+                            <td>Value</td>
+                            <td>string</td>
+                            <td>The value of the field</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            @* Integrating the Filler *@
+            <div class="bs-docs-section">
+                <h1 id="integratingTheFiller" class="page-header">Integrating the Filler</h1>
+                <h2 id="integratingTheFiller-description">Description</h2>
+                <p>
+                    The filler is a standalone application that will display the documents to the user. <br />
+                    The filler has minimum styles, meaning that you it won't affect your site's theme
+                </p>
+                <p>
+                    In order the integrate it with your application, the recomended way is through the inclusion of an iframe in your site, that will host the app. <br />
+                    To interact with the iframe, we recomend to set an ID that will allow you to identify the iframe, in order to call the function. An example can be seen below. <br />
+                    The method used to interact with the iframe then will be through the use of the Javascript "postMessage" function
+                </p>
+                <h2 id="integratingTheFiller-setup">Setup</h2>
+                <h3>URL</h3>
+                <p>
+                    In order to set it up, you must set the url indicating the Id of the document you want it to display. <br />
+                    E.g. .../filler?documentId=32
+                </p>
+                <h3>Style</h3>
+                <p>For the filler to be displayed correctly, the iframe must be set to a minimum size of 1010 width x 1400 heigh, which will make the scroll to be only displayed on your app.</p>
+                <h2 id="integratingTheFiller-initialValues">Initial values</h2>
+                <p>
+                    If you want to setup values for certain fields, for example to keep values across different documents, you can send a message to the filler with the following information: <br />
+                    <b>method</b>: "setDocumentValues" <br />
+                    <b>values</b>: Object - An object where the keys are the names of the fields, and the values are the ones you want to use
+                </p>
+                <h3>Example</h3>
+                <p>
+                    Assuming you set your iframe's id property to "filler", then you can call the following function: <br /><br />
+                    document.getElementById("filler").contentWindow.postMessage({ <br />
+                    &emsp;method: "setDocumentValues", values: { firstName: "John", lastName: "Doe" } <br />
+                    }, "*");
+                </p>
+                <h2 id="integratingTheFiller-pageErrors">Page Errors</h2>
+                <p>
+                    When the page has errors, the filler will make use of the function postMessage, to notify about it. <br />
+                    You can bind yourself to this events in order to act in case you want to. The message sent will have the following format: <br />
+                    <b>event</b>: "page-error" <br />
+                </p>
+                <h3>Example</h3>
+                <p>
+                    For a better cross browser experience, we recomend to declare a "bindEvent" function to make the binding easier: <br /><br />
+                    function bindEvent(el, eventName, eventHandler) { <br />
+                    &emsp;if (el.addEventListener) { <br />
+                    &emsp;&emsp;el.addEventListener(eventName, eventHandler, false); <br />
+                    &emsp;} else if (el.attachEvent) { <br />
+                    &emsp;&emsp;el.attachEvent('on' + eventName, eventHandler); <br />
+                    &emsp;} <br />
+                    } <br /><br />
+                    bindEvent(window, 'message', function (event) { <br />
+                    &emsp;if (event.data.event == "page-error") { <br />
+                    &emsp;&emsp;myPageErrorHandler(); <br />
+                    &emsp;} <br />
+                    });
+                </p>
+                <h2 id="integratingTheFiller-nextPage">Next Page</h2>
+                <p>
+                    When the page is correctly submitted and the next one is loaded, the filler will make use of the function postMessage, to notify about it. <br />
+                    You can bind yourself to this events in order to act in case you want to. The message sent will have the following format: <br />
+                    <b>event</b>: "next-page"
+                </p>
+                <h3>Example</h3>
+                <p>
+                    For a better cross browser experience, we recomend to declare a "bindEvent" function to make the binding easier: <br /><br />
+                    function bindEvent(el, eventName, eventHandler) { <br />
+                    &emsp;if (el.addEventListener) { <br />
+                    &emsp;&emsp;el.addEventListener(eventName, eventHandler, false); <br />
+                    &emsp;} else if (el.attachEvent) { <br />
+                    &emsp;&emsp;el.attachEvent('on' + eventName, eventHandler); <br />
+                    &emsp;} <br />
+                    } <br /><br />
+                    bindEvent(window, 'message', function (event) { <br />
+                    &emsp;if (event.data.event == "next-page") { <br />
+                    &emsp;&emsp;myNextPageHandler(); <br />
+                    &emsp;} <br />
+                    });
+                </p>
+                <h2 id="integratingTheFiller-documentFinished">Document Finished</h2>
+                <p>
+                    Once all pages have been filled and the document is completed, the filler will make use of the function postMessage, to notify about it. <br />
+                    You can bind yourself to this events in order to act in case you want to. The message sent will have the following format: <br />
+                    <b>event</b>: "finished" <br />
+                    <b>entryId</b>: string - The Id of the entry that represents the current document field values
+                </p>
+                <h3>Example</h3>
+                <p>
+                    For a better cross browser experience, we recomend to declare a "bindEvent" function to make the binding easier: <br /><br />
+                    function bindEvent(el, eventName, eventHandler) { <br />
+                    &emsp;if (el.addEventListener) { <br />
+                    &emsp;&emsp;el.addEventListener(eventName, eventHandler, false); <br />
+                    &emsp;} else if (el.attachEvent) { <br />
+                    &emsp;&emsp;el.attachEvent('on' + eventName, eventHandler); <br />
+                    &emsp;} <br />
+                    } <br /><br />
+                    bindEvent(window, 'message', function (event) { <br />
+                    &emsp;if (event.data.event == "finished") { <br />
+                    &emsp;&emsp;myDocumentFinishedHandler(event.data.entryId); <br />
+                    &emsp;} <br />
+                    });
+                </p>
+            </div>
+        </div>
+
+
+        @* Menu *@
+        <div class="col-md-3" role="complementary">
+            <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
+                <ul class="nav bs-docs-sidenav">
+                    <li>
+                        <a href="#getDocuments">GetDocuments</a>
+                        <ul class="nav">
+                            <li><a href="#getDocuments-description">Description</a></li>
+                            <li><a href="#getDocuments-input">Input</a></li>
+                            <li><a href="#getDocuments-output">Output</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#getDocumentFields">GetDocumentFields</a>
+                        <ul class="nav">
+                            <li><a href="#getDocumentFields-description">Description</a></li>
+                            <li><a href="#getDocumentFields-input">Input</a></li>
+                            <li><a href="#getDocumentFields-output">Output</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#getEntryFieldValues">GetEntryFieldValues</a>
+                        <ul class="nav">
+                            <li><a href="#getEntryFieldValues-description">Description</a></li>
+                            <li><a href="#getEntryFieldValues-input">Input</a></li>
+                            <li><a href="#getEntryFieldValues-output">Output</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#integratingTheFiller">Integrating The Filler</a>
+                        <ul class="nav">
+                            <li><a href="#integratingTheFiller-description">Description</a></li>
+                            <li><a href="#integratingTheFiller-setup">Setup</a></li>
+                            <li><a href="#integratingTheFiller-initialValues">Initial Values</a></li>
+                            <li><a href="#integratingTheFiller-pageErrors">Page Errors</a></li>
+                            <li><a href="#integratingTheFiller-nextPage">Next Page</a></li>
+                            <li><a href="#integratingTheFiller-documentFinished">Document Finished</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>

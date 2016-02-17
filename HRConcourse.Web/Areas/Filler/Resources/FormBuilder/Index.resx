@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddInitialValueMessage" xml:space="preserve">
+    <value>Select one of the following values</value>
+    <comment>Modal dialog message</comment>
+  </data>
+  <data name="AddInitialValueTitle" xml:space="preserve">
+    <value>Add initial value</value>
+    <comment>Modal dialog title</comment>
+  </data>
+  <data name="ConfirmActionMessage" xml:space="preserve">
+    <value>Are you sure?</value>
+    <comment>Modal dialog default message</comment>
+  </data>
+  <data name="ConfirmActionTitle" xml:space="preserve">
+    <value>Confirm</value>
+    <comment>Modal dialog title</comment>
+  </data>
+  <data name="CurrentDate_Help" xml:space="preserve">
+    <value>Use this property when you want the initial value of this date field to be the current date, such as when the user is filling the form</value>
+  </data>
+  <data name="Equals_Help" xml:space="preserve">
+    <value>This property is used to compare the equity between this field's value and the selected field's value.</value>
+  </data>
+  <data name="FieldID_Help" xml:space="preserve">
+    <value>This read-only property contains the unique identifier of the field.</value>
+  </data>
+  <data name="FieldName_Help" xml:space="preserve">
+    <value>This property represents the field's name. Use a name that easily conveys its purpose. Example: "FirstName"</value>
+  </data>
+  <data name="FilterInitialValueMessage" xml:space="preserve">
+    <value>Search:</value>
+  </data>
+  <data name="FontSize_Help" xml:space="preserve">
+    <value>This property represents the field's font size in pixels.</value>
+  </data>
+  <data name="Grouping_Help" xml:space="preserve">
+    <value>Use this property if you want to make the checkboxes to behave as a group, i.e. only one can be selected.</value>
+  </data>
+  <data name="Href_Help" xml:space="preserve">
+    <value>Use this property to specify the URL of the page the link goes to</value>
+  </data>
+  <data name="InitialValue_Help" xml:space="preserve">
+    <value>Use this property to set the initial value for the field. Using the plus sign will show a list of all the available values. Example value: "2/4/2012"</value>
+  </data>
+  <data name="JavaScriptWarningMessage" xml:space="preserve">
+    <value>This application requires javascript enabled</value>
+    <comment>This message is displayed if JavaScript is disabled</comment>
+  </data>
+  <data name="MaxDate_Help" xml:space="preserve">
+    <value>This property represents the maximum date that the user will be allowed to select for this field.</value>
+  </data>
+  <data name="MaxLength_Help" xml:space="preserve">
+    <value>This property represents the maximum length of characters that the user should enter for this field.</value>
+  </data>
+  <data name="MaxNumber_Help" xml:space="preserve">
+    <value>This property represents the maximum number that the user will be allowed to enter for this field.</value>
+  </data>
+  <data name="MinDate_Help" xml:space="preserve">
+    <value>This property represents the minimum date that the user will be allowed to select for this field.</value>
+  </data>
+  <data name="MinLength_Help" xml:space="preserve">
+    <value>This property represents the minimum length of characters that the user should enter for this field.</value>
+  </data>
+  <data name="MinNumber_Help" xml:space="preserve">
+    <value>This property represents the minimum number that the user will be allowed to enter for this field.</value>
+  </data>
+  <data name="MinSelected_Help" xml:space="preserve">
+    <value>Use this property to indicate the minimum of selected checkboxes that the user should check.</value>
+  </data>
+  <data name="OutField_Help" xml:space="preserve">
+    <value>Use this property to mark the field as an out field, indicating the corresponding name when needed.</value>
+  </data>
+  <data name="Pattern_Help" xml:space="preserve">
+    <value>Use this property when you want to restrict the user's input, indicating the regular expresion that it must match.</value>
+  </data>
+  <data name="ReadOnly_Help" xml:space="preserve">
+    <value>Use this property to mark the field as read-only</value>
+  </data>
+  <data name="Required_Help" xml:space="preserve">
+    <value>Use this property to mark the field as required to fill</value>
+  </data>
+  <data name="SelectTitle_Help" xml:space="preserve">
+    <value>This property represents the text displayed on the select field when no value has been selected.</value>
+  </data>
+  <data name="ShowLessErrors" xml:space="preserve">
+    <value>show less</value>
+  </data>
+  <data name="ShowMoreErrors" xml:space="preserve">
+    <value>show more</value>
+  </data>
+  <data name="Source_Help" xml:space="preserve">
+    <value>This property is used to select the source from where to populate the select field's values.</value>
+  </data>
+  <data name="TabIndex_Help" xml:space="preserve">
+    <value>Use this property if you want to modify the default  tab order for the field.</value>
+  </data>
+  <data name="Tooltip_Help" xml:space="preserve">
+    <value>Use this property to set a tooltip that will appear over the field on hover. Example: "Introduce your birth date" </value>
+  </data>
+</root>

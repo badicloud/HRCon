@@ -1,0 +1,57 @@
+﻿@using HRConcourse.Web.Areas.Filler.Resources.DocumentFill
+@model  HRConcourse.Web.Areas.Filler.Models.KioskDocumentPanelViewModel
+@{
+    var revisionId = Model.RevisionId;
+}
+
+@* navigation buttons section *@
+<div class="navi" id="navSection" data-pageCount="@Model.Pages.Count()">
+    
+    @{            
+        foreach (var page in Model.Pages)
+        {
+        <div  class="pending pageNumberBox">
+            <a class="navItem" onclick="checkAndLoad('@page.PageId', '@revisionId', '@Url.Action("GetKioskPage")?pageId=@page.PageId&revisionId=@Model.RevisionId')"
+               id="@page.PageId" href="@Url.Action("GetKioskPage")?pageId=@page.PageId&revisionId=@Model.RevisionId">
+                @page.Number
+        </a>
+        </div>
+        }
+    }
+
+    <div id="totalPageCount" style=" float: left; margin-right: 20px; position: relative; top: 7px;">
+        <span class="current">0</span> / <span class="total">0</span>
+    </div>
+
+  
+        <div class="navButton submitButton">
+            <a href="#">@DocumentSliderUserControl.NEXT</a>
+        </div>
+ 
+  
+
+</div>
+
+
+
+
+@* sliding pages section *@
+<div class="scrollable" id="scrollable">
+    <div class="items">
+        @{           
+            foreach (var page in Model.Pages)
+            {
+            <div class="item" id="documentFillPlace-@page.PageId">
+                <form id="pageForm-@page.PageId" novalidate="novalidate"></form>
+            </div>
+            }
+        }
+    </div>
+</div>
+
+@* next / print buttons again *@
+<div class="navi">
+    <div class="navButton submitButton" style="margin-left: 3px;">
+        <a href="#">@DocumentSliderUserControl.NEXT</a>
+    </div>
+</div>

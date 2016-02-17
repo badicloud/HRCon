@@ -1,0 +1,151 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{DFA48E27-7D53-4955-A722-3D91A7119BE7}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRConcourse.Core", "HRConcourse.Core\HRConcourse.Core.csproj", "{17298EA0-AF73-4F30-B6F1-2066100D7D74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRConcourse.Application", "HRConcourse.Application\HRConcourse.Application.csproj", "{EDF5D964-4C0F-4F19-B674-58A38A5E5401}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRConcourse.EntityFramework", "HRConcourse.EntityFramework\HRConcourse.EntityFramework.csproj", "{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRConcourse.Web", "HRConcourse.Web\HRConcourse.Web.csproj", "{897F6FD8-6F90-48E4-95A5-B4429B896205}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRConcourse.WebApi", "HRConcourse.WebApi\HRConcourse.WebApi.csproj", "{5EB52D3D-09FD-463A-B02A-8D9856BD3724}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{7E85C7E5-70BD-4C9D-B052-D95955F46609}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://twtfs2010.tempworks.com:8080/tfs/tempworks
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = HRConcourse.Application\\HRConcourse.Application.csproj
+		SccProjectName1 = HRConcourse.Application
+		SccLocalPath1 = HRConcourse.Application
+		SccProjectUniqueName2 = HRConcourse.Core\\HRConcourse.Core.csproj
+		SccProjectName2 = HRConcourse.Core
+		SccLocalPath2 = HRConcourse.Core
+		SccProjectUniqueName3 = HRConcourse.EntityFramework\\HRConcourse.EntityFramework.csproj
+		SccProjectName3 = HRConcourse.EntityFramework
+		SccLocalPath3 = HRConcourse.EntityFramework
+		SccProjectUniqueName4 = HRConcourse.Web\\HRConcourse.Web.csproj
+		SccProjectName4 = HRConcourse.Web
+		SccLocalPath4 = HRConcourse.Web
+		SccProjectUniqueName5 = HRConcourse.WebApi\\HRConcourse.WebApi.csproj
+		SccProjectName5 = HRConcourse.WebApi
+		SccLocalPath5 = HRConcourse.WebApi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		AWS|Any CPU = AWS|Any CPU
+		AWS|x64 = AWS|x64
+		AWS|x86 = AWS|x86
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{17298EA0-AF73-4F30-B6F1-2066100D7D74}.AWS|Any CPU.ActiveCfg = Debug|Any CPU
+		{17298EA0-AF73-4F30-B6F1-2066100D7D74}.AWS|Any CPU.Build.0 = Debug|Any CPU
+		{17298EA0-AF73-4F30-B6F1-2066100D7D74}.AWS|x64.ActiveCfg = Debug|x64
+		{17298EA0-AF73-4F30-B6F1-2066100D7D74}.AWS|x64.Build.0 = Debug|x64
+		{17298EA0-AF73-4F30-B6F1-2066100D7D74}.AWS|x86.ActiveCfg = Debug|Any CPU
+		{17298EA0-AF73-4F30-B6F1-2066100D7D74}.AWS|x86.Build.0 = Debug|Any CPU
+		{17298EA0-AF73-4F30-B6F1-2066100D7D74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17298EA0-AF73-4F30-B6F1-2066100D7D74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17298EA0-AF73-4F30-B6F1-2066100D7D74}.Debug|x64.ActiveCfg = Debug|x64
+		{17298EA0-AF73-4F30-B6F1-2066100D7D74}.Debug|x64.Build.0 = Debug|x64
+		{17298EA0-AF73-4F30-B6F1-2066100D7D74}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{17298EA0-AF73-4F30-B6F1-2066100D7D74}.Debug|x86.Build.0 = Debug|Any CPU
+		{17298EA0-AF73-4F30-B6F1-2066100D7D74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17298EA0-AF73-4F30-B6F1-2066100D7D74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17298EA0-AF73-4F30-B6F1-2066100D7D74}.Release|x64.ActiveCfg = Release|Any CPU
+		{17298EA0-AF73-4F30-B6F1-2066100D7D74}.Release|x64.Build.0 = Release|Any CPU
+		{17298EA0-AF73-4F30-B6F1-2066100D7D74}.Release|x86.ActiveCfg = Release|Any CPU
+		{17298EA0-AF73-4F30-B6F1-2066100D7D74}.Release|x86.Build.0 = Release|Any CPU
+		{EDF5D964-4C0F-4F19-B674-58A38A5E5401}.AWS|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDF5D964-4C0F-4F19-B674-58A38A5E5401}.AWS|Any CPU.Build.0 = Debug|Any CPU
+		{EDF5D964-4C0F-4F19-B674-58A38A5E5401}.AWS|x64.ActiveCfg = Debug|x64
+		{EDF5D964-4C0F-4F19-B674-58A38A5E5401}.AWS|x64.Build.0 = Debug|x64
+		{EDF5D964-4C0F-4F19-B674-58A38A5E5401}.AWS|x86.ActiveCfg = Debug|Any CPU
+		{EDF5D964-4C0F-4F19-B674-58A38A5E5401}.AWS|x86.Build.0 = Debug|Any CPU
+		{EDF5D964-4C0F-4F19-B674-58A38A5E5401}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDF5D964-4C0F-4F19-B674-58A38A5E5401}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDF5D964-4C0F-4F19-B674-58A38A5E5401}.Debug|x64.ActiveCfg = Debug|x64
+		{EDF5D964-4C0F-4F19-B674-58A38A5E5401}.Debug|x64.Build.0 = Debug|x64
+		{EDF5D964-4C0F-4F19-B674-58A38A5E5401}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EDF5D964-4C0F-4F19-B674-58A38A5E5401}.Debug|x86.Build.0 = Debug|Any CPU
+		{EDF5D964-4C0F-4F19-B674-58A38A5E5401}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDF5D964-4C0F-4F19-B674-58A38A5E5401}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDF5D964-4C0F-4F19-B674-58A38A5E5401}.Release|x64.ActiveCfg = Release|Any CPU
+		{EDF5D964-4C0F-4F19-B674-58A38A5E5401}.Release|x64.Build.0 = Release|Any CPU
+		{EDF5D964-4C0F-4F19-B674-58A38A5E5401}.Release|x86.ActiveCfg = Release|Any CPU
+		{EDF5D964-4C0F-4F19-B674-58A38A5E5401}.Release|x86.Build.0 = Release|Any CPU
+		{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}.AWS|Any CPU.ActiveCfg = Debug|Any CPU
+		{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}.AWS|Any CPU.Build.0 = Debug|Any CPU
+		{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}.AWS|x64.ActiveCfg = Debug|x64
+		{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}.AWS|x64.Build.0 = Debug|x64
+		{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}.AWS|x86.ActiveCfg = Debug|Any CPU
+		{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}.AWS|x86.Build.0 = Debug|Any CPU
+		{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}.Debug|x64.ActiveCfg = Debug|x64
+		{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}.Debug|x64.Build.0 = Debug|x64
+		{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}.Debug|x86.Build.0 = Debug|Any CPU
+		{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}.Release|x64.ActiveCfg = Release|Any CPU
+		{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}.Release|x64.Build.0 = Release|Any CPU
+		{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}.Release|x86.ActiveCfg = Release|Any CPU
+		{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}.Release|x86.Build.0 = Release|Any CPU
+		{897F6FD8-6F90-48E4-95A5-B4429B896205}.AWS|Any CPU.ActiveCfg = AWS|Any CPU
+		{897F6FD8-6F90-48E4-95A5-B4429B896205}.AWS|Any CPU.Build.0 = AWS|Any CPU
+		{897F6FD8-6F90-48E4-95A5-B4429B896205}.AWS|x64.ActiveCfg = AWS|x64
+		{897F6FD8-6F90-48E4-95A5-B4429B896205}.AWS|x64.Build.0 = AWS|x64
+		{897F6FD8-6F90-48E4-95A5-B4429B896205}.AWS|x86.ActiveCfg = AWS|x86
+		{897F6FD8-6F90-48E4-95A5-B4429B896205}.AWS|x86.Build.0 = AWS|x86
+		{897F6FD8-6F90-48E4-95A5-B4429B896205}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{897F6FD8-6F90-48E4-95A5-B4429B896205}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{897F6FD8-6F90-48E4-95A5-B4429B896205}.Debug|x64.ActiveCfg = Debug|x64
+		{897F6FD8-6F90-48E4-95A5-B4429B896205}.Debug|x64.Build.0 = Debug|x64
+		{897F6FD8-6F90-48E4-95A5-B4429B896205}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{897F6FD8-6F90-48E4-95A5-B4429B896205}.Debug|x86.Build.0 = Debug|Any CPU
+		{897F6FD8-6F90-48E4-95A5-B4429B896205}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{897F6FD8-6F90-48E4-95A5-B4429B896205}.Release|Any CPU.Build.0 = Release|Any CPU
+		{897F6FD8-6F90-48E4-95A5-B4429B896205}.Release|x64.ActiveCfg = Release|Any CPU
+		{897F6FD8-6F90-48E4-95A5-B4429B896205}.Release|x64.Build.0 = Release|Any CPU
+		{897F6FD8-6F90-48E4-95A5-B4429B896205}.Release|x86.ActiveCfg = Release|Any CPU
+		{897F6FD8-6F90-48E4-95A5-B4429B896205}.Release|x86.Build.0 = Release|Any CPU
+		{5EB52D3D-09FD-463A-B02A-8D9856BD3724}.AWS|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EB52D3D-09FD-463A-B02A-8D9856BD3724}.AWS|Any CPU.Build.0 = Debug|Any CPU
+		{5EB52D3D-09FD-463A-B02A-8D9856BD3724}.AWS|x64.ActiveCfg = Debug|x64
+		{5EB52D3D-09FD-463A-B02A-8D9856BD3724}.AWS|x64.Build.0 = Debug|x64
+		{5EB52D3D-09FD-463A-B02A-8D9856BD3724}.AWS|x86.ActiveCfg = Debug|x86
+		{5EB52D3D-09FD-463A-B02A-8D9856BD3724}.AWS|x86.Build.0 = Debug|x86
+		{5EB52D3D-09FD-463A-B02A-8D9856BD3724}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EB52D3D-09FD-463A-B02A-8D9856BD3724}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EB52D3D-09FD-463A-B02A-8D9856BD3724}.Debug|x64.ActiveCfg = Debug|x64
+		{5EB52D3D-09FD-463A-B02A-8D9856BD3724}.Debug|x64.Build.0 = Debug|x64
+		{5EB52D3D-09FD-463A-B02A-8D9856BD3724}.Debug|x86.ActiveCfg = Debug|x86
+		{5EB52D3D-09FD-463A-B02A-8D9856BD3724}.Debug|x86.Build.0 = Debug|x86
+		{5EB52D3D-09FD-463A-B02A-8D9856BD3724}.Release|Any CPU.ActiveCfg = Release|x86
+		{5EB52D3D-09FD-463A-B02A-8D9856BD3724}.Release|x64.ActiveCfg = Release|x86
+		{5EB52D3D-09FD-463A-B02A-8D9856BD3724}.Release|x86.ActiveCfg = Release|x86
+		{5EB52D3D-09FD-463A-B02A-8D9856BD3724}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

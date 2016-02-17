@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9580e94734914a6f85fc2a2a550cef19" Name="Diagram1">
+        <EntityTypeShape EntityType="HRConcourseDCModel.DocumentInstanceFiles" Width="1.5" PointX="9.75" PointY="32.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRConcourseDCModel.DocumentPageTranslations" Width="1.5" PointX="9.75" PointY="39" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRConcourseDCModel.MergeFieldInstanceValues" Width="1.5" PointX="9.75" PointY="35.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRConcourseDCModel.ObjRoots" Width="4" PointX="0.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRConcourseDCModel.ObjRoots_ComboGroup" Width="1.5" PointX="3" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRConcourseDCModel.ObjRoots_Document" Width="2.375" PointX="5.25" PointY="28.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRConcourseDCModel.ObjRoots_DocumentInstance" Width="2.875" PointX="7.5" PointY="27.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRConcourseDCModel.ObjRoots_DocumentInstanceLog" Width="1.5" PointX="3" PointY="28.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRConcourseDCModel.ObjRoots_DocumentInstanceMessage" Width="1.5" PointX="9.75" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRConcourseDCModel.ObjRoots_DocumentPackage" Width="1.5" PointX="10.5" PointY="29.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRConcourseDCModel.ObjRoots_DocumentPage" Width="3.125" PointX="7.5" PointY="33.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRConcourseDCModel.ObjRoots_DocumentPageInstance" Width="1.5" PointX="12.75" PointY="29.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRConcourseDCModel.ObjRoots_DocumentType" Width="1.5" PointX="3" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRConcourseDCModel.ObjRoots_ExternalGuidFillToken" Width="1.5" PointX="3" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRConcourseDCModel.ObjRoots_MergeField" Width="1.5" PointX="3" PointY="36.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRConcourseDCModel.ObjRoots_Notification" Width="1.5" PointX="3" PointY="40.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRConcourseDCModel.ObjRoots_PageField" Width="1.5" PointX="15.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRConcourseDCModel.ObjRoots_PageImage" Width="1.5" PointX="3" PointY="42.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRConcourseDCModel.PageFieldTranslations" Width="1.5" PointX="18" PointY="32.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRConcourseDCModel.Sys_DataMotions" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRConcourseDCModel.UserTokens" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="HRConcourseDCModel.FK_DocumentInstanceFiles_ObjRoots_DocumentInstance" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseDCModel.FK_DocumentPageTranslationDocumentPage" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseDCModel.FK_DocumentPageTranslationDocumentPageDefinition" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseDCModel.FK_DocumentPageTranslationDocumentPageImage" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseDCModel.FK_DocumentPageTranslationPageFieldTranslation" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseDCModel.FK_MergeFieldInstanceValues_DocumentInstanceId" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseDCModel.FK_MergeFieldInstanceValues_MergeField" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseDCModel.FK_ComboGroup_inherits_ObjRoot" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseDCModel.FK_Document_inherits_ObjRoot" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseDCModel.FK_DocumentInstance_inherits_ObjRoot" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseDCModel.FK_DocumentInstanceLog_inherits_ObjRoot" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseDCModel.FK_DocumentInstanceNotificationLog_inherits_ObjRoot" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseDCModel.FK_DocumentPackage_inherits_ObjRoot" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseDCModel.FK_DocumentPage_inherits_ObjRoot" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseDCModel.FK_DocumentPageInstance_inherits_ObjRoot" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseDCModel.FK_DocumentType_inherits_ObjRoot" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseDCModel.FK_ExternalGuidFillToken_inherits_ObjRoot" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseDCModel.FK_MergeField_inherits_ObjRoot" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseDCModel.FK_Notification_inherits_ObjRoot" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseDCModel.FK_PageField_inherits_ObjRoot" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseDCModel.FK_PageImage_inherits_ObjRoot" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseDCModel.FK_Document_ChildDocuments" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseDCModel.FK_Document_MergeFieldId" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseDCModel.FK_DocumentDefinitionDocumentPage" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseDCModel.FK_DocumentDocument" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseDCModel.FK_DocumentDocumentType" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseDCModel.FK_DocumentInstanceDocument" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseDCModel.FK_DocumentTranslationId" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseDCModel.FK_DocumentInstanceDocumentInstance" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseDCModel.FK_DocumentInstanceDocumentPageInstance" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseDCModel.FK_DocumentInstanceNotificationDocumentInstance" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseDCModel.FK_DocumentPageDefinitionDocumentPageImage" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseDCModel.FK_DocumentPageInstanceDocumentPageDefinition" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseDCModel.FK_DocumentPagePageField" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseDCModel.FK_DocumentPageTooltipDocumentPage" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseDCModel.FK_PageFieldMetadataTranslationPageFieldMetadata1" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseDCModel.DocumentPackageDocumentDefinition" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

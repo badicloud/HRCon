@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HRConcourseDCModelStoreContainer" CdmEntityContainer="HRConcourseDCEntities">
+    <EntitySetMapping Name="DocumentInstanceFiles">
+      <EntityTypeMapping TypeName="HRConcourseDCModel.DocumentInstanceFiles">
+        <MappingFragment StoreEntitySet="DocumentInstanceFiles">
+          <ScalarProperty Name="DocumentInstanceId" ColumnName="DocumentInstanceId" />
+          <ScalarProperty Name="FileData" ColumnName="FileData" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="FileExtension" ColumnName="FileExtension" />
+          <ScalarProperty Name="MimeType" ColumnName="MimeType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentPageTranslations">
+      <EntityTypeMapping TypeName="HRConcourseDCModel.DocumentPageTranslations">
+        <MappingFragment StoreEntitySet="DocumentPageTranslations">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DocumentPageId" ColumnName="DocumentPageId" />
+          <ScalarProperty Name="Language" ColumnName="Language" />
+          <ScalarProperty Name="DocumentPageImageId" ColumnName="DocumentPageImageId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MergeFieldInstanceValues">
+      <EntityTypeMapping TypeName="HRConcourseDCModel.MergeFieldInstanceValues">
+        <MappingFragment StoreEntitySet="MergeFieldInstanceValues">
+          <ScalarProperty Name="DocumentInstanceId" ColumnName="DocumentInstanceId" />
+          <ScalarProperty Name="MergeFieldId" ColumnName="MergeFieldId" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="HasChanged" ColumnName="HasChanged" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ObjRoots">
+      <EntityTypeMapping TypeName="HRConcourseDCModel.ObjRoots">
+        <MappingFragment StoreEntitySet="ObjRoots">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="HierId" ColumnName="HierId" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsTestData" ColumnName="IsTestData" />
+          <ScalarProperty Name="SearchKey" ColumnName="SearchKey" />
+          <ScalarProperty Name="CreatedByUserId" ColumnName="CreatedByUserId" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="CurrentUserId" ColumnName="CurrentUserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ObjRoots_ComboGroup">
+      <EntityTypeMapping TypeName="HRConcourseDCModel.ObjRoots_ComboGroup">
+        <MappingFragment StoreEntitySet="ObjRoots_ComboGroup">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ObjRoots_Document">
+      <EntityTypeMapping TypeName="HRConcourseDCModel.ObjRoots_Document">
+        <MappingFragment StoreEntitySet="ObjRoots_Document">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="RequiresHardSignature" ColumnName="RequiresHardSignature" />
+          <ScalarProperty Name="DaysToExpire" ColumnName="DaysToExpire" />
+          <ScalarProperty Name="OriginalLanguage" ColumnName="OriginalLanguage" />
+          <ScalarProperty Name="DocumentTypeId" ColumnName="DocumentTypeId" />
+          <ScalarProperty Name="OverriddenByDocumentId" ColumnName="OverriddenByDocumentId" />
+          <ScalarProperty Name="ParentDocumentId" ColumnName="ParentDocumentId" />
+          <ScalarProperty Name="ChildTypeMergeFieldId" ColumnName="ChildTypeMergeFieldId" />
+          <ScalarProperty Name="ChildTypeMergeFieldValue" ColumnName="ChildTypeMergeFieldValue" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IsReadOnly" ColumnName="IsReadOnly" />
+          <ScalarProperty Name="Revision" ColumnName="Revision" />
+          <ScalarProperty Name="DocumentExpirationDate" ColumnName="DocumentExpirationDate" />
+          <ScalarProperty Name="InstantiateParent" ColumnName="InstantiateParent" />
+          <ScalarProperty Name="IsReadyForInstantiation" ColumnName="IsReadyForInstantiation" />
+          <ScalarProperty Name="AutoExpire" ColumnName="AutoExpire" />
+          <ScalarProperty Name="Order" ColumnName="Order" />
+          <ScalarProperty Name="TranslationOfDocumentId" ColumnName="TranslationOfDocumentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ObjRoots_DocumentInstance">
+      <EntityTypeMapping TypeName="HRConcourseDCModel.ObjRoots_DocumentInstance">
+        <MappingFragment StoreEntitySet="ObjRoots_DocumentInstance">
+          <ScalarProperty Name="IsRequired" ColumnName="IsRequired" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ExtenalGuid" ColumnName="ExtenalGuid" />
+          <ScalarProperty Name="DocumentId" ColumnName="DocumentId" />
+          <ScalarProperty Name="OverrideType" ColumnName="OverrideType" />
+          <ScalarProperty Name="OverrideReason" ColumnName="OverrideReason" />
+          <ScalarProperty Name="OverriddenByInstanceId" ColumnName="OverriddenByInstanceId" />
+          <ScalarProperty Name="InstantiationDate" ColumnName="InstantiationDate" />
+          <ScalarProperty Name="Recipient" ColumnName="Recipient" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IsManuallyExpired" ColumnName="IsManuallyExpired" />
+          <ScalarProperty Name="IsExternallySubmitted" ColumnName="IsExternallySubmitted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ObjRoots_DocumentInstanceLog">
+      <EntityTypeMapping TypeName="HRConcourseDCModel.ObjRoots_DocumentInstanceLog">
+        <MappingFragment StoreEntitySet="ObjRoots_DocumentInstanceLog">
+          <ScalarProperty Name="ExternalId" ColumnName="ExternalId" />
+          <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ObjRoots_DocumentInstanceMessage">
+      <EntityTypeMapping TypeName="HRConcourseDCModel.ObjRoots_DocumentInstanceMessage">
+        <MappingFragment StoreEntitySet="ObjRoots_DocumentInstanceMessage">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DocumentInstanceId" ColumnName="DocumentInstanceId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ObjRoots_DocumentPackage">
+      <EntityTypeMapping TypeName="HRConcourseDCModel.ObjRoots_DocumentPackage">
+        <MappingFragment StoreEntitySet="ObjRoots_DocumentPackage">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IsRequired" ColumnName="IsRequired" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IsKiosk" ColumnName="IsKiosk" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ObjRoots_DocumentPage">
+      <EntityTypeMapping TypeName="HRConcourseDCModel.ObjRoots_DocumentPage">
+        <MappingFragment StoreEntitySet="ObjRoots_DocumentPage">
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="DocumentId" ColumnName="DocumentId" />
+          <ScalarProperty Name="DocumentPageImageId" ColumnName="DocumentPageImageId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Instantiate" ColumnName="Instantiate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ObjRoots_DocumentPageInstance">
+      <EntityTypeMapping TypeName="HRConcourseDCModel.ObjRoots_DocumentPageInstance">
+        <MappingFragment StoreEntitySet="ObjRoots_DocumentPageInstance">
+          <ScalarProperty Name="Approved" ColumnName="Approved" />
+          <ScalarProperty Name="NotApprovedReason" ColumnName="NotApprovedReason" />
+          <ScalarProperty Name="DocumentPageId" ColumnName="DocumentPageId" />
+          <ScalarProperty Name="UserComments" ColumnName="UserComments" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+          <ScalarProperty Name="FillDate" ColumnName="FillDate" />
+          <ScalarProperty Name="DocumentInstanceId" ColumnName="DocumentInstanceId" />
+          <ScalarProperty Name="PreRenderedPDFPage" ColumnName="PreRenderedPDFPage" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SubmittedData" ColumnName="SubmittedData" />
+          <ScalarProperty Name="DraftData" ColumnName="DraftData" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ObjRoots_DocumentType">
+      <EntityTypeMapping TypeName="HRConcourseDCModel.ObjRoots_DocumentType">
+        <MappingFragment StoreEntitySet="ObjRoots_DocumentType">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FillMode" ColumnName="FillMode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ObjRoots_ExternalGuidFillToken">
+      <EntityTypeMapping TypeName="HRConcourseDCModel.ObjRoots_ExternalGuidFillToken">
+        <MappingFragment StoreEntitySet="ObjRoots_ExternalGuidFillToken">
+          <ScalarProperty Name="ExternalGuid" ColumnName="ExternalGuid" />
+          <ScalarProperty Name="Token" ColumnName="Token" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ObjRoots_MergeField">
+      <EntityTypeMapping TypeName="HRConcourseDCModel.ObjRoots_MergeField">
+        <MappingFragment StoreEntitySet="ObjRoots_MergeField">
+          <ScalarProperty Name="Key" ColumnName="Key" />
+          <ScalarProperty Name="TestValue" ColumnName="TestValue" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IsPostBack" ColumnName="IsPostBack" />
+          <ScalarProperty Name="FieldType" ColumnName="FieldType" />
+          <ScalarProperty Name="DecimalPrecision" ColumnName="DecimalPrecision" />
+          <ScalarProperty Name="ShowTime" ColumnName="ShowTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ObjRoots_Notification">
+      <EntityTypeMapping TypeName="HRConcourseDCModel.ObjRoots_Notification">
+        <MappingFragment StoreEntitySet="ObjRoots_Notification">
+          <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+          <ScalarProperty Name="ConditionId" ColumnName="ConditionId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ObjRoots_PageField">
+      <EntityTypeMapping TypeName="HRConcourseDCModel.ObjRoots_PageField">
+        <MappingFragment StoreEntitySet="ObjRoots_PageField">
+          <ScalarProperty Name="FieldId" ColumnName="FieldId" />
+          <ScalarProperty Name="FieldName" ColumnName="FieldName" />
+          <ScalarProperty Name="Tooltip" ColumnName="Tooltip" />
+          <ScalarProperty Name="DocumentPageId" ColumnName="DocumentPageId" />
+          <ScalarProperty Name="FieldType" ColumnName="FieldType" />
+          <ScalarProperty Name="Html" ColumnName="Html" />
+          <ScalarProperty Name="InitialValue" ColumnName="InitialValue" />
+          <ScalarProperty Name="IsOutField" ColumnName="IsOutField" />
+          <ScalarProperty Name="FontSize" ColumnName="FontSize" />
+          <ScalarProperty Name="TabIndex" ColumnName="TabIndex" />
+          <ScalarProperty Name="Required" ColumnName="Required" />
+          <ScalarProperty Name="Pattern" ColumnName="Pattern" />
+          <ScalarProperty Name="MinimumLength" ColumnName="MinimumLength" />
+          <ScalarProperty Name="MaxLength" ColumnName="MaxLength" />
+          <ScalarProperty Name="Min" ColumnName="Min" />
+          <ScalarProperty Name="Max" ColumnName="Max" />
+          <ScalarProperty Name="MinSelected" ColumnName="MinSelected" />
+          <ScalarProperty Name="DataEquals" ColumnName="DataEquals" />
+          <ScalarProperty Name="UseCurrentDate" ColumnName="UseCurrentDate" />
+          <ScalarProperty Name="RangeDateMin" ColumnName="RangeDateMin" />
+          <ScalarProperty Name="RangeDateMax" ColumnName="RangeDateMax" />
+          <ScalarProperty Name="DependencyCount" ColumnName="DependencyCount" />
+          <ScalarProperty Name="SelectTitle" ColumnName="SelectTitle" />
+          <ScalarProperty Name="SelectFieldSource" ColumnName="SelectFieldSource" />
+          <ScalarProperty Name="SelectPrefixedSource" ColumnName="SelectPrefixedSource" />
+          <ScalarProperty Name="DependencyData" ColumnName="DependencyData" />
+          <ScalarProperty Name="IsGroup" ColumnName="IsGroup" />
+          <ScalarProperty Name="ReadOnly" ColumnName="ReadOnly" />
+          <ScalarProperty Name="RangeDateMinUseCurrent" ColumnName="RangeDateMinUseCurrent" />
+          <ScalarProperty Name="RangeDateMaxUseCurrent" ColumnName="RangeDateMaxUseCurrent" />
+          <ScalarProperty Name="Style" ColumnName="Style" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Href" ColumnName="Href" />
+          <ScalarProperty Name="OutFieldId" ColumnName="OutFieldId" />
+          <ScalarProperty Name="CustomValidationCount" ColumnName="CustomValidationCount" />
+          <ScalarProperty Name="CustomValidationData" ColumnName="CustomValidationData" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ObjRoots_PageImage">
+      <EntityTypeMapping TypeName="HRConcourseDCModel.ObjRoots_PageImage">
+        <MappingFragment StoreEntitySet="ObjRoots_PageImage">
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PageFieldTranslations">
+      <EntityTypeMapping TypeName="HRConcourseDCModel.PageFieldTranslations">
+        <MappingFragment StoreEntitySet="PageFieldTranslations">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DocumentPageTranslationId" ColumnName="DocumentPageTranslationId" />
+          <ScalarProperty Name="PageFieldId" ColumnName="PageFieldId" />
+          <ScalarProperty Name="Tooltip" ColumnName="Tooltip" />
+          <ScalarProperty Name="FontSize" ColumnName="FontSize" />
+          <ScalarProperty Name="Html" ColumnName="Html" />
+          <ScalarProperty Name="InitialValue" ColumnName="InitialValue" />
+          <ScalarProperty Name="SelectTitle" ColumnName="SelectTitle" />
+          <ScalarProperty Name="Href" ColumnName="Href" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_DataMotions">
+      <EntityTypeMapping TypeName="HRConcourseDCModel.Sys_DataMotions">
+        <MappingFragment StoreEntitySet="Sys_DataMotions">
+          <ScalarProperty Name="DataMotionId" ColumnName="DataMotionId" />
+          <ScalarProperty Name="DateExcecuted" ColumnName="DateExcecuted" />
+          <ScalarProperty Name="IsPreDeploy" ColumnName="IsPreDeploy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserTokens">
+      <EntityTypeMapping TypeName="HRConcourseDCModel.UserTokens">
+        <MappingFragment StoreEntitySet="UserTokens">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TokenString" ColumnName="TokenString" />
+          <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="DocumentPackageDocumentDefinition" TypeName="HRConcourseDCModel.DocumentPackageDocumentDefinition" StoreEntitySet="DocumentPackageDocumentDefinition">
+      <EndProperty Name="ObjRoots_Document">
+        <ScalarProperty Name="Id" ColumnName="Documents_Id" />
+      </EndProperty>
+      <EndProperty Name="ObjRoots_DocumentPackage">
+        <ScalarProperty Name="Id" ColumnName="DocumentPackages_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

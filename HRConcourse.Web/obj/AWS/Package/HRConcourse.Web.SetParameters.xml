@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <setParameter name="IIS Web Application Name" value="Default Web Site/" />
+  <setParameter name="HRConcourseDCEntities-Web.config Connection String" value="metadata=res://*/cor.OldModel.csdl|res://*/cor.OldModel.ssdl|res://*/cor.OldModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|hrcback_Data.mdf;App=EntityFramework&quot;" />
+  <setParameter name="HRConcourseCoreEntities-Web.config Connection String" value="metadata=res://*/CodeModel.csdl|res://*/CodeModel.ssdl|res://*/CodeModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|hrccore_back_Data.mdf;App=EntityFramework&quot;" />
+  <setParameter name="Default-Web.config Connection String" value="Data Source=hrc2.caqaphborw01.us-west-2.rds.amazonaws.com,1433;initial catalog=HRConcourse;persist security info=True;user id=hrconcourse;password=M49Q23623sNyS;" />
+</parameters>

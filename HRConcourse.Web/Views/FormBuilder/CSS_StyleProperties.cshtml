@@ -1,0 +1,406 @@
+﻿@using HRConcourse.Web.Localization.FormBuilder
+
+<div class="style-settings-section setting">
+    <div class="style-header">
+        <span class="expand-collapse-style">&nbsp;</span>
+        <div class="settingName">Shorthands</div>
+    </div>
+    <div class="setting-content">
+        <div class="style-shorthand">
+            <div id="style-background">
+                <div class="settingName">background</div>
+                <img alt="help-icon" title="@CSS_StyleProperties.Background_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                <input type="text" name="background" />
+            </div>
+        </div>
+
+        <div class="style-shorthand">
+            <div id="style-border">
+                <div class="settingName">border</div>
+                <img alt="help-icon" title="@CSS_StyleProperties.Border_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                <input type="text" name="border" />
+            </div>
+        </div>
+
+        <div class="style-shorthand">
+            <div id="style-font">
+                <div class="settingName">font</div>
+                <img alt="help-icon" title="@CSS_StyleProperties.Font_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                <input type="text" name="font" />
+            </div>
+        </div>
+
+        <div class="style-shorthand">
+            <div id="style-outline">
+                <div class="settingName">outline</div>
+                <img alt="help-icon" title="@CSS_StyleProperties.Outline_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                <input type="text" name="outline" />
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+
+
+<div class="style-settings-section setting">
+    <div class="style-header">
+        <span class="expand-collapse-style">&nbsp;</span>
+        <div class="settingName">Background</div>
+    </div>
+    <div class="setting-content">
+        <div class="style-single">
+            <div id="style-background-attachment">
+                <div class="settingName">background-attachment</div>
+                <img alt="help-icon" title="@CSS_StyleProperties.BackgroundAttachment_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                <input type="text" name="background-attachment" class="autocompleteTags" />
+            </div>
+            <div id="style-background-color">
+                <div class="settingName">background-color</div>
+                <img alt="help-icon" title="@CSS_StyleProperties.BackgroundColor_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                <input type="text" name="background-color" class="autocompleteTags" />
+            </div>
+            <div id="style-background-image">
+                <div class="settingName">background-image</div>
+                <img alt="help-icon" title="@CSS_StyleProperties.BackgroundImage_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                <input type="text" name="background-image" />
+            </div>
+            <div id="style-background-position">
+                <div class="settingName">background-position</div>
+                <img alt="help-icon" title="@CSS_StyleProperties.BackgroundPosition_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                <input type="text" name="background-position" class="autocompleteTags" />
+            </div>
+            <div id="style-background-repeat">
+                <div class="settingName">background-repeat</div>
+                <img alt="help-icon" title="@CSS_StyleProperties.BackgroundRepeat_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                <input type="text" name="background-repeat" class="autocompleteTags" />
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="style-settings-section setting">
+    <div class="style-header">
+        <span class="expand-collapse-style">&nbsp;</span>
+        <div class="settingName">Border color</div>
+    </div>
+    <div class="setting-content">
+        <div class="style-shorthand">
+            <div id="style-border-color">
+                <div class="settingName">border-color</div>
+                <img alt="help-icon" title="@CSS_StyleProperties.BorderColor_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                <input type="text" name="border-color" class="autocompleteTags" />
+            </div>
+        </div>
+        <div class="style-single">
+            <div id="style-border-left-color">
+                <div class="settingName">border-left-color</div>
+                <img alt="help-icon" title="@CSS_StyleProperties.BorderLeftColor_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                <input type="text" name="border-left-color" class="autocompleteTags" />
+            </div>
+            <div id="style-border-top-color">
+                <div class="settingName">border-top-color</div>
+                <img alt="help-icon" title="@CSS_StyleProperties.BorderTopColor_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                <input type="text" name="border-top-color" class="autocompleteTags" />
+            </div>
+            <div id="style-border-right-color">
+                <div class="settingName">border-right-color</div>
+                <img alt="help-icon" title="@CSS_StyleProperties.BorderRightColor_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                <input type="text" name="border-right-color" class="autocompleteTags" />
+            </div>
+            <div id="style-border-bottom-color">
+                <div class="settingName">border-bottom-color</div>
+                <img alt="help-icon" title="@CSS_StyleProperties.BorderBottomColor_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                <input type="text" name="border-bottom-color" class="autocompleteTags" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="style-settings-section setting">
+    <div class="style-header">
+        <span class="expand-collapse-style">&nbsp;</span>
+        <div class="settingName">Border style</div>
+    </div>
+    <div class="setting-content">
+        <div class="style-shorthand">
+            <div id="style-border-style">
+                <div class="settingName">border-style</div>
+                <img alt="help-icon" title="@CSS_StyleProperties.BorderStyle_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                <input type="text" name="border-style" class="autocompleteTags" />
+            </div>
+        </div>
+        <div class="style-single">
+            <div id="style-border-left-style">
+                <div class="settingName">border-left-style</div>
+                <img alt="help-icon" title="@CSS_StyleProperties.BorderLeftStyle_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                <input type="text" name="border-left-style" class="autocompleteTags" />
+            </div>
+            <div id="style-border-top-style">
+                <div class="settingName">border-top-style</div>
+                <img alt="help-icon" title="@CSS_StyleProperties.BorderTopStyle_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                <input type="text" name="border-top-style" class="autocompleteTags" />
+            </div>
+            <div id="style-border-right-style">
+                <div class="settingName">border-right-style</div>
+                <img alt="help-icon" title="@CSS_StyleProperties.BorderRightStyle_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                <input type="text" name="border-right-style" class="autocompleteTags" />
+            </div>
+            <div id="style-border-bottom-style">
+                <div class="settingName">border-bottom-style</div>
+                <img alt="help-icon" title="@CSS_StyleProperties.BorderBottomStyle_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                <input type="text" name="border-bottom-style" class="autocompleteTags" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="style-settings-section setting">
+    <div class="style-header">
+        <span class="expand-collapse-style">&nbsp;</span>
+        <div class="settingName">Border width</div>
+    </div>
+    <div class="setting-content">
+        <div class="style-shorthand">
+            <div id="style-border-width">
+                <div class="settingName">border-width</div>
+                <img alt="help-icon" title="@CSS_StyleProperties.BorderWidth_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                <input type="text" name="border-width" class="autocompleteTags" />
+            </div>
+        </div>
+        <div class="style-single">
+            <div id="style-border-left-width">
+                <div class="settingName">border-left-width</div>
+                <img alt="help-icon" title="@CSS_StyleProperties.BorderLeftWidth_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                <input type="text" name="border-left-width" class="autocompleteTags" />
+            </div>
+            <div id="style-border-top-width">
+                <div class="settingName">border-top-width</div>
+                <img alt="help-icon" title="@CSS_StyleProperties.BorderTopWidth_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                <input type="text" name="border-top-width" class="autocompleteTags" />
+            </div>
+            <div id="style-border-right-width">
+                <div class="settingName">border-right-width</div>
+                <img alt="help-icon" title="@CSS_StyleProperties.BorderRightWidth_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                <input type="text" name="border-right-width" class="autocompleteTags" />
+            </div>
+            <div id="style-border-bottom-width">
+                <div class="settingName">border-bottom-width</div>
+                <img alt="help-icon" title="@CSS_StyleProperties.BorderBottomWidth_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                <input type="text" name="border-bottom-width" class="autocompleteTags" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="style-settings-section setting">
+    <div class="style-header">
+        <span class="expand-collapse-style">&nbsp;</span>
+        <div class="settingName">Font</div>
+    </div>
+    <div class="setting-content">
+        <div class="style-single">
+            <div id="style-font-family">
+                <div class="settingName">font-family</div>
+                <img alt="help-icon" title="@CSS_StyleProperties.FontFamily_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                <input type="text" name="font-family" class="autocompleteTags" />
+            </div>
+            <div id="style-font-size">
+                <div class="settingName">font-size</div>
+                <img alt="help-icon" title="@CSS_StyleProperties.FontSize_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                <input type="number" name="font-size" min=0 />
+            </div>
+            <div id="style-font-style">
+                <div class="settingName">font-style</div>
+                <img alt="help-icon" title="@CSS_StyleProperties.FontStyle_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                <input type="text" name="font-style" class="autocompleteTags" />
+            </div>
+            <div id="style-font-variant">
+                <div class="settingName">font-variant</div>
+                <img alt="help-icon" title="@CSS_StyleProperties.FontVariant_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                <input type="text" name="font-variant" class="autocompleteTags" />
+            </div>
+            <div id="style-font-weight">
+                <div class="settingName">font-weight</div>
+                <img alt="help-icon" title="@CSS_StyleProperties.FontWeight_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                <input type="text" name="font-weight" class="autocompleteTags" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="style-settings-section setting">
+    <div class="style-header">
+        <span class="expand-collapse-style">&nbsp;</span>
+        <div class="settingName">Outline</div>
+    </div>
+    <div class="setting-content">
+        <div class="style-single">
+            <div id="style-outline-color">
+                <div class="settingName">outline-color</div>
+                <img alt="help-icon" title="@CSS_StyleProperties.OutlineColor_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                <input type="text" name="outline-color" class="autocompleteTags" />
+            </div>
+            <div id="style-outline-style">
+                <div class="settingName">outline-style</div>
+                <img alt="help-icon" title="@CSS_StyleProperties.OutlineStyle_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                <input type="text" name="outline-style" class="autocompleteTags" />
+            </div>
+            <div id="style-outline-width">
+                <div class="settingName">outline-width</div>
+                <img alt="help-icon" title="@CSS_StyleProperties.OutlineWidth_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                <input type="text" name="outline-width" class="autocompleteTags" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="style-settings-section setting">
+    <div class="style-header">
+        <span class="expand-collapse-style">&nbsp;</span>
+        <div class="settingName">Text</div>
+    </div>
+    <div class="setting-content">
+        <div class="style-single">
+            <div id="style-text-align">
+                <div class="settingName">text-align</div>
+                <img alt="help-icon" title="@CSS_StyleProperties.TextAlign_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                <input type="text" name="text-align" class="autocompleteTags" />
+            </div>
+            <div id="style-text-decoration">
+                <div class="settingName">text-decoration</div>
+                <img alt="help-icon" title="@CSS_StyleProperties.TextDecoration_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                <input type="text" name="text-decoration" class="autocompleteTags" />
+            </div>
+            <div id="style-text-indent">
+                <div class="settingName">text-indent</div>
+                <img alt="help-icon" title="@CSS_StyleProperties.TextIndent_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                <input type="text" name="text-indent" />
+            </div>
+            <div id="style-text-transform">
+                <div class="settingName">text-transform</div>
+                <img alt="help-icon" title="@CSS_StyleProperties.TextTransform_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                <input type="text" name="text-transform" class="autocompleteTags" />
+            </div>
+            <div id="style-color">
+                <div class="settingName">color</div>
+                <img alt="help-icon" title="@CSS_StyleProperties.Color_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                <input type="text" name="color" class="autocompleteTags" />
+            </div>
+
+            <div id="style-letter-spacing">
+                <div class="settingName">letter-spacing</div>
+                <img alt="help-icon" title="@CSS_StyleProperties.LetterSpacing_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                <input type="text" name="letter-spacing" />
+            </div>
+
+            <div id="style-word-spacing">
+                <div class="settingName">word-spacing</div>
+                <img alt="help-icon" title="@CSS_StyleProperties.WordSpacing_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+                <input type="text" name="word-spacing" />
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="style-settings-section setting">
+    <div id="style-cursor">
+        <div class="settingName">cursor</div>
+        <img alt="help-icon" title="@CSS_StyleProperties.Cursor_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+        <input type="text" name="cursor" class="autocompleteTags" />
+    </div>
+</div>
+
+<div class="style-settings-section setting">
+    <div id="style-display">
+        <div class="settingName">display (applied on preview mode)</div>
+        <img alt="help-icon" title="@CSS_StyleProperties.Display_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+        <input type="text" name="display" class="autocompleteTags" />
+    </div>
+</div>
+
+<div class="style-settings-section setting">
+    <div id="style-opacity">
+        <div class="settingName">opacity</div>
+        <img alt="help-icon" title="@CSS_StyleProperties.Opacity_Help" src="@Url.Content("~/Images/Metro/black/questionmark.png")" />
+        <input type="text" name="opacity" />
+    </div>
+</div>
+
+
+
+<script>
+    var commonUnits = ["px", "em", "pt", "ex", "cm", "mm", "in", "%"];
+    var commonStyles = ["none", "solid", "dotted", "dashed", "double"];
+    var commonWidths = ["thin", "medium", "thick"];
+    var commonColors = ["AliceBlue", "AntiqueWhite", "Aqua", "Aquamarine", "Azure", "Beige", "Bisque", "Black", "BlanchedAlmond", "Blue", "BlueViolet", "Brown", "BurlyWood",
+                        "CadetBlue", "Chartreuse", "Chocolate", "Coral", "CornflowerBlue", "Cornsilk", "Crimson", "Cyan", "DarkBlue", "DarkCyan", "DarkGoldenRod", "DarkGray",
+                        "DarkGrey", "DarkGreen", "DarkKhaki", "DarkMagenta", "DarkOliveGreen", "Darkorange", "DarkOrchid", "DarkRed", "DarkSalmon", "DarkSeaGreen", "DarkSlateBlue",
+                        "DarkSlateGray", "DarkSlateGrey", "DarkTurquoise", "DarkViolet", "DeepPink", "DeepSkyBlue", "DimGray", "DimGrey", "DodgerBlue", "FireBrick", "FloralWhite",
+                        "ForestGreen", "Fuchsia", "Gainsboro", "GhostWhite", "Gold", "GoldenRod", "Gray", "Grey", "Green", "GreenYellow", "HoneyDew", "HotPink", "IndianRed", "Indigo",
+                        "Ivory", "Khaki", "Lavender", "LavenderBlush", "LawnGreen", "LemonChiffon", "LightBlue", "LightCoral", "LightCyan", "LightGoldenRodYellow", "LightGray",
+                        "LightGrey", "LightGreen", "LightPink", "LightSalmon", "LightSeaGreen", "LightSkyBlue", "LightSlateGray", "LightSlateGrey", "LightSteelBlue", "LightYellow",
+                        "Lime", "LimeGreen", "Linen", "Magenta", "Maroon", "MediumAquaMarine", "MediumBlue", "MediumOrchid", "MediumPurple", "MediumSeaGreen", "MediumSlateBlue",
+                        "MediumSpringGreen", "MediumTurquoise", "MediumVioletRed", "MidnightBlue", "MintCream", "MistyRose", "Moccasin", "NavajoWhite", "Navy", "OldLace", "Olive",
+                        "OliveDrab", "Orange", "OrangeRed", "Orchid", "PaleGoldenRod", "PaleGreen", "PaleTurquoise", "PaleVioletRed", "PapayaWhip", "PeachPuff", "Peru", "Pink",
+                        "Plum", "PowderBlue", "Purple", "Red", "RosyBrown", "RoyalBlue", "SaddleBrown", "Salmon", "SandyBrown", "SeaGreen", "SeaShell", "Sienna", "Silver", "SkyBlue",
+                        "SlateBlue", "SlateGray", "SlateGrey", "Snow", "SpringGreen", "SteelBlue", "Tan", "Teal", "Thistle", "Tomato", "Transparent", "Turquoise", "Violet", "Wheat",
+                        "White", "WhiteSmoke", "Yellow", "YellowGreen"];
+
+
+    var availableTags = {
+        'background-attachment': ["fixed", "scroll"],
+        'background-color': commonColors,
+        'background-position': ["left top", "left center", "left bottom", "right top", "right center", "right bottom", "center top", "center center", "center bottom"],
+        'background-repeat': ["repeat", "repeat-x", "repeat-y", "no-repeat"],
+        'border-color' : commonColors,
+        'border-left-color': commonColors,
+        'border-top-color' : commonColors,
+        'border-right-color' : commonColors,
+        'border-bottom-color' : commonColors,
+        'border-style': commonStyles,
+        'border-left-style': commonStyles,
+        'border-top-style' : commonStyles,
+        'border-right-style' : commonStyles,
+        'border-bottom-style' : commonStyles,
+        'border-width' : commonWidths,
+        'border-left-width' : commonWidths,
+        'border-top-width' : commonWidths,
+        'border-right-width' : commonWidths,
+        'border-bottom-width' : commonWidths,
+        'color' : commonColors,
+        'cursor': ["auto", "crosshair", "default", "help", "move", "pointer", "progress", "text", "wait"],
+        'display': ["none", "block", "inline-block"],
+        'font-family' : ["serif", "sans-serif", "cursive", "fantasy", "monospace", "script"],
+        'font-size' : ["xx-small", "x-small", "small", "medium", "large", "x-large", "xx-large", "smaller", "larger"],
+        'font-style' : ["normal", "italic", "oblique"],
+        'font-variant' : ["normal", "small-caps"],
+        'font-weight': ["normal", "bold", "bolder", "lighter", "100", "200", "300", "400", "500", "600", "700", "800", "900"],
+        'outline-color' : commonColors,
+        'outline-style' : commonStyles,
+        'outline-width' : commonWidths,
+        'text-align' : ["center", "left", "right", "justify"],
+        'text-decoration' : ["none", "underline", "overline", "line-through"],
+        'text-transform' : ["none", "capitalize", "uppercase", "lowercase"]
+    };
+
+    
+    // Setup the auto complete plugin for the style fields
+    $('div.style-settings-section input.autocompleteTags').each(function () {
+        $(this).autocomplete({
+            source: availableTags[$(this).attr('name')],
+            close: function (event, ui) {
+                $(this).trigger('change');
+            },
+            minLength: 0
+        });
+        $(this).focus(function () {
+            $(this).autocomplete('search', '');
+        });
+    });
+
+</script>

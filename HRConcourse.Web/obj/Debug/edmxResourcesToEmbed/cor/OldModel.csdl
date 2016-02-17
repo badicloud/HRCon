@@ -1,0 +1,966 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HRConcourseDCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="DocumentInstanceFiles">
+    <Key>
+      <PropertyRef Name="DocumentInstanceId" />
+    </Key>
+    <Property Name="DocumentInstanceId" Type="Guid" Nullable="false" />
+    <Property Name="FileData" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="FileName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FileExtension" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MimeType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="ObjRoots_DocumentInstance" Relationship="Self.FK_DocumentInstanceFiles_ObjRoots_DocumentInstance" FromRole="DocumentInstanceFiles" ToRole="ObjRoots_DocumentInstance" />
+  </EntityType>
+  <EntityType Name="DocumentPageTranslations">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="DocumentPageId" Type="Guid" Nullable="false" />
+    <Property Name="Language" Type="String" MaxLength="400" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DocumentPageImageId" Type="Guid" />
+    <NavigationProperty Name="ObjRoots_DocumentPage" Relationship="Self.FK_DocumentPageTranslationDocumentPage" FromRole="DocumentPageTranslations" ToRole="ObjRoots_DocumentPage" />
+    <NavigationProperty Name="ObjRoots_DocumentPage1" Relationship="Self.FK_DocumentPageTranslationDocumentPageDefinition" FromRole="DocumentPageTranslations" ToRole="ObjRoots_DocumentPage" />
+    <NavigationProperty Name="ObjRoots_PageImage" Relationship="Self.FK_DocumentPageTranslationDocumentPageImage" FromRole="DocumentPageTranslations" ToRole="ObjRoots_PageImage" />
+    <NavigationProperty Name="PageFieldTranslations" Relationship="Self.FK_DocumentPageTranslationPageFieldTranslation" FromRole="DocumentPageTranslations" ToRole="PageFieldTranslations" />
+  </EntityType>
+  <EntityType Name="MergeFieldInstanceValues">
+    <Key>
+      <PropertyRef Name="DocumentInstanceId" />
+      <PropertyRef Name="MergeFieldId" />
+    </Key>
+    <Property Name="DocumentInstanceId" Type="Guid" Nullable="false" />
+    <Property Name="MergeFieldId" Type="Guid" Nullable="false" />
+    <Property Name="Value" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="HasChanged" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="ObjRoots_DocumentInstance" Relationship="Self.FK_MergeFieldInstanceValues_DocumentInstanceId" FromRole="MergeFieldInstanceValues" ToRole="ObjRoots_DocumentInstance" />
+    <NavigationProperty Name="ObjRoots_MergeField" Relationship="Self.FK_MergeFieldInstanceValues_MergeField" FromRole="MergeFieldInstanceValues" ToRole="ObjRoots_MergeField" />
+  </EntityType>
+  <EntityType Name="ObjRoots">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="HierId" Type="Guid" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsTestData" Type="Boolean" Nullable="false" />
+    <Property Name="SearchKey" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedByUserId" Type="Guid" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CurrentUserId" Type="Guid" />
+  </EntityType>
+  <EntityType Name="ObjRoots_ComboGroup">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="ObjRoots" Relationship="Self.FK_ComboGroup_inherits_ObjRoot" FromRole="ObjRoots_ComboGroup" ToRole="ObjRoots" />
+  </EntityType>
+  <EntityType Name="ObjRoots_Document">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RequiresHardSignature" Type="Boolean" Nullable="false" />
+    <Property Name="DaysToExpire" Type="Int32" Nullable="false" />
+    <Property Name="OriginalLanguage" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DocumentTypeId" Type="Guid" />
+    <Property Name="OverriddenByDocumentId" Type="Guid" />
+    <Property Name="ParentDocumentId" Type="Guid" />
+    <Property Name="ChildTypeMergeFieldId" Type="Guid" />
+    <Property Name="ChildTypeMergeFieldValue" Type="String" MaxLength="600" FixedLength="false" Unicode="true" />
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="IsReadOnly" Type="Boolean" Nullable="false" />
+    <Property Name="Revision" Type="Int32" Nullable="false" />
+    <Property Name="DocumentExpirationDate" Type="DateTime" Precision="0" />
+    <Property Name="InstantiateParent" Type="Boolean" />
+    <Property Name="IsReadyForInstantiation" Type="Boolean" Nullable="false" />
+    <Property Name="AutoExpire" Type="Boolean" Nullable="false" />
+    <Property Name="Order" Type="Int32" Nullable="false" />
+    <Property Name="TranslationOfDocumentId" Type="Guid" />
+    <NavigationProperty Name="ObjRoots" Relationship="Self.FK_Document_inherits_ObjRoot" FromRole="ObjRoots_Document" ToRole="ObjRoots" />
+    <NavigationProperty Name="ObjRoots_Document1" Relationship="Self.FK_Document_ChildDocuments" FromRole="ObjRoots_Document" ToRole="ObjRoots_Document1" />
+    <NavigationProperty Name="ObjRoots_Document2" Relationship="Self.FK_Document_ChildDocuments" FromRole="ObjRoots_Document1" ToRole="ObjRoots_Document" />
+    <NavigationProperty Name="ObjRoots_MergeField" Relationship="Self.FK_Document_MergeFieldId" FromRole="ObjRoots_Document" ToRole="ObjRoots_MergeField" />
+    <NavigationProperty Name="ObjRoots_DocumentPage" Relationship="Self.FK_DocumentDefinitionDocumentPage" FromRole="ObjRoots_Document" ToRole="ObjRoots_DocumentPage" />
+    <NavigationProperty Name="ObjRoots_Document11" Relationship="Self.FK_DocumentDocument" FromRole="ObjRoots_Document" ToRole="ObjRoots_Document1" />
+    <NavigationProperty Name="ObjRoots_Document3" Relationship="Self.FK_DocumentDocument" FromRole="ObjRoots_Document1" ToRole="ObjRoots_Document" />
+    <NavigationProperty Name="ObjRoots_DocumentType" Relationship="Self.FK_DocumentDocumentType" FromRole="ObjRoots_Document" ToRole="ObjRoots_DocumentType" />
+    <NavigationProperty Name="ObjRoots_DocumentInstance" Relationship="Self.FK_DocumentInstanceDocument" FromRole="ObjRoots_Document" ToRole="ObjRoots_DocumentInstance" />
+    <NavigationProperty Name="ObjRoots_Document12" Relationship="Self.FK_DocumentTranslationId" FromRole="ObjRoots_Document" ToRole="ObjRoots_Document1" />
+    <NavigationProperty Name="ObjRoots_Document4" Relationship="Self.FK_DocumentTranslationId" FromRole="ObjRoots_Document1" ToRole="ObjRoots_Document" />
+    <NavigationProperty Name="ObjRoots_DocumentPackage" Relationship="Self.DocumentPackageDocumentDefinition" FromRole="ObjRoots_Document" ToRole="ObjRoots_DocumentPackage" />
+  </EntityType>
+  <EntityType Name="ObjRoots_DocumentInstance">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="IsRequired" Type="Boolean" Nullable="false" />
+    <Property Name="Enabled" Type="Boolean" Nullable="false" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="ExtenalGuid" Type="Guid" Nullable="false" />
+    <Property Name="DocumentId" Type="Guid" Nullable="false" />
+    <Property Name="OverrideType" Type="Int32" />
+    <Property Name="OverrideReason" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="OverriddenByInstanceId" Type="Guid" />
+    <Property Name="InstantiationDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Recipient" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="Status" Type="Int32" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="IsManuallyExpired" Type="Boolean" Nullable="false" />
+    <Property Name="IsExternallySubmitted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="DocumentInstanceFiles" Relationship="Self.FK_DocumentInstanceFiles_ObjRoots_DocumentInstance" FromRole="ObjRoots_DocumentInstance" ToRole="DocumentInstanceFiles" />
+    <NavigationProperty Name="MergeFieldInstanceValues" Relationship="Self.FK_MergeFieldInstanceValues_DocumentInstanceId" FromRole="ObjRoots_DocumentInstance" ToRole="MergeFieldInstanceValues" />
+    <NavigationProperty Name="ObjRoots" Relationship="Self.FK_DocumentInstance_inherits_ObjRoot" FromRole="ObjRoots_DocumentInstance" ToRole="ObjRoots" />
+    <NavigationProperty Name="ObjRoots_Document" Relationship="Self.FK_DocumentInstanceDocument" FromRole="ObjRoots_DocumentInstance" ToRole="ObjRoots_Document" />
+    <NavigationProperty Name="ObjRoots_DocumentInstance1" Relationship="Self.FK_DocumentInstanceDocumentInstance" FromRole="ObjRoots_DocumentInstance" ToRole="ObjRoots_DocumentInstance1" />
+    <NavigationProperty Name="ObjRoots_DocumentInstance2" Relationship="Self.FK_DocumentInstanceDocumentInstance" FromRole="ObjRoots_DocumentInstance1" ToRole="ObjRoots_DocumentInstance" />
+    <NavigationProperty Name="ObjRoots_DocumentPageInstance" Relationship="Self.FK_DocumentInstanceDocumentPageInstance" FromRole="ObjRoots_DocumentInstance" ToRole="ObjRoots_DocumentPageInstance" />
+    <NavigationProperty Name="ObjRoots_DocumentInstanceMessage" Relationship="Self.FK_DocumentInstanceNotificationDocumentInstance" FromRole="ObjRoots_DocumentInstance" ToRole="ObjRoots_DocumentInstanceMessage" />
+  </EntityType>
+  <EntityType Name="ObjRoots_DocumentInstanceLog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="ExternalId" Type="Guid" Nullable="false" />
+    <Property Name="DateModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="ObjRoots" Relationship="Self.FK_DocumentInstanceLog_inherits_ObjRoot" FromRole="ObjRoots_DocumentInstanceLog" ToRole="ObjRoots" />
+  </EntityType>
+  <EntityType Name="ObjRoots_DocumentInstanceMessage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="DocumentInstanceId" Type="Guid" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="ObjRoots" Relationship="Self.FK_DocumentInstanceNotificationLog_inherits_ObjRoot" FromRole="ObjRoots_DocumentInstanceMessage" ToRole="ObjRoots" />
+    <NavigationProperty Name="ObjRoots_DocumentInstance" Relationship="Self.FK_DocumentInstanceNotificationDocumentInstance" FromRole="ObjRoots_DocumentInstanceMessage" ToRole="ObjRoots_DocumentInstance" />
+  </EntityType>
+  <EntityType Name="ObjRoots_DocumentPackage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IsRequired" Type="Boolean" Nullable="false" />
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="IsKiosk" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="ObjRoots" Relationship="Self.FK_DocumentPackage_inherits_ObjRoot" FromRole="ObjRoots_DocumentPackage" ToRole="ObjRoots" />
+    <NavigationProperty Name="ObjRoots_Document" Relationship="Self.DocumentPackageDocumentDefinition" FromRole="ObjRoots_DocumentPackage" ToRole="ObjRoots_Document" />
+  </EntityType>
+  <EntityType Name="ObjRoots_DocumentPage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Number" Type="Int16" Nullable="false" />
+    <Property Name="DocumentId" Type="Guid" Nullable="false" />
+    <Property Name="DocumentPageImageId" Type="Guid" />
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="Instantiate" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="DocumentPageTranslations" Relationship="Self.FK_DocumentPageTranslationDocumentPage" FromRole="ObjRoots_DocumentPage" ToRole="DocumentPageTranslations" />
+    <NavigationProperty Name="DocumentPageTranslations1" Relationship="Self.FK_DocumentPageTranslationDocumentPageDefinition" FromRole="ObjRoots_DocumentPage" ToRole="DocumentPageTranslations" />
+    <NavigationProperty Name="ObjRoots" Relationship="Self.FK_DocumentPage_inherits_ObjRoot" FromRole="ObjRoots_DocumentPage" ToRole="ObjRoots" />
+    <NavigationProperty Name="ObjRoots_Document" Relationship="Self.FK_DocumentDefinitionDocumentPage" FromRole="ObjRoots_DocumentPage" ToRole="ObjRoots_Document" />
+    <NavigationProperty Name="ObjRoots_PageImage" Relationship="Self.FK_DocumentPageDefinitionDocumentPageImage" FromRole="ObjRoots_DocumentPage" ToRole="ObjRoots_PageImage" />
+    <NavigationProperty Name="ObjRoots_DocumentPageInstance" Relationship="Self.FK_DocumentPageInstanceDocumentPageDefinition" FromRole="ObjRoots_DocumentPage" ToRole="ObjRoots_DocumentPageInstance" />
+    <NavigationProperty Name="ObjRoots_PageField" Relationship="Self.FK_DocumentPagePageField" FromRole="ObjRoots_DocumentPage" ToRole="ObjRoots_PageField" />
+    <NavigationProperty Name="ObjRoots_PageField1" Relationship="Self.FK_DocumentPageTooltipDocumentPage" FromRole="ObjRoots_DocumentPage" ToRole="ObjRoots_PageField" />
+  </EntityType>
+  <EntityType Name="ObjRoots_DocumentPageInstance">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Approved" Type="Boolean" />
+    <Property Name="NotApprovedReason" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DocumentPageId" Type="Guid" Nullable="false" />
+    <Property Name="UserComments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+    <Property Name="FillDate" Type="DateTime" Precision="3" />
+    <Property Name="DocumentInstanceId" Type="Guid" Nullable="false" />
+    <Property Name="PreRenderedPDFPage" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="SubmittedData" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="DraftData" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="ObjRoots" Relationship="Self.FK_DocumentPageInstance_inherits_ObjRoot" FromRole="ObjRoots_DocumentPageInstance" ToRole="ObjRoots" />
+    <NavigationProperty Name="ObjRoots_DocumentInstance" Relationship="Self.FK_DocumentInstanceDocumentPageInstance" FromRole="ObjRoots_DocumentPageInstance" ToRole="ObjRoots_DocumentInstance" />
+    <NavigationProperty Name="ObjRoots_DocumentPage" Relationship="Self.FK_DocumentPageInstanceDocumentPageDefinition" FromRole="ObjRoots_DocumentPageInstance" ToRole="ObjRoots_DocumentPage" />
+  </EntityType>
+  <EntityType Name="ObjRoots_DocumentType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="FillMode" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="ObjRoots" Relationship="Self.FK_DocumentType_inherits_ObjRoot" FromRole="ObjRoots_DocumentType" ToRole="ObjRoots" />
+    <NavigationProperty Name="ObjRoots_Document" Relationship="Self.FK_DocumentDocumentType" FromRole="ObjRoots_DocumentType" ToRole="ObjRoots_Document" />
+  </EntityType>
+  <EntityType Name="ObjRoots_ExternalGuidFillToken">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="ExternalGuid" Type="Guid" Nullable="false" />
+    <Property Name="Token" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="ObjRoots" Relationship="Self.FK_ExternalGuidFillToken_inherits_ObjRoot" FromRole="ObjRoots_ExternalGuidFillToken" ToRole="ObjRoots" />
+  </EntityType>
+  <EntityType Name="ObjRoots_MergeField">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Key" Type="String" MaxLength="600" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TestValue" Type="String" MaxLength="400" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="IsPostBack" Type="Boolean" Nullable="false" />
+    <Property Name="FieldType" Type="Int64" Nullable="false" />
+    <Property Name="DecimalPrecision" Type="Int32" />
+    <Property Name="ShowTime" Type="Boolean" />
+    <NavigationProperty Name="MergeFieldInstanceValues" Relationship="Self.FK_MergeFieldInstanceValues_MergeField" FromRole="ObjRoots_MergeField" ToRole="MergeFieldInstanceValues" />
+    <NavigationProperty Name="ObjRoots" Relationship="Self.FK_MergeField_inherits_ObjRoot" FromRole="ObjRoots_MergeField" ToRole="ObjRoots" />
+    <NavigationProperty Name="ObjRoots_Document" Relationship="Self.FK_Document_MergeFieldId" FromRole="ObjRoots_MergeField" ToRole="ObjRoots_Document" />
+  </EntityType>
+  <EntityType Name="ObjRoots_Notification">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="TemplateId" Type="Guid" Nullable="false" />
+    <Property Name="ConditionId" Type="Guid" Nullable="false" />
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="ObjRoots" Relationship="Self.FK_Notification_inherits_ObjRoot" FromRole="ObjRoots_Notification" ToRole="ObjRoots" />
+  </EntityType>
+  <EntityType Name="ObjRoots_PageField">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="FieldId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FieldName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Tooltip" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="DocumentPageId" Type="Guid" Nullable="false" />
+    <Property Name="FieldType" Type="Int32" Nullable="false" />
+    <Property Name="Html" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="InitialValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsOutField" Type="Boolean" Nullable="false" />
+    <Property Name="FontSize" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="TabIndex" Type="Int16" />
+    <Property Name="Required" Type="Boolean" Nullable="false" />
+    <Property Name="Pattern" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MinimumLength" Type="Int16" />
+    <Property Name="MaxLength" Type="Int16" />
+    <Property Name="Min" Type="Int32" />
+    <Property Name="Max" Type="Int32" />
+    <Property Name="MinSelected" Type="Int16" />
+    <Property Name="DataEquals" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UseCurrentDate" Type="Boolean" />
+    <Property Name="RangeDateMin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RangeDateMax" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DependencyCount" Type="Int16" />
+    <Property Name="SelectTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SelectFieldSource" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SelectPrefixedSource" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DependencyData" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsGroup" Type="Boolean" />
+    <Property Name="ReadOnly" Type="Boolean" />
+    <Property Name="RangeDateMinUseCurrent" Type="Boolean" />
+    <Property Name="RangeDateMaxUseCurrent" Type="Boolean" />
+    <Property Name="Style" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="Href" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="OutFieldId" Type="Guid" />
+    <Property Name="CustomValidationCount" Type="Int16" />
+    <Property Name="CustomValidationData" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ObjRoots" Relationship="Self.FK_PageField_inherits_ObjRoot" FromRole="ObjRoots_PageField" ToRole="ObjRoots" />
+    <NavigationProperty Name="ObjRoots_DocumentPage" Relationship="Self.FK_DocumentPagePageField" FromRole="ObjRoots_PageField" ToRole="ObjRoots_DocumentPage" />
+    <NavigationProperty Name="ObjRoots_DocumentPage1" Relationship="Self.FK_DocumentPageTooltipDocumentPage" FromRole="ObjRoots_PageField" ToRole="ObjRoots_DocumentPage" />
+    <NavigationProperty Name="PageFieldTranslations" Relationship="Self.FK_PageFieldMetadataTranslationPageFieldMetadata1" FromRole="ObjRoots_PageField" ToRole="PageFieldTranslations" />
+  </EntityType>
+  <EntityType Name="ObjRoots_PageImage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="DocumentPageTranslations" Relationship="Self.FK_DocumentPageTranslationDocumentPageImage" FromRole="ObjRoots_PageImage" ToRole="DocumentPageTranslations" />
+    <NavigationProperty Name="ObjRoots" Relationship="Self.FK_PageImage_inherits_ObjRoot" FromRole="ObjRoots_PageImage" ToRole="ObjRoots" />
+    <NavigationProperty Name="ObjRoots_DocumentPage" Relationship="Self.FK_DocumentPageDefinitionDocumentPageImage" FromRole="ObjRoots_PageImage" ToRole="ObjRoots_DocumentPage" />
+  </EntityType>
+  <EntityType Name="PageFieldTranslations">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="DocumentPageTranslationId" Type="Guid" Nullable="false" />
+    <Property Name="PageFieldId" Type="Guid" Nullable="false" />
+    <Property Name="Tooltip" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="FontSize" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="Html" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="InitialValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SelectTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Href" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DocumentPageTranslations" Relationship="Self.FK_DocumentPageTranslationPageFieldTranslation" FromRole="PageFieldTranslations" ToRole="DocumentPageTranslations" />
+    <NavigationProperty Name="ObjRoots_PageField" Relationship="Self.FK_PageFieldMetadataTranslationPageFieldMetadata1" FromRole="PageFieldTranslations" ToRole="ObjRoots_PageField" />
+  </EntityType>
+  <EntityType Name="Sys_DataMotions">
+    <Key>
+      <PropertyRef Name="DataMotionId" />
+      <PropertyRef Name="IsPreDeploy" />
+    </Key>
+    <Property Name="DataMotionId" Type="Int32" Nullable="false" />
+    <Property Name="DateExcecuted" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="IsPreDeploy" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserTokens">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TokenString" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IssueDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_DocumentInstanceFiles_ObjRoots_DocumentInstance">
+    <End Role="ObjRoots_DocumentInstance" Type="Self.ObjRoots_DocumentInstance" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DocumentInstanceFiles" Type="Self.DocumentInstanceFiles" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ObjRoots_DocumentInstance">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DocumentInstanceFiles">
+        <PropertyRef Name="DocumentInstanceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentPageTranslationDocumentPage">
+    <End Role="ObjRoots_DocumentPage" Type="Self.ObjRoots_DocumentPage" Multiplicity="1" />
+    <End Role="DocumentPageTranslations" Type="Self.DocumentPageTranslations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ObjRoots_DocumentPage">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DocumentPageTranslations">
+        <PropertyRef Name="DocumentPageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentPageTranslationDocumentPageDefinition">
+    <End Role="ObjRoots_DocumentPage" Type="Self.ObjRoots_DocumentPage" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DocumentPageTranslations" Type="Self.DocumentPageTranslations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ObjRoots_DocumentPage">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DocumentPageTranslations">
+        <PropertyRef Name="DocumentPageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentPageTranslationDocumentPageImage">
+    <End Role="ObjRoots_PageImage" Type="Self.ObjRoots_PageImage" Multiplicity="0..1" />
+    <End Role="DocumentPageTranslations" Type="Self.DocumentPageTranslations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ObjRoots_PageImage">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DocumentPageTranslations">
+        <PropertyRef Name="DocumentPageImageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentPageTranslationPageFieldTranslation">
+    <End Role="DocumentPageTranslations" Type="Self.DocumentPageTranslations" Multiplicity="1" />
+    <End Role="PageFieldTranslations" Type="Self.PageFieldTranslations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocumentPageTranslations">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PageFieldTranslations">
+        <PropertyRef Name="DocumentPageTranslationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MergeFieldInstanceValues_DocumentInstanceId">
+    <End Role="ObjRoots_DocumentInstance" Type="Self.ObjRoots_DocumentInstance" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="MergeFieldInstanceValues" Type="Self.MergeFieldInstanceValues" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ObjRoots_DocumentInstance">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MergeFieldInstanceValues">
+        <PropertyRef Name="DocumentInstanceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MergeFieldInstanceValues_MergeField">
+    <End Role="ObjRoots_MergeField" Type="Self.ObjRoots_MergeField" Multiplicity="1" />
+    <End Role="MergeFieldInstanceValues" Type="Self.MergeFieldInstanceValues" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ObjRoots_MergeField">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MergeFieldInstanceValues">
+        <PropertyRef Name="MergeFieldId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ComboGroup_inherits_ObjRoot">
+    <End Role="ObjRoots" Type="Self.ObjRoots" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ObjRoots_ComboGroup" Type="Self.ObjRoots_ComboGroup" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ObjRoots">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjRoots_ComboGroup">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Document_inherits_ObjRoot">
+    <End Role="ObjRoots" Type="Self.ObjRoots" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ObjRoots_Document" Type="Self.ObjRoots_Document" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ObjRoots">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjRoots_Document">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentInstance_inherits_ObjRoot">
+    <End Role="ObjRoots" Type="Self.ObjRoots" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ObjRoots_DocumentInstance" Type="Self.ObjRoots_DocumentInstance" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ObjRoots">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjRoots_DocumentInstance">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentInstanceLog_inherits_ObjRoot">
+    <End Role="ObjRoots" Type="Self.ObjRoots" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ObjRoots_DocumentInstanceLog" Type="Self.ObjRoots_DocumentInstanceLog" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ObjRoots">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjRoots_DocumentInstanceLog">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentInstanceNotificationLog_inherits_ObjRoot">
+    <End Role="ObjRoots" Type="Self.ObjRoots" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ObjRoots_DocumentInstanceMessage" Type="Self.ObjRoots_DocumentInstanceMessage" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ObjRoots">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjRoots_DocumentInstanceMessage">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentPackage_inherits_ObjRoot">
+    <End Role="ObjRoots" Type="Self.ObjRoots" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ObjRoots_DocumentPackage" Type="Self.ObjRoots_DocumentPackage" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ObjRoots">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjRoots_DocumentPackage">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentPage_inherits_ObjRoot">
+    <End Role="ObjRoots" Type="Self.ObjRoots" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ObjRoots_DocumentPage" Type="Self.ObjRoots_DocumentPage" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ObjRoots">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjRoots_DocumentPage">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentPageInstance_inherits_ObjRoot">
+    <End Role="ObjRoots" Type="Self.ObjRoots" Multiplicity="1" />
+    <End Role="ObjRoots_DocumentPageInstance" Type="Self.ObjRoots_DocumentPageInstance" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ObjRoots">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjRoots_DocumentPageInstance">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentType_inherits_ObjRoot">
+    <End Role="ObjRoots" Type="Self.ObjRoots" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ObjRoots_DocumentType" Type="Self.ObjRoots_DocumentType" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ObjRoots">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjRoots_DocumentType">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ExternalGuidFillToken_inherits_ObjRoot">
+    <End Role="ObjRoots" Type="Self.ObjRoots" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ObjRoots_ExternalGuidFillToken" Type="Self.ObjRoots_ExternalGuidFillToken" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ObjRoots">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjRoots_ExternalGuidFillToken">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MergeField_inherits_ObjRoot">
+    <End Role="ObjRoots" Type="Self.ObjRoots" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ObjRoots_MergeField" Type="Self.ObjRoots_MergeField" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ObjRoots">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjRoots_MergeField">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Notification_inherits_ObjRoot">
+    <End Role="ObjRoots" Type="Self.ObjRoots" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ObjRoots_Notification" Type="Self.ObjRoots_Notification" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ObjRoots">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjRoots_Notification">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PageField_inherits_ObjRoot">
+    <End Role="ObjRoots" Type="Self.ObjRoots" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ObjRoots_PageField" Type="Self.ObjRoots_PageField" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ObjRoots">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjRoots_PageField">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PageImage_inherits_ObjRoot">
+    <End Role="ObjRoots" Type="Self.ObjRoots" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ObjRoots_PageImage" Type="Self.ObjRoots_PageImage" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ObjRoots">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjRoots_PageImage">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Document_ChildDocuments">
+    <End Role="ObjRoots_Document" Type="Self.ObjRoots_Document" Multiplicity="0..1" />
+    <End Role="ObjRoots_Document1" Type="Self.ObjRoots_Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ObjRoots_Document">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjRoots_Document1">
+        <PropertyRef Name="ParentDocumentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Document_MergeFieldId">
+    <End Role="ObjRoots_MergeField" Type="Self.ObjRoots_MergeField" Multiplicity="0..1" />
+    <End Role="ObjRoots_Document" Type="Self.ObjRoots_Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ObjRoots_MergeField">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjRoots_Document">
+        <PropertyRef Name="ChildTypeMergeFieldId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentDefinitionDocumentPage">
+    <End Role="ObjRoots_Document" Type="Self.ObjRoots_Document" Multiplicity="1" />
+    <End Role="ObjRoots_DocumentPage" Type="Self.ObjRoots_DocumentPage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ObjRoots_Document">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjRoots_DocumentPage">
+        <PropertyRef Name="DocumentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentDocument">
+    <End Role="ObjRoots_Document" Type="Self.ObjRoots_Document" Multiplicity="0..1" />
+    <End Role="ObjRoots_Document1" Type="Self.ObjRoots_Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ObjRoots_Document">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjRoots_Document1">
+        <PropertyRef Name="OverriddenByDocumentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentDocumentType">
+    <End Role="ObjRoots_DocumentType" Type="Self.ObjRoots_DocumentType" Multiplicity="0..1" />
+    <End Role="ObjRoots_Document" Type="Self.ObjRoots_Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ObjRoots_DocumentType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjRoots_Document">
+        <PropertyRef Name="DocumentTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentInstanceDocument">
+    <End Role="ObjRoots_Document" Type="Self.ObjRoots_Document" Multiplicity="1" />
+    <End Role="ObjRoots_DocumentInstance" Type="Self.ObjRoots_DocumentInstance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ObjRoots_Document">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjRoots_DocumentInstance">
+        <PropertyRef Name="DocumentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentTranslationId">
+    <End Role="ObjRoots_Document" Type="Self.ObjRoots_Document" Multiplicity="0..1" />
+    <End Role="ObjRoots_Document1" Type="Self.ObjRoots_Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ObjRoots_Document">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjRoots_Document1">
+        <PropertyRef Name="TranslationOfDocumentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentInstanceDocumentInstance">
+    <End Role="ObjRoots_DocumentInstance" Type="Self.ObjRoots_DocumentInstance" Multiplicity="0..1" />
+    <End Role="ObjRoots_DocumentInstance1" Type="Self.ObjRoots_DocumentInstance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ObjRoots_DocumentInstance">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjRoots_DocumentInstance1">
+        <PropertyRef Name="OverriddenByInstanceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentInstanceDocumentPageInstance">
+    <End Role="ObjRoots_DocumentInstance" Type="Self.ObjRoots_DocumentInstance" Multiplicity="1" />
+    <End Role="ObjRoots_DocumentPageInstance" Type="Self.ObjRoots_DocumentPageInstance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ObjRoots_DocumentInstance">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjRoots_DocumentPageInstance">
+        <PropertyRef Name="DocumentInstanceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentInstanceNotificationDocumentInstance">
+    <End Role="ObjRoots_DocumentInstance" Type="Self.ObjRoots_DocumentInstance" Multiplicity="1" />
+    <End Role="ObjRoots_DocumentInstanceMessage" Type="Self.ObjRoots_DocumentInstanceMessage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ObjRoots_DocumentInstance">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjRoots_DocumentInstanceMessage">
+        <PropertyRef Name="DocumentInstanceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentPageDefinitionDocumentPageImage">
+    <End Role="ObjRoots_PageImage" Type="Self.ObjRoots_PageImage" Multiplicity="0..1" />
+    <End Role="ObjRoots_DocumentPage" Type="Self.ObjRoots_DocumentPage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ObjRoots_PageImage">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjRoots_DocumentPage">
+        <PropertyRef Name="DocumentPageImageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentPageInstanceDocumentPageDefinition">
+    <End Role="ObjRoots_DocumentPage" Type="Self.ObjRoots_DocumentPage" Multiplicity="1" />
+    <End Role="ObjRoots_DocumentPageInstance" Type="Self.ObjRoots_DocumentPageInstance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ObjRoots_DocumentPage">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjRoots_DocumentPageInstance">
+        <PropertyRef Name="DocumentPageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentPagePageField">
+    <End Role="ObjRoots_DocumentPage" Type="Self.ObjRoots_DocumentPage" Multiplicity="1" />
+    <End Role="ObjRoots_PageField" Type="Self.ObjRoots_PageField" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ObjRoots_DocumentPage">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjRoots_PageField">
+        <PropertyRef Name="DocumentPageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentPageTooltipDocumentPage">
+    <End Role="ObjRoots_DocumentPage" Type="Self.ObjRoots_DocumentPage" Multiplicity="1" />
+    <End Role="ObjRoots_PageField" Type="Self.ObjRoots_PageField" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ObjRoots_DocumentPage">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjRoots_PageField">
+        <PropertyRef Name="DocumentPageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PageFieldMetadataTranslationPageFieldMetadata1">
+    <End Role="ObjRoots_PageField" Type="Self.ObjRoots_PageField" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PageFieldTranslations" Type="Self.PageFieldTranslations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ObjRoots_PageField">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PageFieldTranslations">
+        <PropertyRef Name="PageFieldId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DocumentPackageDocumentDefinition">
+    <End Role="ObjRoots_Document" Type="Self.ObjRoots_Document" Multiplicity="*" />
+    <End Role="ObjRoots_DocumentPackage" Type="Self.ObjRoots_DocumentPackage" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="HRConcourseDCEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DocumentInstanceFiles" EntityType="Self.DocumentInstanceFiles" />
+    <EntitySet Name="DocumentPageTranslations" EntityType="Self.DocumentPageTranslations" />
+    <EntitySet Name="MergeFieldInstanceValues" EntityType="Self.MergeFieldInstanceValues" />
+    <EntitySet Name="ObjRoots" EntityType="Self.ObjRoots" />
+    <EntitySet Name="ObjRoots_ComboGroup" EntityType="Self.ObjRoots_ComboGroup" />
+    <EntitySet Name="ObjRoots_Document" EntityType="Self.ObjRoots_Document" />
+    <EntitySet Name="ObjRoots_DocumentInstance" EntityType="Self.ObjRoots_DocumentInstance" />
+    <EntitySet Name="ObjRoots_DocumentInstanceLog" EntityType="Self.ObjRoots_DocumentInstanceLog" />
+    <EntitySet Name="ObjRoots_DocumentInstanceMessage" EntityType="Self.ObjRoots_DocumentInstanceMessage" />
+    <EntitySet Name="ObjRoots_DocumentPackage" EntityType="Self.ObjRoots_DocumentPackage" />
+    <EntitySet Name="ObjRoots_DocumentPage" EntityType="Self.ObjRoots_DocumentPage" />
+    <EntitySet Name="ObjRoots_DocumentPageInstance" EntityType="Self.ObjRoots_DocumentPageInstance" />
+    <EntitySet Name="ObjRoots_DocumentType" EntityType="Self.ObjRoots_DocumentType" />
+    <EntitySet Name="ObjRoots_ExternalGuidFillToken" EntityType="Self.ObjRoots_ExternalGuidFillToken" />
+    <EntitySet Name="ObjRoots_MergeField" EntityType="Self.ObjRoots_MergeField" />
+    <EntitySet Name="ObjRoots_Notification" EntityType="Self.ObjRoots_Notification" />
+    <EntitySet Name="ObjRoots_PageField" EntityType="Self.ObjRoots_PageField" />
+    <EntitySet Name="ObjRoots_PageImage" EntityType="Self.ObjRoots_PageImage" />
+    <EntitySet Name="PageFieldTranslations" EntityType="Self.PageFieldTranslations" />
+    <EntitySet Name="Sys_DataMotions" EntityType="Self.Sys_DataMotions" />
+    <EntitySet Name="UserTokens" EntityType="Self.UserTokens" />
+    <AssociationSet Name="FK_DocumentInstanceFiles_ObjRoots_DocumentInstance" Association="Self.FK_DocumentInstanceFiles_ObjRoots_DocumentInstance">
+      <End Role="ObjRoots_DocumentInstance" EntitySet="ObjRoots_DocumentInstance" />
+      <End Role="DocumentInstanceFiles" EntitySet="DocumentInstanceFiles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentPageTranslationDocumentPage" Association="Self.FK_DocumentPageTranslationDocumentPage">
+      <End Role="ObjRoots_DocumentPage" EntitySet="ObjRoots_DocumentPage" />
+      <End Role="DocumentPageTranslations" EntitySet="DocumentPageTranslations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentPageTranslationDocumentPageDefinition" Association="Self.FK_DocumentPageTranslationDocumentPageDefinition">
+      <End Role="ObjRoots_DocumentPage" EntitySet="ObjRoots_DocumentPage" />
+      <End Role="DocumentPageTranslations" EntitySet="DocumentPageTranslations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentPageTranslationDocumentPageImage" Association="Self.FK_DocumentPageTranslationDocumentPageImage">
+      <End Role="ObjRoots_PageImage" EntitySet="ObjRoots_PageImage" />
+      <End Role="DocumentPageTranslations" EntitySet="DocumentPageTranslations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentPageTranslationPageFieldTranslation" Association="Self.FK_DocumentPageTranslationPageFieldTranslation">
+      <End Role="DocumentPageTranslations" EntitySet="DocumentPageTranslations" />
+      <End Role="PageFieldTranslations" EntitySet="PageFieldTranslations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MergeFieldInstanceValues_DocumentInstanceId" Association="Self.FK_MergeFieldInstanceValues_DocumentInstanceId">
+      <End Role="ObjRoots_DocumentInstance" EntitySet="ObjRoots_DocumentInstance" />
+      <End Role="MergeFieldInstanceValues" EntitySet="MergeFieldInstanceValues" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MergeFieldInstanceValues_MergeField" Association="Self.FK_MergeFieldInstanceValues_MergeField">
+      <End Role="ObjRoots_MergeField" EntitySet="ObjRoots_MergeField" />
+      <End Role="MergeFieldInstanceValues" EntitySet="MergeFieldInstanceValues" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ComboGroup_inherits_ObjRoot" Association="Self.FK_ComboGroup_inherits_ObjRoot">
+      <End Role="ObjRoots" EntitySet="ObjRoots" />
+      <End Role="ObjRoots_ComboGroup" EntitySet="ObjRoots_ComboGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Document_inherits_ObjRoot" Association="Self.FK_Document_inherits_ObjRoot">
+      <End Role="ObjRoots" EntitySet="ObjRoots" />
+      <End Role="ObjRoots_Document" EntitySet="ObjRoots_Document" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentInstance_inherits_ObjRoot" Association="Self.FK_DocumentInstance_inherits_ObjRoot">
+      <End Role="ObjRoots" EntitySet="ObjRoots" />
+      <End Role="ObjRoots_DocumentInstance" EntitySet="ObjRoots_DocumentInstance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentInstanceLog_inherits_ObjRoot" Association="Self.FK_DocumentInstanceLog_inherits_ObjRoot">
+      <End Role="ObjRoots" EntitySet="ObjRoots" />
+      <End Role="ObjRoots_DocumentInstanceLog" EntitySet="ObjRoots_DocumentInstanceLog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentInstanceNotificationLog_inherits_ObjRoot" Association="Self.FK_DocumentInstanceNotificationLog_inherits_ObjRoot">
+      <End Role="ObjRoots" EntitySet="ObjRoots" />
+      <End Role="ObjRoots_DocumentInstanceMessage" EntitySet="ObjRoots_DocumentInstanceMessage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentPackage_inherits_ObjRoot" Association="Self.FK_DocumentPackage_inherits_ObjRoot">
+      <End Role="ObjRoots" EntitySet="ObjRoots" />
+      <End Role="ObjRoots_DocumentPackage" EntitySet="ObjRoots_DocumentPackage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentPage_inherits_ObjRoot" Association="Self.FK_DocumentPage_inherits_ObjRoot">
+      <End Role="ObjRoots" EntitySet="ObjRoots" />
+      <End Role="ObjRoots_DocumentPage" EntitySet="ObjRoots_DocumentPage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentPageInstance_inherits_ObjRoot" Association="Self.FK_DocumentPageInstance_inherits_ObjRoot">
+      <End Role="ObjRoots" EntitySet="ObjRoots" />
+      <End Role="ObjRoots_DocumentPageInstance" EntitySet="ObjRoots_DocumentPageInstance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentType_inherits_ObjRoot" Association="Self.FK_DocumentType_inherits_ObjRoot">
+      <End Role="ObjRoots" EntitySet="ObjRoots" />
+      <End Role="ObjRoots_DocumentType" EntitySet="ObjRoots_DocumentType" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ExternalGuidFillToken_inherits_ObjRoot" Association="Self.FK_ExternalGuidFillToken_inherits_ObjRoot">
+      <End Role="ObjRoots" EntitySet="ObjRoots" />
+      <End Role="ObjRoots_ExternalGuidFillToken" EntitySet="ObjRoots_ExternalGuidFillToken" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MergeField_inherits_ObjRoot" Association="Self.FK_MergeField_inherits_ObjRoot">
+      <End Role="ObjRoots" EntitySet="ObjRoots" />
+      <End Role="ObjRoots_MergeField" EntitySet="ObjRoots_MergeField" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Notification_inherits_ObjRoot" Association="Self.FK_Notification_inherits_ObjRoot">
+      <End Role="ObjRoots" EntitySet="ObjRoots" />
+      <End Role="ObjRoots_Notification" EntitySet="ObjRoots_Notification" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PageField_inherits_ObjRoot" Association="Self.FK_PageField_inherits_ObjRoot">
+      <End Role="ObjRoots" EntitySet="ObjRoots" />
+      <End Role="ObjRoots_PageField" EntitySet="ObjRoots_PageField" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PageImage_inherits_ObjRoot" Association="Self.FK_PageImage_inherits_ObjRoot">
+      <End Role="ObjRoots" EntitySet="ObjRoots" />
+      <End Role="ObjRoots_PageImage" EntitySet="ObjRoots_PageImage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Document_ChildDocuments" Association="Self.FK_Document_ChildDocuments">
+      <End Role="ObjRoots_Document" EntitySet="ObjRoots_Document" />
+      <End Role="ObjRoots_Document1" EntitySet="ObjRoots_Document" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Document_MergeFieldId" Association="Self.FK_Document_MergeFieldId">
+      <End Role="ObjRoots_MergeField" EntitySet="ObjRoots_MergeField" />
+      <End Role="ObjRoots_Document" EntitySet="ObjRoots_Document" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentDefinitionDocumentPage" Association="Self.FK_DocumentDefinitionDocumentPage">
+      <End Role="ObjRoots_Document" EntitySet="ObjRoots_Document" />
+      <End Role="ObjRoots_DocumentPage" EntitySet="ObjRoots_DocumentPage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentDocument" Association="Self.FK_DocumentDocument">
+      <End Role="ObjRoots_Document" EntitySet="ObjRoots_Document" />
+      <End Role="ObjRoots_Document1" EntitySet="ObjRoots_Document" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentDocumentType" Association="Self.FK_DocumentDocumentType">
+      <End Role="ObjRoots_DocumentType" EntitySet="ObjRoots_DocumentType" />
+      <End Role="ObjRoots_Document" EntitySet="ObjRoots_Document" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentInstanceDocument" Association="Self.FK_DocumentInstanceDocument">
+      <End Role="ObjRoots_Document" EntitySet="ObjRoots_Document" />
+      <End Role="ObjRoots_DocumentInstance" EntitySet="ObjRoots_DocumentInstance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentTranslationId" Association="Self.FK_DocumentTranslationId">
+      <End Role="ObjRoots_Document" EntitySet="ObjRoots_Document" />
+      <End Role="ObjRoots_Document1" EntitySet="ObjRoots_Document" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentInstanceDocumentInstance" Association="Self.FK_DocumentInstanceDocumentInstance">
+      <End Role="ObjRoots_DocumentInstance" EntitySet="ObjRoots_DocumentInstance" />
+      <End Role="ObjRoots_DocumentInstance1" EntitySet="ObjRoots_DocumentInstance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentInstanceDocumentPageInstance" Association="Self.FK_DocumentInstanceDocumentPageInstance">
+      <End Role="ObjRoots_DocumentInstance" EntitySet="ObjRoots_DocumentInstance" />
+      <End Role="ObjRoots_DocumentPageInstance" EntitySet="ObjRoots_DocumentPageInstance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentInstanceNotificationDocumentInstance" Association="Self.FK_DocumentInstanceNotificationDocumentInstance">
+      <End Role="ObjRoots_DocumentInstance" EntitySet="ObjRoots_DocumentInstance" />
+      <End Role="ObjRoots_DocumentInstanceMessage" EntitySet="ObjRoots_DocumentInstanceMessage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentPageDefinitionDocumentPageImage" Association="Self.FK_DocumentPageDefinitionDocumentPageImage">
+      <End Role="ObjRoots_PageImage" EntitySet="ObjRoots_PageImage" />
+      <End Role="ObjRoots_DocumentPage" EntitySet="ObjRoots_DocumentPage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentPageInstanceDocumentPageDefinition" Association="Self.FK_DocumentPageInstanceDocumentPageDefinition">
+      <End Role="ObjRoots_DocumentPage" EntitySet="ObjRoots_DocumentPage" />
+      <End Role="ObjRoots_DocumentPageInstance" EntitySet="ObjRoots_DocumentPageInstance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentPagePageField" Association="Self.FK_DocumentPagePageField">
+      <End Role="ObjRoots_DocumentPage" EntitySet="ObjRoots_DocumentPage" />
+      <End Role="ObjRoots_PageField" EntitySet="ObjRoots_PageField" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentPageTooltipDocumentPage" Association="Self.FK_DocumentPageTooltipDocumentPage">
+      <End Role="ObjRoots_DocumentPage" EntitySet="ObjRoots_DocumentPage" />
+      <End Role="ObjRoots_PageField" EntitySet="ObjRoots_PageField" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PageFieldMetadataTranslationPageFieldMetadata1" Association="Self.FK_PageFieldMetadataTranslationPageFieldMetadata1">
+      <End Role="ObjRoots_PageField" EntitySet="ObjRoots_PageField" />
+      <End Role="PageFieldTranslations" EntitySet="PageFieldTranslations" />
+    </AssociationSet>
+    <AssociationSet Name="DocumentPackageDocumentDefinition" Association="Self.DocumentPackageDocumentDefinition">
+      <End Role="ObjRoots_Document" EntitySet="ObjRoots_Document" />
+      <End Role="ObjRoots_DocumentPackage" EntitySet="ObjRoots_DocumentPackage" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

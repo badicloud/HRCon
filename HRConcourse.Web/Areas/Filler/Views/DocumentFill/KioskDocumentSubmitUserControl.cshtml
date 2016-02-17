@@ -1,0 +1,22 @@
+﻿@model HRConcourse.Web.Areas.Filler.Models.KioskPageSubmitViewModel
+@using HRConcourse.Web.Areas.Filler.Resources.DocumentFill
+
+
+@* Error Container *@
+<div class="content">
+    <div id="formErrors" class="errorBox" style="display: none" />
+</div>
+
+@* Page Section *@
+<div class="content" id="documentFillPlace">
+    @if (Model.PageImageId != null)
+    {
+        <img src="@Url.Action("Index", "Image", new { area = "" })?pageImageId=@Model.PageImageId" alt="" width="100%" style="position:relative; top:0px; z-index: -10;" />
+    }
+    <div id="form-@Model.PageId" class="TTWForm">
+        @Html.Raw(Model.FormView as string)
+    </div>
+ 
+    <div id="metadata" style="display: none">@Model.MetadataJSON</div>
+    <div id="submittedData" style="display: none">@Model.SubmittedDataJson</div>
+</div>

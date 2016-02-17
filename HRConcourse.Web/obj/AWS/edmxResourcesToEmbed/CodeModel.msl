@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HRConcourseCoreModelStoreContainer" CdmEntityContainer="HRConcourseCoreEntities">
+    <EntitySetMapping Name="C__RefactorLog">
+      <EntityTypeMapping TypeName="HRConcourseCoreModel.C__RefactorLog">
+        <MappingFragment StoreEntitySet="__RefactorLog">
+          <ScalarProperty Name="OperationKey" ColumnName="OperationKey" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConfigurationValues">
+      <EntityTypeMapping TypeName="HRConcourseCoreModel.ConfigurationValues">
+        <MappingFragment StoreEntitySet="ConfigurationValues">
+          <ScalarProperty Name="ConfigurationId" ColumnName="ConfigurationId" />
+          <ScalarProperty Name="OriginId" ColumnName="OriginId" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailAccountDefaults">
+      <EntityTypeMapping TypeName="HRConcourseCoreModel.EmailAccountDefaults">
+        <MappingFragment StoreEntitySet="EmailAccountDefaults">
+          <ScalarProperty Name="EmailAccountTypeId" ColumnName="EmailAccountTypeId" />
+          <ScalarProperty Name="ServerName" ColumnName="ServerName" />
+          <ScalarProperty Name="IncomingPort" ColumnName="IncomingPort" />
+          <ScalarProperty Name="IncomingServerAddress" ColumnName="IncomingServerAddress" />
+          <ScalarProperty Name="IncomingUseSSL" ColumnName="IncomingUseSSL" />
+          <ScalarProperty Name="OutgoingPort" ColumnName="OutgoingPort" />
+          <ScalarProperty Name="OutgoingServerAddress" ColumnName="OutgoingServerAddress" />
+          <ScalarProperty Name="OutgoingUseSSL" ColumnName="OutgoingUseSSL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailTemplateFields">
+      <EntityTypeMapping TypeName="HRConcourseCoreModel.EmailTemplateFields">
+        <MappingFragment StoreEntitySet="EmailTemplateFields">
+          <ScalarProperty Name="EmailTemplateId" ColumnName="EmailTemplateId" />
+          <ScalarProperty Name="FieldId" ColumnName="FieldId" />
+          <ScalarProperty Name="FieldName" ColumnName="FieldName" />
+          <ScalarProperty Name="FieldTestValue" ColumnName="FieldTestValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hiers">
+      <EntityTypeMapping TypeName="HRConcourseCoreModel.Hiers">
+        <MappingFragment StoreEntitySet="Hiers">
+          <ScalarProperty Name="HierId" ColumnName="HierId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ParentHierId" ColumnName="ParentHierId" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="ExternalHierId" ColumnName="ExternalHierId" />
+          <ScalarProperty Name="WebName" ColumnName="WebName" />
+          <ScalarProperty Name="KioskCallbackUrl" ColumnName="KioskCallbackUrl" />
+          <ScalarProperty Name="HierTypeId" ColumnName="HierTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HierTypes">
+      <EntityTypeMapping TypeName="HRConcourseCoreModel.HierTypes">
+        <MappingFragment StoreEntitySet="HierTypes">
+          <ScalarProperty Name="HierTypeId" ColumnName="HierTypeId" />
+          <ScalarProperty Name="ParentHierTypeId" ColumnName="ParentHierTypeId" />
+          <ScalarProperty Name="HierTypeName" ColumnName="HierTypeName" />
+          <ScalarProperty Name="RoleIdRequiredForUpdates" ColumnName="RoleIdRequiredForUpdates" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logger">
+      <EntityTypeMapping TypeName="HRConcourseCoreModel.Logger">
+        <MappingFragment StoreEntitySet="Logger">
+          <ScalarProperty Name="LogId" ColumnName="LogId" />
+          <ScalarProperty Name="LogDate" ColumnName="LogDate" />
+          <ScalarProperty Name="LogMsg1" ColumnName="LogMsg1" />
+          <ScalarProperty Name="LogMsg2" ColumnName="LogMsg2" />
+          <ScalarProperty Name="MiscId1" ColumnName="MiscId1" />
+          <ScalarProperty Name="MiscId2" ColumnName="MiscId2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Modules">
+      <EntityTypeMapping TypeName="HRConcourseCoreModel.Modules">
+        <MappingFragment StoreEntitySet="Modules">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="XapName" ColumnName="XapName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ObjRoots">
+      <EntityTypeMapping TypeName="HRConcourseCoreModel.ObjRoots">
+        <MappingFragment StoreEntitySet="ObjRoots">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="HierId" ColumnName="HierId" />
+          <ScalarProperty Name="IsTestData" ColumnName="IsTestData" />
+          <ScalarProperty Name="PrimaryUserId" ColumnName="PrimaryUserId" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ObjRoots_EmailTemplate">
+      <EntityTypeMapping TypeName="HRConcourseCoreModel.ObjRoots_EmailTemplate">
+        <MappingFragment StoreEntitySet="ObjRoots_EmailTemplate">
+          <ScalarProperty Name="SubjectTemplate" ColumnName="SubjectTemplate" />
+          <ScalarProperty Name="BodyTemplate" ColumnName="BodyTemplate" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="TemplateName" ColumnName="TemplateName" />
+          <ScalarProperty Name="DefaultMailBoxId" ColumnName="DefaultMailBoxId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CC" ColumnName="CC" />
+          <ScalarProperty Name="BCC" ColumnName="BCC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ObjRoots_HierVisualProfile">
+      <EntityTypeMapping TypeName="HRConcourseCoreModel.ObjRoots_HierVisualProfile">
+        <MappingFragment StoreEntitySet="ObjRoots_HierVisualProfile">
+          <ScalarProperty Name="StringContent" ColumnName="StringContent" />
+          <ScalarProperty Name="BinaryContent" ColumnName="BinaryContent" />
+          <ScalarProperty Name="ProfileId" ColumnName="ProfileId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ObjRoots_MailBoxes">
+      <EntityTypeMapping TypeName="HRConcourseCoreModel.ObjRoots_MailBoxes">
+        <MappingFragment StoreEntitySet="ObjRoots_MailBoxes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="IncomingServerAddress" ColumnName="IncomingServerAddress" />
+          <ScalarProperty Name="IncomingPort" ColumnName="IncomingPort" />
+          <ScalarProperty Name="IncomingUseSSL" ColumnName="IncomingUseSSL" />
+          <ScalarProperty Name="OutgoingServerAddress" ColumnName="OutgoingServerAddress" />
+          <ScalarProperty Name="OutgoingPort" ColumnName="OutgoingPort" />
+          <ScalarProperty Name="OutgoingUseSSL" ColumnName="OutgoingUseSSL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ObjRoots_SLMessage">
+      <EntityTypeMapping TypeName="HRConcourseCoreModel.ObjRoots_SLMessage">
+        <MappingFragment StoreEntitySet="ObjRoots_SLMessage">
+          <ScalarProperty Name="FrameworkElementName" ColumnName="FrameworkElementName" />
+          <ScalarProperty Name="ViewModel" ColumnName="ViewModel" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ObjRoots_TemplateCategoryDefaults">
+      <EntityTypeMapping TypeName="HRConcourseCoreModel.ObjRoots_TemplateCategoryDefaults">
+        <MappingFragment StoreEntitySet="ObjRoots_TemplateCategoryDefaults">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProfileProperties">
+      <EntityTypeMapping TypeName="HRConcourseCoreModel.ProfileProperties">
+        <MappingFragment StoreEntitySet="ProfileProperties">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PropertyName" ColumnName="PropertyName" />
+          <ScalarProperty Name="PropertyValueString" ColumnName="PropertyValueString" />
+          <ScalarProperty Name="PropertyValueBinary" ColumnName="PropertyValueBinary" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="HRConcourseCoreModel.Roles">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="IsHierCreateDefault" ColumnName="IsHierCreateDefault" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="uScriptAllText">
+      <EntityTypeMapping TypeName="HRConcourseCoreModel.uScriptAllText">
+        <MappingFragment StoreEntitySet="uScriptAllText">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ObjectType" ColumnName="ObjectType" />
+          <ScalarProperty Name="ObjectName" ColumnName="ObjectName" />
+          <ScalarProperty Name="IsCreateLine" ColumnName="IsCreateLine" />
+          <ScalarProperty Name="Txt" ColumnName="Txt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserHierRoles">
+      <EntityTypeMapping TypeName="HRConcourseCoreModel.UserHierRoles">
+        <MappingFragment StoreEntitySet="UserHierRoles">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="HierId" ColumnName="HierId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserModules">
+      <EntityTypeMapping TypeName="HRConcourseCoreModel.UserModules">
+        <MappingFragment StoreEntitySet="UserModules">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+          <ScalarProperty Name="UserUserId" ColumnName="UserUserId" />
+          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="HRConcourseCoreModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="MobileAlias" ColumnName="MobileAlias" />
+          <ScalarProperty Name="CurrentHierId" ColumnName="CurrentHierId" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="FriendlyName" ColumnName="FriendlyName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="ForceUpdatePassword" ColumnName="ForceUpdatePassword" />
+          <ScalarProperty Name="LastPasswordUpdateDate" ColumnName="LastPasswordUpdateDate" />
+          <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsTestMode" ColumnName="IsTestMode" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="ViewModeEnum" ColumnName="ViewModeEnum" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="IsKiosk" ColumnName="IsKiosk" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserVisitedURLs">
+      <EntityTypeMapping TypeName="HRConcourseCoreModel.UserVisitedURLs">
+        <MappingFragment StoreEntitySet="UserVisitedURLs">
+          <ScalarProperty Name="UserVisitId" ColumnName="UserVisitId" />
+          <ScalarProperty Name="PageTitle" ColumnName="PageTitle" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="VisitDate" ColumnName="VisitDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="HierModules" TypeName="HRConcourseCoreModel.HierModules" StoreEntitySet="HierModules">
+      <EndProperty Name="Hiers">
+        <ScalarProperty Name="HierId" ColumnName="HierId" />
+      </EndProperty>
+      <EndProperty Name="Modules">
+        <ScalarProperty Name="Id" ColumnName="ModuleId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

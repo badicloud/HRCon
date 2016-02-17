@@ -1,0 +1,113 @@
+﻿@using System.Text.RegularExpressions
+@using System.Linq
+@using HRConcourse.Web.Models
+@model  IEnumerable<HRConcourse.Web.Models.PrintPageModel>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>DocCenter | HRConcourse</title>
+
+    <link href="@Url.Content("~/Content/formbuilder/basic.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/formbuilder/jquery-ui.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/printStyle.css?ts=20121011")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/print.css?ts=20121025")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/formbuilder/themes/aristo/css/uniform.aristo.css?ts=20120905")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Fonts/script.css?ts=20140905")" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-1.7.1.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-ui-1.8.16.custom.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.tools.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/json2.js")"></script>
+    <!--[if lt IE 9]><script src="@Url.Content("~/Scripts/excanvas.js")" type="text/javascript"></script><![endif]-->
+    <script src="@Url.Content("~/Scripts/jquery.signaturepad.min.js?ts=20121004")" type="text/javascript"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.html5type.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.uniform.min.js?ts=20120917")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/formsCommon.js?ts=20140107")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/viewCommon.js?ts=201402012")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/printCommon.js?ts=20130710")"></script>
+
+    @if (ViewBag.PageInstanceIds != null)
+    {
+        <script type="text/javascript" src="@Url.Content("~/Scripts/printByPageSetup.js?ts=20121105")"></script>
+    }
+    else
+    {
+        <script type="text/javascript" src="@Url.Content("~/Scripts/printSetup.js?ts=20121023")"></script>
+    }
+
+    <script type="text/javascript">
+        function getFullyQualifiedURL(action) {
+            var baseUrl = "@Url.Action("/")";
+            return baseUrl + action;
+        }
+
+        var mergeFieldValuesDictionary = new Object();
+        var selectPrefixValues = new Object();
+        var documentPages = {};
+        var setupInterval;
+
+        @if (ViewBag.PageInstanceIds != null)
+        {
+            foreach (var pageId in ViewBag.PageInstanceIds)
+            {
+            <text>documentPages['@pageId'] = 1;</text>
+            }
+        }
+    </script>
+
+    @*Merge Field Instance Values *@
+    @if (ViewBag.MergeFieldValues.Count > 0)
+    {
+        <script type="text/javascript">
+        @foreach (var value in ViewBag.MergeFieldValues)
+        {
+                <text>mergeFieldValuesDictionary['@value.MergeFieldId'] = '@value.Value';</text>
+        }
+        </script>
+    }
+</head>
+
+<body @if (ViewBag.ForcePrint == true) { @Html.Raw("onload=\"window.print(); window.close();\"")  }>
+
+    <div id="main">
+
+        @foreach (PrintPageModel item in Model)
+        {
+            @*Select Prefixed Values *@
+            if (item.SelectPrefixedValues.Count > 0)
+            {
+                <script type="text/javascript">
+                @foreach (var key in item.SelectPrefixedValues)
+                {
+                    <text>selectPrefixValues['@key.Key'] = new Object();</text>
+                    foreach (var value in key.Value)
+                    {
+                        <text>selectPrefixValues['@key.Key']['@value.Value'] = '@value.Text';</text>
+                    }
+                }
+                </script>
+            }
+
+            @* Page form section *@
+            
+
+            <div style="position: relative; width: 970px; ">
+                <div id="@item.PageInstanceId" style="page-break-inside: avoid; min-height: 800px;" class="TTWForm singlePage">
+                    <div style="position: absolute; top: 0px; width: 100%;">
+                        @Html.Raw(item.Html)
+                    </div>
+                    @if (item.ImageId != null)
+                    {
+                        <img src="@Url.Action("Index", "Image",new { area = "" })?pageImageId=@item.ImageId" alt="pageImg" width="100%" style="position:relative; top:0px; z-index: -10" />
+                    }
+                    <div id="metadata" style="display: none">@item.MetadataJSON</div>
+                    <div id="submittedData" style="display: none">@item.SubmittedDataJson</div>
+                </div>
+            </div>
+        }
+
+    </div>
+</body>
+</html>
+

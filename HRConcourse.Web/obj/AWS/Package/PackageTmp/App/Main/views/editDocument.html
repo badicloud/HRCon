@@ -1,0 +1,53 @@
+﻿<div class="container">
+    <h2>Edit Document</h2>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="portlet portlet-boxed">
+                <div class="portlet-header">
+                    <h4 class="portlet-title">Document Information</h4>
+                </div> <!-- /.portlet-header -->
+
+                <div class="portlet-body">
+                    <div class="row">
+                        <form class="form-horizontal">
+                            <!-- Name -->
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Name</label>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control" data-bind="value: documentData.name">
+                                </div> <!-- /.col -->
+                            </div> <!-- /.form-group -->
+
+                            <!-- Hard Signature -->
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Requires Hard Signature</label>
+                                <div class="col-md-4">
+                                    <input type="checkbox" data-bind="checked: documentData.hardSignature">
+                                </div> <!-- /.col -->
+                            </div> <!-- /.form-group -->
+
+                            <!-- Read Only -->
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Is Read Only</label>
+                                <div class="col-md-4">
+                                    <input type="checkbox" data-bind="checked: documentData.readOnly">
+                                </div> <!-- /.col -->
+                            </div> <!-- /.form-group -->
+
+
+                            <!-- Save Button -->
+                            <div class="form-group">
+                                <div class="col-md-7 col-md-push-3">
+                                    <button type="submit" class="btn btn-primary" data-bind="click: save">
+                                        <i class="fa fa-save"></i> Save
+                                    </button>
+                                </div> <!-- /.col -->
+                            </div>
+                        </form>
+                    </div>
+                </div> <!-- /.portlet-body -->
+            </div>
+        </div>
+    </div>
+</div>

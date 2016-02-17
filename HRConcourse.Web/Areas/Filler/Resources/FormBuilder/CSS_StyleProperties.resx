@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BackgroundAttachment_Help" xml:space="preserve">
+    <value>The background-attachment property sets whether a background image is fixed or scrolls with the rest of the page.</value>
+  </data>
+  <data name="BackgroundColor_Help" xml:space="preserve">
+    <value>The background-color property sets the background color of an element.</value>
+  </data>
+  <data name="BackgroundImage_Help" xml:space="preserve">
+    <value>The background-image property sets the background image for an element. By default, a background-image is placed at the top-left corner of an element, and repeated both vertically and horizontally. Syntax: url(stars.gif)</value>
+  </data>
+  <data name="BackgroundPosition_Help" xml:space="preserve">
+    <value>The background-position property sets the starting position of a background image. Note: For this to work in Firefox and Opera, the background-attachment property must be set to "fixed".</value>
+  </data>
+  <data name="BackgroundRepeat_Help" xml:space="preserve">
+    <value>The background-repeat property sets if/how a background image will be repeated. By default, a background-image is repeated both vertically and horizontally.</value>
+  </data>
+  <data name="Background_Help" xml:space="preserve">
+    <value>The background shorthand property sets all the background properties in one declaration. The properties that can be set, are: background-color, background-position, background-size, background-repeat, background-origin, background-clip, background-attachment, and background-image. Syntax: color position size repeat origin clip attachment image</value>
+  </data>
+  <data name="BorderBottomColor_Help" xml:space="preserve">
+    <value>The border-bottom-color property sets the color of an element's bottom border.</value>
+  </data>
+  <data name="BorderBottomStyle_Help" xml:space="preserve">
+    <value>The border-left-style property sets the style of an element's bottom border.</value>
+  </data>
+  <data name="BorderBottomWidth_Help" xml:space="preserve">
+    <value>The border-right-width property sets the width of an element's bottom border.</value>
+  </data>
+  <data name="BorderColor_Help" xml:space="preserve">
+    <value>The border-color property sets the color of an element's four borders.</value>
+  </data>
+  <data name="BorderLeftColor_Help" xml:space="preserve">
+    <value>The border-left-color property sets the color of an element's left border.</value>
+  </data>
+  <data name="BorderLeftStyle_Help" xml:space="preserve">
+    <value>The border-left-style property sets the style of an element's left border.</value>
+  </data>
+  <data name="BorderLeftWidth_Help" xml:space="preserve">
+    <value>The border-right-width property sets the width of an element's left border.</value>
+  </data>
+  <data name="BorderRightColor_Help" xml:space="preserve">
+    <value>The border-right-color property sets the color of an element's right border.</value>
+  </data>
+  <data name="BorderRightStyle_Help" xml:space="preserve">
+    <value>The border-left-style property sets the style of an element's right border.</value>
+  </data>
+  <data name="BorderRightWidth_Help" xml:space="preserve">
+    <value>The border-right-width property sets the width of an element's right border.</value>
+  </data>
+  <data name="BorderStyle_Help" xml:space="preserve">
+    <value>The border-style property sets the style of an element's four borders.</value>
+  </data>
+  <data name="BorderTopColor_Help" xml:space="preserve">
+    <value>The border-top-color property sets the color of an element's top border.</value>
+  </data>
+  <data name="BorderTopStyle_Help" xml:space="preserve">
+    <value>The border-left-style property sets the style of an element's top border.</value>
+  </data>
+  <data name="BorderTopWidth_Help" xml:space="preserve">
+    <value>The border-right-width property sets the width of an element's top border.</value>
+  </data>
+  <data name="BorderWidth_Help" xml:space="preserve">
+    <value>The border-width property sets the width of an element's four borders. Example: 1px 2px 1px 2px</value>
+  </data>
+  <data name="Border_Help" xml:space="preserve">
+    <value>The border shorthand property sets all the border properties in one declaration. The properties that can be set, are (in order): border-width, border-style, and border-color. Syntax: width style color</value>
+  </data>
+  <data name="Color_Help" xml:space="preserve">
+    <value>The color property specifies the color of text.</value>
+  </data>
+  <data name="Cursor_Help" xml:space="preserve">
+    <value>The cursor property specifies the type of cursor to be displayed when pointing on an element.</value>
+  </data>
+  <data name="Display_Help" xml:space="preserve">
+    <value>The display property defines how a certain HTML element should be displayed.</value>
+  </data>
+  <data name="FontFamily_Help" xml:space="preserve">
+    <value>The font-family property specifies the font for an element. The font-family property can hold several font names as a "fallback" system. If the browser does not support the first font, it tries the next font. If a font name contains white-space, it must be quoted. Single quotes must be used when using the "style" attribute in HTML. Example: "Times New Roman",Georgia,Serif;</value>
+  </data>
+  <data name="FontSize_Help" xml:space="preserve">
+    <value>The font-size property sets the size of a font.</value>
+  </data>
+  <data name="FontStyle_Help" xml:space="preserve">
+    <value>The font-style property specifies the font style for a text.</value>
+  </data>
+  <data name="FontVariant_Help" xml:space="preserve">
+    <value>The font-variant property specifies whether or not a text should be displayed in a small-caps font. In a small-caps font, all lowercase letters are converted to uppercase letters. However, the converted uppercase letters appears in a smaller font size than the original uppercase letters in the text.</value>
+  </data>
+  <data name="FontWeight_Help" xml:space="preserve">
+    <value>The font-weight property sets how thick or thin characters in text should be displayed.</value>
+  </data>
+  <data name="Font_Help" xml:space="preserve">
+    <value>The font shorthand property sets all the font properties in one declaration. The properties that can be set, are (in order): "font-style font-variant font-weight font-size font-family"The font-size and font-family values are required. If one of the other values are missing, the default values will be inserted, if any.</value>
+  </data>
+  <data name="LetterSpacing_Help" xml:space="preserve">
+    <value>The letter-spacing property increases or decreases the space between characters in a text.</value>
+  </data>
+  <data name="Opacity_Help" xml:space="preserve">
+    <value>The opacity property sets the opacity level for an element. From 0.0 (fully transparent) to 1.0 (fully opaque)</value>
+  </data>
+  <data name="OutlineColor_Help" xml:space="preserve">
+    <value>The outline-color property specifies the color of an outline.</value>
+  </data>
+  <data name="OutlineStyle_Help" xml:space="preserve">
+    <value>The outline-style property specifies the style of an outline.</value>
+  </data>
+  <data name="OutlineWidth_Help" xml:space="preserve">
+    <value>The outline-width specifies the width of an outline.</value>
+  </data>
+  <data name="Outline_Help" xml:space="preserve">
+    <value>An outline is a line that is drawn around elements (outside the borders) to make the element "stand out". The outline shorthand property sets all the outline properties in one declaration. The properties that can be set, are (in order): outline-color, outline-style, outline-width. If one of the values above are missing, e.g. "outline:solid #ff0000;", the default value for the missing property will be inserted, if any.</value>
+  </data>
+  <data name="TextAlign_Help" xml:space="preserve">
+    <value>The text-align property specifies the horizontal alignment of text in an element.</value>
+  </data>
+  <data name="TextDecoration_Help" xml:space="preserve">
+    <value>The text-decoration property specifies the decoration added to text.</value>
+  </data>
+  <data name="TextIndent_Help" xml:space="preserve">
+    <value>The text-indent property specifies the indentation of the first line in a text-block.</value>
+  </data>
+  <data name="TextTransform_Help" xml:space="preserve">
+    <value>The text-transform property controls the capitalization of text.</value>
+  </data>
+  <data name="WordSpacing_Help" xml:space="preserve">
+    <value>The word-spacing property increases or decreases the white space between words.</value>
+  </data>
+</root>

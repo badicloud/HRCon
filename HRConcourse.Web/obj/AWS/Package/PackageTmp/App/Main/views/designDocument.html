@@ -1,0 +1,72 @@
+﻿<div class="" style="margin-left: 20px; margin-top: -30px;">
+    <div class="portlet portlet-default documentListPage">
+        <div class="portlet-header">
+            <h4 class="portlet-title">
+                <span data-bind="text: documentInfo().name"></span>
+                <small class="badge badge-primary" role="alert" data-bind="if: documentInfo().isDraft">
+                    You are working with a draft. You can
+                    <a href="#" class="alert-link" style="color: white; text-decoration: underline;" data-bind="click: publishDraft">Publish</a> this draft, or
+                    <a href="#" class="alert-link" style="color: white; text-decoration: underline;">Cancel</a> it.
+                </small>
+            </h4>
+        </div>
+
+        <div class="portlet-body documentList">
+            <!-- Actions -->
+            <div class="designerActions">
+                <label style="margin-left: 6px;">Actions</label>
+
+                <!-- Add page -->
+                <a class="pointer" data-toggle="tooltip" data-placement="top" title="Add Page" data-bind="click: addPage">
+                    <span class="fa-stack">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-plus fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+
+                <!-- Save changes -->
+                <a class="pointer" data-toggle="tooltip" data-placement="top" title="Save Changes" data-bind="click: saveChanges">
+                    <span class="fa-stack">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-save fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+
+                <!-- Refresh -->
+                <a class="pointer" data-toggle="tooltip" data-placement="top" title="Refresh page" data-bind="click: refresh">
+                    <span class="fa-stack">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-refresh fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+
+                <!-- More actions -->
+                <div class="btn-group">
+                    <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a data-bind="click: clearForm"><i class="fa fa-trash-o"></i> Clear Form</a></li>
+                        <li role="separator" class="divider"></li>
+                        <!--<li><a href="#"><i class="fa fa-file-pdf-o"></i> Add more pages from PDF</a></li>
+                        <li><a href="#"><i class="fa fa-file-pdf-o"></i> Upload image from PDF</a></li>
+                        <li><a href="#"><i class="fa fa-file-image-o"></i> Upload image from file</a></li>
+                        <li><a href="#"><i class="fa fa-file-image-o"></i> Download Image</a></li>
+                        <li><a href="#"><i class="fa fa-file-image-o"></i> Remove Image</a></li>-->
+                        <li role="separator" class="divider"></li>
+                        <li><a data-bind="click: removePage"><i class="fa fa-remove"></i> Remove Page</a></li>
+                        <!--<li><a href="#"><i class="fa fa-sort"></i> Manage Pages</a></li>-->
+                    </ul>
+                </div>
+
+                <!-- Pagination -->
+                <div class="btn-group pagination" role="group" data-bind="foreach: documentInfo().pages">
+                    <button type="button" class="btn btn-sm" data-bind="click: $parent.loadPage, css: { 'btn-primary': $parent.isPageActive($data), 'btn-default': !$parent.isPageActive($data) }">
+                        <span data-bind="text: number"></span>
+                    </button>
+                </div>
+            </div>
+
+            <iframe id="myIFrame" data-bind="attr: {src: designerUrl}" width="100%" height="100%" style="height: 160vh;"></iframe>
+
+        </div>
+    </div>
+</div>

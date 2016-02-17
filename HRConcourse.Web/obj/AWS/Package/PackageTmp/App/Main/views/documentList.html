@@ -1,0 +1,124 @@
+﻿
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="portlet portlet-default documentListPage">
+                <div class="portlet-header">
+                    <h4 class="portlet-title">
+                        Documents
+
+                        <!-- Buttons -->
+                        <small class="pull-right">
+                            <!-- Add new -->
+                            <span class="fa-stack fa-lg pointer" data-toggle="tooltip" title="Add New Document" data-bind="click: addDocument">
+                                <i class="fa fa-square-o fa-stack-2x"></i>
+                                <i class="fa fa-plus fa-stack-1x"></i>
+                            </span>
+
+                            <!-- Parse from file -->
+                            <span class="fa-stack fa-lg pointer" data-toggle="tooltip" title="Parse New Document From File">
+                                <i class="fa fa-square-o fa-stack-2x"></i>
+                                <i class="fa fa-folder-open fa-stack-1x"></i>
+                            </span>
+
+                            <!-- Refresh -->
+                            <span class="fa-stack fa-lg pointer" data-toggle="tooltip" title="Refresh" data-bind="click: getDocuments">
+                                <i class="fa fa-square-o fa-stack-2x"></i>
+                                <i class="fa fa-refresh fa-stack-1x"></i>
+                            </span>
+                        </small>
+                    </h4>
+
+                </div> <!-- /.portlet-header -->
+                <!-- Search bar -->
+                <div class="row searchBar">
+                    <div class="col-md-12">
+                        <div class="form-inline">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search" data-bind="value: searchString">
+                                    <div class="input-group-addon"><i class="fa fa-search"></i></div>
+                                </div>
+                            </div>
+                            <div class="checkbox" style="margin-left: 20px;">
+                                <label>
+                                    <input type="checkbox" data-bind="checked: showPublished" /> Show only pending publish
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portlet-body documentList" data-bind="foreach: documents">
+                    <div class="row">
+                        <!-- Thumbnail -->
+                        <div class="col-md-1">
+                            <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTM0IiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDEzNCAxODAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTRmYjhlMDBhYTAgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMHB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNGZiOGUwMGFhMCI+PHJlY3Qgd2lkdGg9IjEzNCIgaGVpZ2h0PSIxODAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI0Mi41IiB5PSI5NC41Ij4xMzR4MTgwPC90ZXh0PjwvZz48L2c+PC9zdmc+" style="height: 100px;">
+                        </div>
+
+                        <!-- Information -->
+                        <div class="col-md-11">
+                            <!-- Title and Revision -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h3>
+                                        <span data-bind="text: name" />
+                                        <small>Rev <span data-bind="text: activeRevisionNumber" /></small>
+                                    </h3>
+                                </div>
+                            </div>
+
+                            <!-- Properties -->
+                            <div class="row">
+                          
+
+                              
+
+                            
+
+                                <div class="col-md-3">
+                                   
+                                    <div>
+                                        <!-- Design -->
+                                        <a data-bind="attr: { href: $parent.designUrl($data) }" data-toggle="tooltip" data-placement="bottom" title="Design Document">
+                                            <span class="fa-stack">
+                                                <i class="fa fa-circle fa-stack-2x"></i>
+                                                <i class="fa fa-paint-brush fa-stack-1x fa-inverse"></i>
+                                            </span>
+                                        </a>
+                                     
+                                        <!-- Edit -->
+                                        <a data-bind="attr: { href: $parent.editUrl($data) }" data-toggle="tooltip" data-placement="bottom" title="Edit Properties">
+                                            <span class="fa-stack">
+                                                <i class="fa fa-circle fa-stack-2x"></i>
+                                                <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                                            </span>
+                                        </a>
+
+                                        <!-- Entries -->
+                                        <a data-bind="attr: { href: $parent.entriesUrl($data) }" data-toggle="tooltip" data-placement="bottom" title="Document Entries">
+                                            <span class="fa-stack">
+                                                <i class="fa fa-circle fa-stack-2x"></i>
+                                                <i class="fa fa-file-text-o fa-stack-1x fa-inverse"></i>
+                                            </span>
+                                        </a>
+
+                                        <!-- Remove -->
+                                        <a href="#documents" data-bind="click: $parent.removeDocument" data-toggle="tooltip" data-placement="bottom" title="Remove Document" style="color: #D60000;">
+                                            <span class="fa-stack">
+                                                <i class="fa fa-circle fa-stack-2x"></i>
+                                                <i class="fa fa-trash fa-stack-1x fa-inverse"></i>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr />
+                </div> <!-- /.portlet-body -->
+            </div>
+        </div>
+    </div>
+</div>

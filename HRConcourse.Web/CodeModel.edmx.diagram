@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="005dbbf6205744dc99550125ea646461" Name="Diagram1">
+        <EntityTypeShape EntityType="HRConcourseCoreModel.C__RefactorLog" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRConcourseCoreModel.ConfigurationValues" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRConcourseCoreModel.EmailAccountDefaults" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRConcourseCoreModel.EmailTemplateFields" Width="1.5" PointX="12" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRConcourseCoreModel.Hiers" Width="1.5" PointX="3" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRConcourseCoreModel.HierTypes" Width="1.5" PointX="0.75" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRConcourseCoreModel.Logger" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRConcourseCoreModel.Modules" Width="1.5" PointX="5.25" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRConcourseCoreModel.ObjRoots" Width="1.5" PointX="7.5" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRConcourseCoreModel.ObjRoots_EmailTemplate" Width="1.5" PointX="9.75" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRConcourseCoreModel.ObjRoots_HierVisualProfile" Width="1.5" PointX="9.75" PointY="26.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRConcourseCoreModel.ObjRoots_MailBoxes" Width="1.5" PointX="9.75" PointY="29.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRConcourseCoreModel.ObjRoots_SLMessage" Width="1.5" PointX="9.75" PointY="33.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRConcourseCoreModel.ObjRoots_TemplateCategoryDefaults" Width="1.5" PointX="13" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRConcourseCoreModel.ProfileProperties" Width="1.5" PointX="7.5" PointY="29.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRConcourseCoreModel.Roles" Width="1.5" PointX="8.25" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRConcourseCoreModel.uScriptAllText" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRConcourseCoreModel.UserHierRoles" Width="1.5" PointX="10.5" PointY="22.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRConcourseCoreModel.UserModules" Width="1.5" PointX="7.5" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRConcourseCoreModel.Users" Width="1.5" PointX="5.25" PointY="28.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRConcourseCoreModel.UserVisitedURLs" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="HRConcourseCoreModel.FK_EmailTemplate_EmailTemplateFields" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseCoreModel.FK_HierHier" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseCoreModel.FK_HierObjRoot" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseCoreModel.FK_HierTypeHiers" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseCoreModel.FK_UserHier" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseCoreModel.FK_UserHierRoleHier" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseCoreModel.FK_ModuleUserModule" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseCoreModel.FK__ObjRoots_TemplateCategoryDefaults_ObjRoots" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseCoreModel.FK_EmailTemplate_inherits_ObjRoot" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseCoreModel.FK_HierVisualProfile_inherits_ObjRoot" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseCoreModel.FK_ObjRoots_MailBoxes_ObjRoots" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseCoreModel.FK_SLMessage_inherits_ObjRoot" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseCoreModel.FK_UserObjRoot" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseCoreModel.FK__ObjRoots_TemplateCategoryDefaults_ObjRoots_Mailboxes" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseCoreModel.FK_UserProfileProperties" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseCoreModel.FK_UserHierRoleRole" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseCoreModel.FK_UserHierRoleUser" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseCoreModel.FK_UserUserModule" ManuallyRouted="false" />
+        <AssociationConnector Association="HRConcourseCoreModel.HierModules" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

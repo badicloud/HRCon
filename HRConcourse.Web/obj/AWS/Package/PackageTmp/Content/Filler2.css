@@ -1,0 +1,806 @@
+﻿html, body {
+   margin:0;
+   padding:0;
+   height:100%;
+}
+
+body {
+  font-family: "Droid Sans";
+}
+
+a:link
+{
+    /* Applies to all unvisited links */
+    text-decoration: none;
+}
+
+a:visited
+{
+    /* Applies to all visited links */
+    text-decoration: none;
+    color: Blue;
+}
+
+a:hover
+{
+    /* Applies to links under the pointer */ /*font-weight: bold;*/
+}
+
+a:active
+{
+    /* Applies to activated links */
+    text-decoration: underline;
+}
+
+.centerDiv
+{
+    margin: 0px auto;
+    width: 1400px;
+}
+
+#header
+{
+    font-size: x-large;
+    font-weight: bolder;
+    margin-bottom: 8px;
+}
+
+#fullLine
+{
+    background: #3b538f;
+    background: -moz-linear-gradient(top, #2676ab 0%, #3b538f 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2676ab), color-stop(100%, #3b538f));
+    background: -webkit-linear-gradient(top, #2676ab 0%, #3b538f 100%);
+    background: -o-linear-gradient(top, #2676ab 0%, #3b538f 100%);
+    background: -ms-linear-gradient(top, #2676ab 0%, #3b538f 100%);
+    background: linear-gradient(top, #2676ab 0%, #3b538f 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=#2676ab, endColorstr=#3b538f,GradientType=0 );
+    height: 6px;
+    margin-bottom: 5px;
+}
+
+
+#documentsMenu
+{
+    width: 180px;
+    float: left;
+    margin-top: 5px;
+    margin-right: 24px;
+}
+
+#welcomeSection
+{
+    font-size: medium;
+}
+
+#mainDiv
+{
+    width: 1200px;
+    float: left;
+}
+
+#documentSliderContainer
+{
+    width: 980px;
+    float: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.subTitle
+{
+    font-family: "Droid Sans",Arial,Verdana,sans-serif;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    font-size: medium;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.shadowBoxContainer
+{
+    background-color: White;
+    padding-bottom: 15px;
+    
+    -webkit-box-shadow: 0 0.3em 0.8em #035677;
+    -moz-box-shadow: 0 0.3em 0.8em #035677;
+    box-shadow: 0 0.3em 0.8em #035677;
+    filter: 
+      progid:DXImageTransform.Microsoft.Shadow(color=#035677,direction=0,strength=1), 
+      progid:DXImageTransform.Microsoft.Shadow(color=#035677,direction=45,strength=2), 
+      progid:DXImageTransform.Microsoft.Shadow(color=#035677,direction=90,strength=3), 
+      progid:DXImageTransform.Microsoft.Shadow(color=#035677,direction=135,strength=3), 
+      progid:DXImageTransform.Microsoft.Shadow(color=#035677,direction=180,strength=10), 
+      progid:DXImageTransform.Microsoft.Shadow(color=#035677,direction=225,strength=3), 
+      progid:DXImageTransform.Microsoft.Shadow(color=#035677,direction=270,strength=3), 
+      progid:DXImageTransform.Microsoft.Shadow(color=#035677,direction=315,strength=1);
+}
+ body:last-child .shadowBoxContainer {
+    /* Remove filter from IE9 */
+    filter: none;
+}
+
+.centeredTableOutterBox
+{
+    display: table;
+    width: 100%;
+}
+
+.centeredTableInnerBox
+{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#documentsTitle, #actionsTitle
+{
+    font-family: "Droid Sans",Arial,Verdana,sans-serif;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    font-size: large;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #808080;
+}
+
+#actionsTitle
+{
+    margin-top: 30px;
+}
+
+#legendTitle
+{
+    font-family: "Droid Sans",Arial,Verdana,sans-serif;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    font-size: x-large;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #808080;
+}
+
+.docName
+{
+    cursor: pointer;
+    font-family: "Droid Sans",Arial,Verdana,sans-serif;
+    font-size: 11px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #B3B3B3;
+}
+
+    .docName a img
+    {
+        height: 0;
+        width: 0;
+        border-width: 0;
+    }
+
+    .docName a:hover img
+    {
+        height: auto;
+        width: auto;
+    }
+
+
+#backArrow, #nextArrow, #skipArrow
+{
+    cursor: pointer;
+}
+
+
+/* main vertical scroll */
+#main
+{
+    position: relative;
+    overflow: hidden;
+}
+
+/* root element for pages */
+#panels
+{
+    float: left;
+}
+
+/* root element for horizontal scrollables */
+.scrollable
+{
+    clear: both;
+    position: relative;
+    overflow-x: hidden;
+    width: 984px;
+    padding: 5px;
+}
+
+/* root element for scrollable items */
+.scrollable .items
+{
+    width: 20000em;
+    position: relative;
+    clear: both;
+}
+
+.panel
+{
+    width: 984px;
+}
+
+.panel li
+{
+    cursor: pointer;
+    margin: 10px 5px;
+}
+
+.panel li p
+{
+    color: Blue;
+    text-decoration: underline;
+}
+
+
+
+.horizontalNavlist li
+{
+    display: inline;
+    list-style-type: none;
+}
+
+.item
+{
+    float: left;
+    width: 970px;
+    margin-right: 20px;
+}
+
+.navi
+{
+    margin: 5px auto;
+    height: 28px;
+    display: table;
+    max-width: 780px;
+}
+
+
+.activeDocument
+{
+    height: 25px;
+    padding-left: 11px;
+    padding-top: 4px;
+    color: White;
+    background-image: url('../Images/doc_name_background.png');
+    background-repeat: repeat-x;
+}
+
+.docNameArrow
+{
+    display: none;
+    float: right;
+    position: relative;
+    right: -15px;
+    top: -4px;
+}
+
+.activeDocument .docNameArrow
+{
+    display: block;
+}
+
+
+
+
+/** Page instance section **/
+#documentFillPlace
+{
+    margin-bottom: 20px;
+    position: relative;
+    min-height: 800px;
+    z-index: 0;
+    
+    background-color: white;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .25);
+    -moz-box-shadow: 0 0 6px rgba(0, 0, 0, .25);
+    -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, .25);
+    -ms-box-shadow: 0 0 6px rgba(0, 0, 0, .25);
+}
+
+.TTWForm {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+/** Page instances fields **/
+.TTWForm .field
+{
+    position: absolute;
+    padding: 8px 28px 8px 8px;
+    clear: both;
+    width: 160px;
+}
+
+.TTWForm input, .TTWForm textarea, .TTWForm select, .TTWForm canvas
+{
+    width: 100%;
+    font-family: Helvetica Neue, "Arial", Helvetica, Verdana, sans-serif;
+    outline: none;
+    display: inline-block;
+    position: relative;
+    padding: 1px 0px;
+    margin: 2px 0px;
+    z-index: 2;
+    background: #E8F9F7;
+    border: 1px solid #CCC;
+    -moz-border-radius: 3px;
+}
+
+.TTWForm input[readonly] {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+.TTWForm .option
+{
+    padding: 3px;
+    width: 40px;
+}
+
+.TTWForm select
+{
+    width: 100%;
+}
+
+.TTWForm canvas
+{
+    margin: 0px;
+    height: 100%;
+}
+.TTWForm label {
+    display: block;
+    color: black;
+    text-align: left;
+    font: 16px/24px Helvetica Neue, "Arial", Helvetica, Verdana, sans-serif;
+    line-height: 100%;
+}
+.TTWForm canvas.pad
+{
+    cursor: url(pen.cur) 16 16, default;
+}
+
+.TTWForm canvas.pad.disabled {
+    cursor: default;
+    background: transparent;
+    border: 1px solid transparent;
+}
+
+.TTWForm div.field.sigPad .clearButton
+{
+    position: absolute;
+    z-index: 5;
+    width: 12px;
+    height: 12px;
+    padding: 2px;
+    display: block;
+    float: right;
+    cursor: pointer;
+    background-image: url(Images/ui-icons_454545_256x240.png);
+    background-position: -32px -192px;
+    opacity: .8;
+}
+
+.TTWForm div.field.sigPad .clearButton:hover
+{
+    opacity: 1;
+}
+
+
+.clearfix:after
+{
+    clear: both;
+    content: ' ';
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
+
+
+.error
+{
+    height: 15px;
+    background-color: #FA94D8;
+    font-size: 11px;
+    border: 1px solid #EE34B0;
+    padding: 4px 10px;
+    color: black;
+    display: none;
+    margin: 0 0 2px;
+    padding: 2px 6px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius-bottomleft: 0;
+    -moz-border-radius-topleft: 0;
+    -webkit-border-bottom-left-radius: 0;
+    -webkit-border-top-left-radius: 0;
+    -moz-box-shadow: 0 0 6px #ddd;
+    -webkit-box-shadow: 0 0 6px #ddd;
+    border-image: initial;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+}
+
+.error em
+{
+    display: block;
+    width: 0;
+    height: 0;
+    border: 10px solid;
+    position: absolute;
+    bottom: -17px;
+    left: 40px;
+    border-image: initial;
+    border-color: #FA94D8 transparent transparent;
+}
+
+.TTWForm div.field.errorField {
+    padding: 7px 27px 7px 7px;
+}
+
+.TTWForm div.field.checkbox-group.errorField .option, .TTWForm div.field.radio-group.errorField .option {  
+    padding-top: 4px;
+    padding-left: 4px;
+}
+
+div.field.errorField input, div.field.errorField canvas
+{
+    border: 2px solid red !important;
+}
+
+div.field.radio-group.errorField span, div.field.checkbox-group.errorField span
+{
+    background-image: url(FormBuilder/Themes/aristo/images/sprite-errors.png);
+}
+
+
+
+#formErrors
+{
+    padding: 15px 10px 15px 50px;
+    font-size: 14px;
+}
+
+#formErrors p
+{
+    margin: 0;
+    line-height: 1.5;
+}
+
+
+/** Modal **/
+
+.modal-box, .ui-dialog
+{
+    display: block;
+    width: 560px;
+    position: absolute;
+    top: -310px;
+    left: 170px;
+    padding: 0;
+    background: #eee; /* old browsers */
+    background: -moz-linear-gradient(top, #FFFFFF 0%, #F7F7F7 3%, #ffffff 43%, #F2F2F2 99%); /* firefox */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #FFFFFF), color-stop(3%, #F7F7F7), color-stop(43%, #ffffff), color-stop(99%, #F2F2F2)); /* webkit */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#FFFFFF', endColorstr = '#F2F2F2', GradientType = 0); /* ie */
+    box-shadow: 0px 0px 6px #666;
+    -moz-box-shadow: 0px 0px 6px #666;
+    -webkit-box-shadow: 0px 0px 6px #666;
+    -ms-box-shadow: 0px 0px 6px #666;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -ms-border-radius: 6px;
+}
+
+
+/* tooltip styling. by default the element to be styled is .tooltip  */
+.tooltip
+{
+    background-color: #000;
+    border: 1px solid #fff;
+    padding: 10px 15px;
+    width: 200px;
+    display: none;
+    color: #fff;
+    text-align: left;
+    font-size: 12px;
+    z-index: 15;
+    -box-shadow: 0 0 10px #000;
+    -moz-box-shadow: 0 0 10px #000;
+    -webkit-box-shadow: 0 0 10px #000;
+    -ms-box-shadow: 0 0 10px #000;
+}
+
+
+/* loading dialog */
+#loading, #submitting
+{
+    /*position: absolute;
+	top: 300px;
+	left: 600px;*/
+    display: none;
+    z-index: 15;
+    background: whitesmoke;
+    width: 145px;
+    height: 20px;
+    border: 2px solid darkBlue;
+    vertical-align: middle;
+    padding: 5px 18px;
+    margin: auto;
+}
+
+div.docTitle
+{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+div.activeDocument div.docTitle
+{
+    float: left;
+    width: 144px;
+}
+
+#documentListContainer div.activeDocument div.docTitle
+{
+    position: relative;
+    top: 3px;
+}
+
+#thankyou
+{
+    width: 600px;
+    height: 300px;
+    margin: 100px auto;
+    -webkit-box-shadow: 0 0.3em 0.8em #035677;
+    -moz-box-shadow: 0 0.3em 0.8em #035677;
+    box-shadow: 0 0.3em 0.8em #035677;
+    vertical-align: middle;
+}
+
+    #thankyou #message
+    {
+        width: 380px;
+        height: 20px;
+        margin: 100px auto;
+        font-weight: bold;
+        font-size: 24px;
+    }
+
+ul.groupDocSelection
+{
+    width: 300px;
+    margin: 0px auto 20px auto;
+    list-style: none;
+    padding: 1em;
+}
+
+ul.groupDocSelection li
+{
+    margin: 5px;
+    /*text-align: center;*/
+    height: 30px;
+    border: 1px solid #CCC;
+    
+    -webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+    -ms-border-radius:8px;
+    -o-border-radius:8px;
+	border-radius: 8px;
+    -khtml-border-radius: 8px;
+    
+    background: #f8f8f8;
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#FDFDFD),to(#EEE));
+    background-image: -webkit-linear-gradient(#FDFDFD,#EEE);
+    background-image: -moz-linear-gradient(#FDFDFD,#EEE);
+    background-image: -ms-linear-gradient(#FDFDFD,#EEE);
+    background-image: -o-linear-gradient(#FDFDFD,#EEE);
+    background-image: linear-gradient(#FDFDFD,#EEE);
+}
+
+
+ul.groupDocSelection li:hover
+{
+    border: 1px solid #BBB;
+    text-shadow: 0 1px 1px white;
+    
+    background: #e4e4e4;
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#EDEDED),to(#DADADA));
+    background-image: -webkit-linear-gradient(#EDEDED,#DADADA);
+    background-image: -moz-linear-gradient(#EDEDED,#DADADA);
+    background-image: -ms-linear-gradient(#EDEDED,#DADADA);
+    background-image: -o-linear-gradient(#EDEDED,#DADADA);
+    background-image: linear-gradient(#EDEDED,#DADADA);
+}
+
+ul.groupDocSelection span
+{
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-left: 7px;
+    background-color: rgb(146, 146, 146);
+}
+
+ul.groupDocSelection div.groupDocSelected span
+{
+    background-color: #4596CE;
+    background-image: url('../Images/icons-18-white.png');
+    background-repeat: no-repeat;
+    background-position: -648px 50%;
+}
+
+ul.groupDocSelection p
+{
+    margin-top: 7px;
+    margin-left: 40px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    color: black;
+    text-decoration: none;
+}
+
+.continueButton
+{
+    max-width: 208px;
+    height: 50px;
+    padding: 0px 8px;
+    color: gray;
+    margin: auto;
+    cursor: pointer;
+    
+    border: 1px solid lightgray;
+    
+    -webkit-border-radius: 9px;
+	-moz-border-radius: 9px;
+    -ms-border-radius: 9px;
+    -o-border-radius: 9px;
+	border-radius: 9px;
+    -khtml-border-radius: 9px;
+    
+    background-color: #f3f3f3;
+    background: linear-gradient(top, #FFFFFF 0%,#E3E3E3 100%);
+    background: -moz-linear-gradient(top, #FFFFFF 0%, #E3E3E3 100%);
+    background: -ms-linear-gradient(top, #FFFFFF 0%,#E3E3E3 100%);
+    background: -o-linear-gradient(top, #FFFFFF 0%,#E3E3E3 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFFFFF), color-stop(100%,#E3E3E3));
+    background: -webkit-linear-gradient(top, #FFFFFF 0%,#E3E3E3 100%);
+    -pie-background: linear-gradient(#FFFFFF, #E3E3E3);
+}
+
+div.continueButton p
+{
+    float: left;
+    margin-right: 15px;
+}
+
+div.continueButton img
+{
+    margin-top: 14px;
+}
+
+div.continueButton.continueEnabled
+{
+    color: Black;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .25);
+    -moz-box-shadow: 0 0 6px rgba(0, 0, 0, .25);
+    -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, .25);
+    -ms-box-shadow: 0 0 6px rgba(0, 0, 0, .25);
+}
+
+div.changeSelection
+{
+    cursor: pointer;
+    float: right;
+    border: 1px solid darkGray;
+    padding: 4px;
+    text-align: center;
+    width: 180px;
+}
+
+.optionActionBttn, .t-button.t-upload-button
+{
+    max-width: 212px;
+    height: 26px;
+    padding: 6px 8px;
+    margin-left: 39px;
+    color: Black;
+    cursor: pointer;
+    border: 1px solid lightgray;
+    border-radius: 9px;
+    -moz-border-radius: 9px;
+    -webkit-border-radius: 9px;
+    -ms-border-radius: 9px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .25);
+    -moz-box-shadow: 0 0 6px rgba(0, 0, 0, .25);
+    -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, .25);
+    -ms-box-shadow: 0 0 6px rgba(0, 0, 0, .25);
+    background: linear-gradient(top, #FFFFFF 0%,#E3E3E3 100%);
+    background: -moz-linear-gradient(top, #FFFFFF 0%, #E3E3E3 100%);
+    background: -ms-linear-gradient(top, #FFFFFF 0%,#E3E3E3 100%);
+    background: -o-linear-gradient(top, #FFFFFF 0%,#E3E3E3 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFFFFF), color-stop(100%,#E3E3E3));
+    background: -webkit-linear-gradient(top, #FFFFFF 0%,#E3E3E3 100%);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#E3E3E3',GradientType=0 )";
+    -pie-background: linear-gradient(#FFFFFF, #E3E3E3);
+}
+
+div.optionActionBttn span
+{
+    float: left;
+    margin-top: 2px;
+}
+
+div.optionActionBttn p
+{
+    margin-left: 35px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+a.optionActionBttn {
+    padding: 11px 8px;
+}
+
+a.optionActionBttn:visited, a.optionActionBttn:active {
+    text-decoration: none;
+    color: black;
+}
+
+/* telerik upload style */
+div.t-widget.t-upload div.t-dropzone em
+{
+    display: none;
+}
+
+.t-widget.t-upload .t-dropzone
+{
+    padding: 0px;
+}
+
+.t-button.t-upload-button
+{
+    text-align: left;
+    width: 212px;
+    display: block;
+}
+
+.t-button.t-upload-button:hover
+{
+    background: linear-gradient(top, #FFFFFF 0%,#E3E3E3 100%);
+    background: -moz-linear-gradient(top, #FFFFFF 0%, #E3E3E3 100%);
+    background: -ms-linear-gradient(top, #FFFFFF 0%,#E3E3E3 100%);
+    background: -o-linear-gradient(top, #FFFFFF 0%,#E3E3E3 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFFFFF), color-stop(100%,#E3E3E3));
+    background: -webkit-linear-gradient(top, #FFFFFF 0%,#E3E3E3 100%);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#E3E3E3',GradientType=0 )";
+    -pie-background: linear-gradient(#FFFFFF, #E3E3E3);
+}
+
+.t-button.t-upload-button span.uploadName
+{
+    margin-left: 13px;
+    position: relative;
+    top: 3px;
+}
+
+/* Requires HS page sprite */
+.sprite-one{ background: url('../Images/requiresHS_sprite.png') no-repeat top left; background-position: 0 0; width: 24px; height: 24px; } 
+.sprite-printDocument{ background: url('../Images/requiresHS_sprite.png') no-repeat top left; background-position: 0 -74px; width: 21px; height: 21px; } 
+.sprite-two{ background: url('../Images/requiresHS_sprite.png') no-repeat top left; background-position: 0 -145px; width: 24px; height: 24px; } 
+.sprite-uploadDocument{ background: url('../Images/requiresHS_sprite.png') no-repeat top left; background-position: 0 -219px; width: 21px; height: 21px; } 

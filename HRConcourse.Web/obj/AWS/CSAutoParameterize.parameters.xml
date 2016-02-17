@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="HRConcourseDCEntities-Web.config Connection String" description="HRConcourseDCEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/cor.OldModel.csdl|res://*/cor.OldModel.ssdl|res://*/cor.OldModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|hrcback_Data.mdf;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\workspaces2\\Source\\HRConcourse\.Web\\obj\\AWS\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='HRConcourseDCEntities']/@connectionString" />
+  </parameter>
+  <parameter name="HRConcourseCoreEntities-Web.config Connection String" description="HRConcourseCoreEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/CodeModel.csdl|res://*/CodeModel.ssdl|res://*/CodeModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|hrccore_back_Data.mdf;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\workspaces2\\Source\\HRConcourse\.Web\\obj\\AWS\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='HRConcourseCoreEntities']/@connectionString" />
+  </parameter>
+  <parameter name="Default-Web.config Connection String" description="Default Connection String used in web.config by the application to access the database." defaultValue="Data Source=hrc2.caqaphborw01.us-west-2.rds.amazonaws.com,1433;initial catalog=HRConcourse;persist security info=True;user id=hrconcourse;password=M49Q23623sNyS;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\workspaces2\\Source\\HRConcourse\.Web\\obj\\AWS\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Default']/@connectionString" />
+  </parameter>
+</parameters>

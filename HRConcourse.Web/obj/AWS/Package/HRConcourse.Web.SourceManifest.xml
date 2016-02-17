@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="C:\workspaces2\Source\HRConcourse.Web\obj\AWS\Package\PackageTmp" />
+  <setAcl path="C:\workspaces2\Source\HRConcourse.Web\obj\AWS\Package\PackageTmp" setAclResourceType="Directory" />
+  <setAcl path="C:\workspaces2\Source\HRConcourse.Web\obj\AWS\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
+  <setAcl path="C:\workspaces2\Source\HRConcourse.Web\obj\AWS\Package\PackageTmp\App_Data" setAclResourceType="Directory" setAclAccess="Write" />
+</sitemanifest>

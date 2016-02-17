@@ -1,0 +1,9 @@
+﻿/* CSS Document */
+@page 
+{
+    margin: 1mm;
+}
+
+body { background:none; width: 975px;}
+#header { display:none; }
+#mainContent { display:none; }

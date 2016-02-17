@@ -1,0 +1,1284 @@
+
+html{
+    overflow-y: scroll;
+}
+body {
+    background: #EAEAEA url(../../Images/grid13.png) repeat 0 0 scroll;
+}
+
+#byline {
+    display: block;
+    clear: both;
+    text-align: right;
+    color: #9a9a9a;
+    text-shadow: 0 1px 0 #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#byline:hover {
+    color: #F72837;
+}
+
+.wrapper {
+    width: 1400px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#header {
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    z-index: 2;
+}
+
+#menu 
+{
+    position: fixed;
+    margin-left: 1000px;
+    width: 350px;
+    
+    /*float: right;
+    top: 0px;
+    right: 50px;*/
+}
+
+#testSubmit 
+{
+    display: none;
+}
+
+#clear, #clear-image, #download, #preview, #help, #save, #testSubmit {
+    float: right;
+    bottom: 0;
+    /*display: block;*/
+    margin-right: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    position: relative;
+    top: 2px;
+    background: transparent url(../../Images/button-overlay.png) repeat-x 0 0 scroll;
+    color: #fff;
+    background-color: #a0a0a0;
+    border-radius: 14px;
+    border-width: 1px;
+    border-style: solid;
+    font-size: 11px;
+    padding: 0 12px;
+    border-color: rgba(0, 0, 0, 0.20);
+    -moz-border-radius: 14px;
+    -webkit-border-radius: 14px;
+    -ms-border-radius: 14px;
+    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    -ms-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+#clear span, #clear-image span, #help span, #download span, #preview span, #save span, #testSubmit span {
+    padding: 8px 0;
+    position: relative;
+    top: -1px;
+    border-radius: 13;
+    -moz-border-radius: 13;
+    -webkit-border-radius: 13;
+    -ms-border-radius: 13;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    display: block;
+    line-height: 1;
+}
+
+#download {
+    border: 1px solid #DA1B28;
+    background-color: #F72837;
+}
+
+#clear:hover, #clear-image:hover, #download:hover, #preview:hover, #help:hover, #save:hover, #testSubmit:hover {
+    color: #fff;
+    border-radius: 14px;
+    -moz-border-radius: 14px;
+    -webkit-border-radius: 14px;
+    -ms-border-radius: 14px;
+    background-color: #afafaf;
+}
+
+#download:hover {
+    background-color: #cd1a27;
+}
+
+#help {
+    border-radius: 14px;
+    -webkit-border-radius: 14px;
+    -moz-border-radius: 14px;
+    -ms-border-radius: 14px;
+    bottom: 0;
+    display: block;
+    float: right;
+    font-weight: bold;
+    height: 23px;
+    padding: 5px 0 0;
+    text-align: center;
+    width: 28px;
+    margin-right: 0;
+}
+
+#help:hover {
+    border-radius: 14px;
+    -webkit-border-radius: 14px;
+    -moz-border-radius: 14px;
+    -ms-border-radius: 14px;
+}
+
+
+/** Download Form Dialog Box */
+#get-form {
+    width: 326px !important;
+}
+
+.form-format {
+    width: 107px;
+    float: left;
+    cursor: pointer;
+    margin: 24px 48px 24px 32px;
+    text-align: center;
+    font-size: 14px;
+    color: #000;
+    opacity: .8;
+}
+
+.form-format img {
+    display: block;
+    margin-bottom: 9px;
+}
+
+.form-format:last-child {
+    margin-left: 0;
+    margin-right: 32px;
+}
+
+.form-format:hover {
+    opacity: 1;
+}
+
+/** Main Controls - ie, add field buttons **/
+
+.controls, .actions {
+    width: 420px;
+    height: 32px;
+    margin-left: 410px;
+    
+    /*overflow: hidden;*/
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -ms-border-radius: 4px;
+    position: fixed;
+    z-index: 1;
+    background: #F8F8F8; /* old browsers */
+    background: -moz-linear-gradient(left, #F8F8F8 1%, #FFFFFF 4%, #FFFFFF 97%, #F8F8F8 100%); /* firefox */
+    background: -webkit-gradient(linear, left top, right top, color-stop(1%, #F8F8F8), color-stop(4%, #FFFFFF), color-stop(97%, #FFFFFF), color-stop(100%, #F8F8F8)); /* webkit */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#F8F8F8', endColorstr = '#F8F8F8', GradientType = 1); /* ie */
+    box-shadow: 0 1px 0px rgba(0, 0, 0, 0.42);
+    -moz-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.42);
+    -webkit-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.42);
+    -ms-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.42);
+}
+
+.actions {
+    width: 84px;
+    margin-left: 840px;
+}
+
+#controls-top, #controls-bottom {
+    height: 7px;
+    padding: 0 2px 0 2px;
+    position: relative;
+    width: 213px;
+}
+
+#controls .title {
+    background: transparent url(../../Images/controls-section-header.png) repeat-x 0 0 scroll;
+    height: 18px;
+    padding: 2px 12px;
+}
+
+#controls ul, #actions ul
+{
+    position: relative;
+    top: 5px;
+    padding: 0;
+    margin: 0;
+    display: inline;
+}
+
+#controls ul li, #actions ul li {
+    border-right: 1px solid #e6e4e4;
+    color: #666;
+    font-size: 14px;
+    height: 24px;
+    list-style: none outside none;
+    padding: 2px 7px 2px 10px;
+    cursor: pointer;
+    text-shadow: 0 1px 0 #fff;
+    position: relative;
+    display: inline;
+}
+
+#controls ul li:hover, #actions ul li:hover {
+    color: #444;
+    text-shadow: 0 1px 0 #fff;
+    background: #f8fbff;
+}
+
+#controls ul li img, #actions ul li img
+{
+    position: relative;
+    top: 3px;
+    margin-right: 5px;
+}
+
+#controls ul li span, #actions ul li span {
+    height: 16px;
+    width: 16px;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    margin-top: -8px;
+    right: 24px;
+    background-position: 0 0;
+}
+
+#controls ul li:hover span, #actions ul li:hover span {
+    background: transparent url(../../Images/plus_16.png) no-repeat center center scroll;
+}
+
+
+
+/* tooltip styling. by default the element to be styled is .tooltip  */
+.tooltip 
+{
+    background-color:#000;
+    border:1px solid #fff;
+    padding:10px 15px;
+    width:200px;
+    display:none;
+    color:#fff;
+    text-align:left;
+    font-size:12px;
+    
+    -box-shadow: 0 0 10px #000;
+    -moz-box-shadow:0 0 10px #000;
+    -webkit-box-shadow:0 0 10px #000;
+    -ms-box-shadow: 0 0 10px #000;
+    
+    /*display:none;
+    background:transparent url(../../Images/black_arrow.png);
+    font-size:12px;
+    height:70px;
+    width:160px;
+    padding:25px;
+    color:#fff;	*/
+}
+
+
+
+/** Error messages div **/
+.errorContainter {
+    margin-left: 400px;
+    width: 970px;
+}
+
+
+/** Work Area and Form Builder **/
+
+#work-container {
+    margin-left: 400px;
+    margin-bottom: 15px;
+    position: relative;
+    float: left;   
+}
+
+#work-area {
+    width: 970px;
+    float: left;
+    background-color: #fff;
+    position: relative;
+    z-index: 0;
+    margin-right: 40px;
+    min-height: 826px;
+    padding: 2px;
+    
+    box-shadow: 0 0 6px rgba(0, 0, 0, .25);
+    -moz-box-shadow: 0 0 6px rgba(0, 0, 0, .25);
+    -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, .25);
+    -ms-box-shadow: 0 0 6px rgba(0, 0, 0, .25);
+}
+
+#work-area.droppableActive 
+{
+    border: 2px solid #89AEF0;
+    padding: 0px;
+}
+
+#form-builder {
+    min-height: 826px;
+    border-radius: 12px;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+}
+
+
+#form-preview {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+#form-preview .field 
+{
+    position: absolute;
+    padding: 8px 28px 8px 8px;
+    width: 160px;
+    /*
+    opacity: 0;
+    padding: 0px;
+    font-weight: bold;
+    font-size: medium;
+    color: black;
+*/
+}
+
+#form-preview .field.radio-group, #form-preview .field.checkbox-group
+{
+    width: auto;
+}
+
+/*#form-preview .submit {
+    right: -65px;
+    top: -15px;
+}*/
+
+#form-preview .field .option
+{
+    padding: 3px;
+    width: 40px;
+}
+
+#form-preview .field .option:hover
+{
+    border: 1px dashed black;
+    padding: 2px;
+}
+
+#form-preview .field:hover, #form-title:hover {
+    padding: 7px 27px 7px 7px !important;
+    cursor: move;
+    
+    border: 1px dotted blue;
+    background: rgba(54, 54, 244,0.1);
+    
+    /*border: 1px solid #DDD;
+    background-color: #F4F4F4;
+    background-image: -webkit-linear-gradient(top,#fff,#f4f4f4);
+    background-image: -moz-linear-gradient(top,#fff,#f4f4f4);
+    background-image: -ms-linear-gradient(top,#fff,#f4f4f4);
+    background-image: -o-linear-gradient(top,#fff,#f4f4f4);
+    background-image: linear-gradient(top,#fff,#f4f4f4);*/
+    
+    
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+}
+
+#form-preview .field.selectedField {
+    padding: 7px 27px 7px 7px !important;
+    cursor: move;
+    z-index: 50;
+    border: 1px dotted blue;
+    background: rgba(54, 54, 244,0.1);
+    
+    /*border: 1px solid #AAA;
+    background-color: #F4F4F4;
+    background-image: -webkit-linear-gradient(top,#fff,#f4f4f4);
+    background-image: -moz-linear-gradient(top,#fff,#f4f4f4);
+    background-image: -ms-linear-gradient(top,#fff,#f4f4f4);
+    background-image: -o-linear-gradient(top,#fff,#f4f4f4);
+    background-image: linear-gradient(top,#fff,#f4f4f4);*/
+    
+    
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+}
+
+/* Make the field background transparent when dragging or resizing */
+#form-preview .field.ui-draggable-dragging:hover, #form-preview field.selectedField.ui-draggable-dragging, #form-preview .field.ui-resizable-resizing:hover, #form-preview field.selectedField.ui-resizable-resizing {
+    background-color: rgba(54,54,255,0.1);
+    background-image: none;
+}
+
+
+
+#form-title:hover {
+    cursor: default;
+}
+ 
+#builder {
+    width: 500px;
+    margin-left: 24px;
+}
+
+#builder ul {
+    margin: 0;
+    padding: 0;
+}
+
+#builder li {
+    border-radius: 6px 6px 6px 6px;
+    -moz-border-radius: 6px 6px 6px 6px;
+    -webkit-border-radius: 6px 6px 6px 6px;
+    -ms-border-radius: 6px 6px 6px 6px;
+    border: 1px solid #CCCCCC;
+    cursor: pointer;
+    display: block;
+    float: left;
+    list-style: none outside none;
+    padding: 0 6px;
+    width: 100%;
+}
+
+#builder li:hover {
+    border: 1px solid #000;
+}
+
+#form-output {
+    display: none;
+}
+
+#notification {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 150px;
+    margin-left: -75px;
+    z-index: 99999;
+    padding: 6px;
+    background: #fafad9;
+    color: #444;
+    display: none;
+    opacity: 0;
+    border-width: 0 1px 1px 1px;
+    border-style: solid;
+    border-color: #d9db7e;
+    border-radius: 0 0 6px 6px;
+    -moz-border-radius: 0 0 6px 6px;
+    -webkit-border-radius: 0 0 6px 6px;
+    -ms-border-radius: 0 0 6px 6px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/** Form Preview Mode **/
+.preview-mode #form-preview .field:hover, .preview-mode #form-title:hover {
+    border: none;
+    padding: 8px 56px 8px 8px !important;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    cursor: default;
+    
+    background-color: rgba(255,255,255,0);
+    background-image: none;
+}
+
+.preview-mode #form-preview .field .option 
+{
+    border: none;
+    padding: 3px !important;
+}
+
+.preview-mode #form-preview .submit:hover {
+    padding: 8px 56px 8px 8px !important;
+}
+
+.preview-mode .field:hover .field-actions {
+    display: none;
+}
+
+.preview-mode .field:hover .ui-resizable-se {
+    display: none !important;
+}
+
+
+/*   Custom user jQuery code area   
+#custom-jquery-code 
+{
+    width: 970px;
+    margin-left: 400px;
+    margin-bottom: 20px;
+}
+
+#custom-jquery-code textarea
+{
+    width: 965px;
+    resize: none;
+}*/
+
+
+/* error message */
+.error {
+    height:15px;
+    background-color:#FA94D8;
+    font-size:11px;
+    border:1px solid #EE34B0;
+    padding:4px 10px;
+    color:#000;
+    display:none;	
+    
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px; 
+    -moz-border-radius-bottomleft:0;
+    -moz-border-radius-topleft:0;	
+    -webkit-border-bottom-left-radius:0; 
+    -webkit-border-top-left-radius:0;
+    
+    -moz-box-shadow:0 0 6px #ddd;
+    -webkit-box-shadow:0 0 6px #ddd;	
+}
+
+.error p {
+    margin:0;		
+}
+
+.error {
+    margin:0 0 2px;
+    padding:2px 6px;	
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px; 		
+}
+
+/* pure CSS arrow */
+.error em {
+    display:block;
+    width:0;
+    height:0;
+    border:10px solid;
+    border-color:#FA94D8 transparent transparent;
+
+    /* positioning */
+    position:absolute;
+    bottom:-17px;
+    left:40px;
+}
+
+div.field.errorField input, div.field.errorField select, div.field.errorField canvas
+{
+    border: 2px solid red !important;
+}
+
+div.field.radio-group.errorField span, div.field.checkbox-group.errorField span
+{
+    background-image: url(Themes/aristo/images/sprite-errors.png);
+}
+
+.invalid
+{
+    padding: 1px;
+    border: 1px solid red;
+}
+
+span > input.invalid
+{
+    padding: 1px;
+    border: 1px solid red;
+}
+
+
+
+
+/** Field Settings **/
+
+#field-settings 
+{
+    width: 350px;
+    height: 620px;
+    position: fixed;
+    margin-left: 10px;
+    padding: 12px;
+    z-index: 1;
+    border: 1px solid #ddd;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    background: #fcfcfc;
+    border-radius: 3px 0 0 3px;
+    -moz-border-radius: 3px 0 0 3px;
+    -webkit-border-radius: 3px 0 0 3px;
+    -ms-border-radius: 3px 0 0 3px;
+}
+
+
+/*
+#settings-top {
+    height: 6px;
+    width: 267px;
+
+}
+
+#settings-pointer {
+    background: transparent url('../../Images/settings-pointer.png') no-repeat 0 0 scroll;
+    height: 23px;
+    width: 15px;
+    position: absolute;
+    left: -15px;
+    top: 36px;
+}
+
+
+#settings-body {
+    width: 267px;
+    position: relative;
+
+}
+
+#settings-bottom {
+    width: 267px;
+    height: 6px;
+
+}*/
+
+
+
+#close-field-settings {
+    color: #666666;
+    font-size: 10px;
+    font-weight: bold;
+    position: absolute;
+    right: 9px;
+    top: 9px;
+    cursor: pointer;
+}
+
+#field-settings-tabs {
+    padding: 0;
+    margin: 0;
+}
+
+#field-settings .ui-tabs-panel {
+    padding: 0;
+}
+
+#field-settings .ui-tabs-nav {
+    position: relative;
+    padding: 0;
+    top: -8px;
+    left: -1px;
+}
+
+#field-settings  .ui-tabs-nav li {
+    border: 1px solid #fcfcfc !important;
+    margin-right: 0;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -ms-border-radius: 3px;
+}
+
+#field-settings  .ui-tabs-nav li a {
+    padding: 6px 16px;
+
+}
+
+
+#field-settings .ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited {
+    color: #555555;
+    /*text-shadow: 0 1px 0 #FFFFFF;*/
+}
+
+#field-settings .ui-corner-all {
+    border: none;
+}
+
+#field-settings .ui-widget-header {
+    background: none;
+    border: none;
+}
+
+
+
+/** Dependecy sections **/
+
+#dependency-section
+{
+    height: 580px;
+    margin-top: 3px;
+    overflow-y: scroll;
+}
+
+#dependency-section .dependency-setting 
+{
+    background: #DEDEDE;
+    border: 1px solid #AAA;
+    padding: 5px;
+    margin-bottom: 5px;
+    
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+}
+
+#dependency-section .setting-heading
+{
+    height: 20px;
+    width: 150px;
+    margin: 2px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#dependency-section .delete-dependency
+{
+    position: relative;
+    top: -25px;
+}
+
+#dependency-section .setting-content
+{
+    margin: 5px;
+}
+
+#dependency-section span.expand-collapse-dependency
+{
+    width: 12px;
+    height: 12px;
+    padding: 2px;
+    float: left;
+    position: relative;
+    top: 3px;
+    display: block;
+    cursor: pointer;
+    background-image: url(../../Content/Images/ui-icons_454545_256x240.png);
+    background-position: -65px -192px;
+}
+
+#dependency-section .dependency-setting.collapsed span.expand-collapse-dependency
+{
+    background-position: -49px -192px;
+}
+
+
+
+
+.setting input, #validation-settings input {
+    background: none repeat scroll 0 0 #FFFFFF;
+    height: 22px;
+    padding: 0;
+    font-size: 12px;
+    margin: 3px 0;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    width:100%;
+    color: #999999;
+    border: 1px solid #d9d9d9;
+    outline: none;
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 0 10px #eee inset;
+    -moz-box-shadow: 0 0 10px #eee inset;
+    -webkit-box-shadow: 0 0 10px #eee inset;
+    -ms-box-shadow: 0 0 10px #eee inset;
+
+}
+
+#field-settings input[type=radio], #field-settings input[type=checkbox] {
+    width: 16px;
+    margin: 0 12px 0 0;
+    top: 6px;
+    position: relative;
+    display: inline;
+}
+
+.setting input:focus, .setting textarea:focus, .setting select:focus {
+    border: 1px solid #9393ff;
+}
+
+.setting label {
+    font-size: 12px;
+    float: left;
+}
+
+#field-settings .setting {
+    margin: 0 12px;
+    max-width: 280px;
+}
+
+#field-settings div.setting {
+    min-height: 48px;
+}
+
+#field-settings div.option {
+    min-height: 28px;
+    max-height: 28px;
+}
+
+#input-settings div label 
+{
+    display: block;
+    float: left;
+    margin-left: 8px;
+    margin-top: 6px;
+}
+
+#input-settings .option {
+     margin: 0;
+    padding: 0 6px;
+    position: relative;
+}
+
+#input-settings .add-option, #input-settings .remove-option {
+    height: 16px;
+    width: 16px;
+    margin: 6px 6px 0;
+    display: block;
+    float: left;
+}
+
+#input-settings .add-option {
+    background: transparent url('../../Images/add_16.png') no-repeat 0 0 scroll;
+    cursor: pointer;
+}
+
+#input-settings .remove-option {
+    background: transparent url('../../Images/close_16.png') no-repeat 0 0 scroll;
+    cursor: pointer;
+}
+
+/*sortable style*/
+.ui-state-highlight { height: 1.5em; line-height: 1.2em; }
+#input-settings div
+{
+    cursor: move;
+}
+
+
+#input-settings-template {
+    display: none;
+}
+
+#input-settings .setting, #validation-settings .setting {
+    width: 150px;
+    float: right;
+}
+
+/* ID of the current field, when selected */
+#current-field {
+    display: none;
+}
+
+.val-settings-section {
+    margin-bottom: 12px;
+}
+
+.val-settings-section:last-child {
+    margin-bottom: 0;
+}
+
+#validation-settings input[type=text] {
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+#validation-settings input[disabled=disabled] {
+    display: none;
+}
+
+#settings-loading {
+    text-align: center;
+    font-size: 12px;
+    margin: 4px;
+    display: none;
+
+}
+
+/** Field Actions **/
+.field-actions {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    display: none;
+    background: #f9f9f9;
+    width: 16px;
+    height: 16px;
+}
+
+.field:hover .field-actions {
+    display: block;
+}
+
+.edit-field, .delete-field, .edit-title, .delete-title, .edit-submit, .delete-submit, .delete-dependency, .clearButton {
+    width: 12px;
+    height: 12px;
+    padding: 2px;
+    display: block;
+    float: right;        
+    cursor: pointer;
+}
+
+.delete-field, .delete-title, .delete-submit, .delete-dependency, .clearButton {
+    /*background: transparent url(../../Images/remove.png) no-repeat center center scroll;*/
+    background-image: url(../../Content/Images/ui-icons_454545_256x240.png);
+    background-position: -32px -192px;
+    opacity: .8;
+}
+
+.edit-field, .edit-title, .edit-submit {
+    background: transparent url(../../Images/pencil.png) no-repeat center center scroll;
+    opacity: .8;
+}
+
+.edit-field:hover, .delete-field:hover, .edit-title:hover, .delete-title:hover, .edit-submit:hover, .delete-submit:hover, .delete-dependency:hover, .clearButton:hover {
+    opacity: 1;
+}
+
+#form-builder-dialog, #docfiller-dialog {
+    display: none;
+}
+
+/** Code Viewer **/
+
+#form-code {
+    overflow-y: scroll;
+    display: none;
+}
+
+#get-form {
+    display: none;
+}
+
+/** jQuery UI Stuff **/
+#resizable {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    padding: 0.5em;
+    border: 1px solid #eee;
+}
+
+#resizable h3 {
+    text-align: center;
+    margin: 0;
+}
+
+#sortable {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#sortable li {
+    background-color: #efefef;
+    box-sizing: border-box;
+    position: relative;
+    font-size: 4em;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.ui-resizable-se
+{
+    width: 16px;
+    height: 16px;
+    background: transparent url(../../Images/resize.png) no-repeat 0 0 scroll;
+    display: none !important;
+    margin: 10px 0px 0px 10px;
+    /*
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    margin-top: -12px;
+    cursor: e-resize;
+    */
+}
+
+.field:hover .ui-resizable-se, .ui-resizable-resizing .ui-resizable-se {
+    display: block !important;
+}
+
+ui-state-active {
+    background: #fff !important;
+}
+
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+    background-color: #DFEFFC !important;
+    padding-bottom: 0 !important;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    background: none;
+    padding-bottom: 0 !important;
+}
+
+#form-code .syntaxhighlighter{
+    overflow-y:hidden !important;
+}
+/** Loading Indicator **/
+
+.loading-overlay {
+    background: #ccc;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 501;
+    opacity: .5;
+}
+
+.loading-content {
+    background: transparent url(../../Images/button-overlay.png) repeat-x 0 0 scroll;
+    color: #fff;
+    background-color: #666666;
+    border-width: 1px;
+    border-style: solid;
+    display: block;
+    font-size: 16px;
+    height: 30px;
+    left: 50%;
+    margin-left: 43px;
+    position: absolute;
+    top: 25%;
+    width: 95px;
+    z-index: 600;
+    padding: 6px 0 0 0;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -ms-border-radius: 3px;
+    text-align:center;
+    border-color: rgba(0, 0, 0, 0.20);
+    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    -ms-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+
+.warning {
+    background: transparent url(../../Images/exclamation.png) no-repeat left center scroll;
+    padding-left: 24px;
+    /*color: #ff6666;*/
+}
+
+/** Modal **/
+
+.modal-box, .ui-dialog {
+    display: block;
+    width: 560px;
+    position: absolute;
+    top: -310px;
+    left: 170px;
+    padding: 0;
+    background: #eee; /* old browsers */
+    background: -moz-linear-gradient(top, #FFFFFF 0%, #F7F7F7 3%, #ffffff 43%, #F2F2F2 99%); /* firefox */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #FFFFFF), color-stop(3%, #F7F7F7), color-stop(43%, #ffffff), color-stop(99%, #F2F2F2)); /* webkit */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#FFFFFF', endColorstr = '#F2F2F2', GradientType = 0); /* ie */
+    box-shadow: 0px 0px 6px #666;
+    -moz-box-shadow: 0px 0px 6px #666;
+    -webkit-box-shadow: 0px 0px 6px #666;
+    -ms-box-shadow: 0px 0px 6px #666;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -ms-border-radius: 6px;
+}
+
+
+.ui-dialog .ui-dialog-titlebar {
+    color: #fff;
+    font-size: 14px;
+    height: 18px;
+    background: transparent url(../../Images/modal_header.png) 0 0 repeat-x scroll;
+    padding: 2px 12px;
+}
+
+.ui-dialog-titlebar.ui-corner-all {
+    border-radius: 6px 6px 0 0;
+    -moz-border-radius: 6px 6px 0 0;
+    -webkit-border-radius: 6px 6px 0 0;
+    -ms-border-radius: 6px 6px 0 0;
+}
+
+.ui-dialog .ui-dialog-buttonpane {
+
+    border-radius: 0 0 6px 6px;
+    -webkit-border-radius: 0 0 6px 6px;
+    -moz-border-radius: 0 0 6px 6px;
+    -ms-border-radius: 0 0 6px 6px;
+    background: url("../../Images/modal_footer.png") repeat-x scroll left bottom #E1E1E1;
+    min-height: 25px;
+    padding: 7px 15px;
+    position: relative;
+}
+
+.button, .ui-button, .ui-button.ui-state-default, button {
+    background: #f3f3f3;
+
+    border: 1px solid #AFAFAF;
+    color: #444444;
+    font-weight: normal;
+    height: 32px;
+    padding: 2px 12px;
+    text-shadow: 0 1px 0 #FFFFFF;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -ms-border-radius: 3px;
+}
+
+.button:hover .button:focus, .ui-button.ui-state-hover, .ui-button.ui-state-focus, button:hover {
+    background: #fcfcfc;
+    color: #222;
+}
+
+.ui-dialog .ui-dialog-content {
+    overflow: hidden;
+    padding-top: 24px;
+}
+
+#field-settings input:focus, .ui-dialog input:focus, .ui-dialog textarea:focus, .ui-dialog select:focus {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border-color: #bbb;
+}
+
+#comfirm-action .message {
+    display: none;
+}
+
+.ui-dialog input, .ui-dialog select{
+   width:100%;
+    font: 16px/24px Helvetica Neue, "Arial", Helvetica, Verdana, sans-serif;
+    padding: 6px 0;
+    color: #999999;
+    border: 1px solid #d9d9d9;
+    outline: none;
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 10px #eee inset;
+    -moz-box-shadow: 0 0 10px #eee inset;
+    -webkit-box-shadow: 0 0 10px #eee inset;
+    -ms-box-shadow: 0 0 10px #eee inset;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+}
+/** Instructions **/
+
+#instructions {
+    width: 648px;
+    padding: 24px;
+    display: none;
+}
+
+#instructions .about {
+    font-size: 16px;
+    text-shadow: 0 1px 0 #fff;
+    color: #444;
+}
+
+#instructions div {
+    padding: 24px 0;
+    border-bottom: 1px solid #fcfcfc;
+    border-top: 1px solid #eee;
+    clear: both;
+    float: left;
+}
+
+#instructions div:first-child {
+    border-top: none;
+}
+
+#instructions div:last-child {
+    border-bottom: none;
+}
+
+#instructions span {
+    display: block;
+    float: left;
+    width: 376px;
+}
+
+#instructions .image {
+    width: 140px;
+    padding: 0 18px;
+    text-align: center;
+}
+
+/** Manual Download **/
+#manual-download{
+    padding:12px;
+    border:1px solid #dfdfdf;
+    border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    -ms-border-radius:4px;
+    background-color:#fff;
+
+}
+
+#manual-download h5{
+    margin-bottom:0;
+    padding: 3px;
+    background: #f8f8f8;
+}
+
+#manual-download a{
+    text-decoration:none;
+    color: #5858ff;
+    display:block;
+}
+
+#manual-download a:hover{
+    color:#000099;
+    background-color: #ffffcc;
+}
+
+.open-directory{
+    color:#888;
+}
+
+/** DO NOT REMOVE - styles in form_resources/css set a z-index value that cause forms in
+jQuery UI Dialogs not to work. This line fixes **/
+.ui-dialog input, .ui-dialog textarea, .ui-dialog select {
+    z-index: inherit !important;
+}
+
+/**Misc**/
+#tmp {
+    display: none;
+}
+
+#form-elements {
+    display: none;
+}
+
+a{
+    outline:none;
+}
+.ui-button::-moz-focus-inner,
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner {
+    border: none;
+}

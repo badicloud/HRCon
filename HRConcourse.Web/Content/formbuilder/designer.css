@@ -1,0 +1,861 @@
+﻿
+body
+{
+    padding-left: 5px;
+    padding-top: 10px;
+}
+
+#header {
+    position: fixed;
+    min-width: 199px;
+    left: 355px;
+    background-color: #25A1DA;
+    height: 25px;
+    padding: 5px 10px;
+    z-index: 20;
+}
+
+#headerTitle {
+    position: relative;
+    top: 3px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    float: left;
+    margin-left: 5px;
+    width: 132px;
+}
+
+/** Menu Buttons **/
+#headerActionButtons {
+    position: relative;
+    top: 2px;
+}
+#headerActionButtons div {
+    float: left;
+}
+#headerActionButtons img {
+    height: 21px;
+    width: 21px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+#testSubmitBttn {
+    display: none;
+}
+
+
+
+/** Property sections - Main, Validation, Dependency **/
+#fieldProperties {
+    position: fixed;
+    width: 342px;
+    height: 98%;
+    min-height: 488px;
+    background-color: white;
+    z-index: 10;
+    overflow: hidden;
+}
+
+
+
+/** Custom jQuery Scroll bars **/
+.jspHorizontalBar, .jspVerticalBar, .jspTrack {
+    background: white;
+}
+.jspVerticalBar {
+    width: 5px;
+}
+.jspDrag {
+    background: #58b8db;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -ms-border-radius: 10px;
+}
+.jspTrack .jspActive, .jspTrack .jspHover, .jspDrag:hover {
+    background: #25a1da;
+}
+
+
+/** Properties sections **/
+#main-settings, #validation-settings, #dependency-settings, #style-settings
+{
+    height: 96%;
+    /*min-height: 452px;*/
+    width: 319px;
+    outline: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 12px 10px;
+}
+.setting {
+    /*border-bottom: 1px solid #DEDEDE;*/
+    padding-bottom: 5px;
+    margin-bottom: 12px;
+    min-height: 20px;
+}
+.setting .settingName {
+    float: left;
+    margin-right: 10px;
+}
+.setting input, .setting select {
+    clear: both;
+    width: 99%;
+}
+.setting input[type=checkbox] {
+    float: right;
+    position: relative;
+    top: -15px;
+}
+.setting input[type=checkbox], .setting input[type=radio] {
+    width: auto;
+}
+.setting img {
+    height: 15px;
+    width: 15px;
+    cursor: help;
+}
+#style-settings .setting img {
+    position: relative;
+	top: 2px;
+}
+#input-settings-container {
+    border: 1px solid #25a1da;
+}
+#setting-selectValues 
+{
+    height: 24px;
+    background-color: #25A1DA;
+    padding: 3px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+#setting-selectValues .settingName {
+    position: relative;
+    top: 3px;
+    color: white;
+}
+#input-settings {
+    padding-left: 5px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+}
+#input-settings .inputValueSection {
+    margin-top: 6px;
+    cursor: move;
+    border-top: 3px solid #25A1DA;
+    padding-top: 0px;
+}
+#input-settings input {
+    width: 90%;
+}
+#input-settings .remove-option {
+    cursor: pointer;
+    position: relative;
+    top: 2px;
+}
+#add-initial-value, #add-new-dependency, #add-new-custom-val, #add-option-value {
+    height: 20px;
+    width: 20px;
+    position: relative;
+    cursor: pointer;
+}
+#add-initial-value {
+    top: 5px;
+    left: 5px;
+}
+#add-new-dependency, #add-new-custom-val {
+    top: -2px;
+    left: 3px;
+}
+#add-option-value {
+    margin-left: 10px;
+    top: 1px;
+}
+
+/** Dependency, Custom Validation and Style sections **/
+#dependency-section .dep-header, #custom-val-section .custom-val-header, #style-settings .style-header
+{
+    background: #25A1DA;
+    color: White;
+    padding: 5px;
+    padding-left: 10px;
+    height: 20px;
+}
+
+#dependency-section .dep-header .settingName, #custom-val-section .custom-val-header .settingName, #style-settings .style-header .settingName {
+    color: white;
+    float: left;
+    margin-left: 8px;
+    width: 230px;
+    cursor: pointer;
+}
+
+#dependency-section .dependency-setting , #custom-val-section .custom-val-setting
+{
+    background: white;
+    border: 1px solid #25A1DA;
+    margin-bottom: 5px;
+}
+
+#dependency-section .delete-dependency, #custom-val-section .delete-validation
+{
+    position: relative;
+    top: -1px;
+    height: 20px;
+    width: 20px;
+    float: right;
+    cursor: pointer;
+}
+
+#dependency-section .setting-content, #custom-val-section .setting-content, #style-settings .setting-content
+{
+    margin: 5px;
+}
+
+#dependency-section span.expand-collapse-dependency, #custom-val-section span.expand-collapse-validation, #style-settings span.expand-collapse-style
+{
+    width: 12px;
+    height: 12px;
+    padding: 2px;
+    float: left;
+    position: relative;
+    top: 3px;
+    display: block;
+    cursor: pointer;
+    background-image: url(images/ui-icons_ffffff_256x240.png);
+    background-position: -65px -192px;
+}
+#dependency-section .dependency-setting.collapsed span.expand-collapse-dependency, #custom-val-section .custom-val-setting.collapsed span.expand-collapse-validation, #style-settings .style-settings-section.collapsed span.expand-collapse-style
+{
+    background-position: -49px -192px;
+}
+
+
+
+
+/** Fields and actions toolbox  **/
+#toolbox {
+    position: fixed;
+    left: 590px;
+    /*width: 390px;*/
+    min-height: 33px;
+    padding-left: 5px;
+    background: white;
+    border: 1px solid #25A1DA;
+    z-index: 10;
+}
+
+.toolboxDivider {
+    height: 22px;
+    background-color: gray;
+    width: 1px;
+}
+
+/** Draggable field controls and multiple fields selection actions **/
+#controls, #actions, .toolboxDivider {
+    margin: 5px;
+    float: left;
+}
+
+#controls ul, #actions ul {
+    position: relative;
+    top: 3px;
+    padding: 0;
+    margin: 0;
+    display: inline;
+}
+
+#controls ul li, #actions ul li {
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    list-style: none outside none;
+    display: inline;
+    cursor: pointer;
+}
+
+
+/** Errors container section **/
+#errorContainer {
+    width: 974px;
+    margin-bottom: 10px;
+}
+.infoBox, .successBox, .warningBox, .errorBox, .validationBox, .approvedBox {
+  border: 1px solid;
+  margin: 10px 0px;
+  padding:15px 10px 15px 50px;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+.infoBox {
+    color: #00529B;
+    background-color: #BDE5F8;
+    background-image: url('../../Images/info.png');
+}
+.successBox {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    background-image:url('../../Images/success.png');
+}
+.warningBox {
+    color: #9F6000;
+    background-color: #FEEFB3;
+    background-image: url('../../Images/warning.png');
+}
+.errorBox {
+    color: #D8000C;
+    background-color: #FFBABA;
+    background-image: url('../../Images/error.png');
+}
+.approvedBox {
+    color: #00529B;
+    background-color: #C8E6EB;
+    background-image: url('../../Images/approved.png');
+}
+
+
+
+
+/** Actual page designer area **/
+#designerArea {
+    margin-left: 350px;
+    width: 974px;
+    min-height: 444px;
+    margin-bottom: 40px;
+    margin-top: 43px;
+    padding-right: 10px;
+}
+
+#work-area {
+    position: relative;
+    width: 970px;
+    background-color: white;
+    z-index: 0;
+    min-height: 438px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .25);
+    -moz-box-shadow: 0 0 6px rgba(0, 0, 0, .25);
+    -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, .25);
+    -ms-box-shadow: 0 0 6px rgba(0, 0, 0, .25);
+}
+
+.TTWForm {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+#work-area.droppableActive 
+{
+    border: 2px solid #25a1da;
+    padding: 0px;
+}
+
+#notification {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 150px;
+    margin-left: -75px;
+    z-index: 99999;
+    padding: 6px;
+    background: #25a1da;
+    color: white;
+    display: none;
+    opacity: 0;
+    border-radius: 0 0 6px 6px;
+    -moz-border-radius: 0 0 6px 6px;
+    -webkit-border-radius: 0 0 6px 6px;
+    -ms-border-radius: 0 0 6px 6px;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+/** Designer field's style **/
+.TTWForm .field {
+    position: absolute;
+    padding: 8px 28px 8px 8px;
+    clear: both;
+    width: 160px;
+}
+.TTWForm .field.radio-group, .TTWForm .field.checkbox-group
+{
+    width: auto;
+}
+#form-preview .field .option:hover
+{
+    border: 1px dashed black;
+    padding: 2px;
+}
+#form-preview .field:hover {
+    padding: 7px 27px 7px 7px !important;
+    cursor: move;
+    border: 1px dotted #25a1da;
+    background: rgba(54, 54, 244,0.1);
+
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+}
+#form-preview .field.selectedField {
+    padding: 7px 27px 7px 7px !important;
+    cursor: move;
+    z-index: 50;
+    border: 1px dotted #25a1da;
+    /*border-top: 3px solid #25a1da;*/
+    background: rgba(54, 54, 244, 0.1);
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+}
+.TTWForm input, .TTWForm textarea, .TTWForm select, .TTWForm canvas {
+    width: 100%;
+    font-family: Helvetica Neue, "Arial", Helvetica, Verdana, sans-serif;
+    outline: none;
+    display: inline-block;
+    position: relative;
+    padding: 1px 0px;
+    margin: 2px 0px;
+    z-index: 2;
+    background: #E8F9F7;
+    border: 1px solid #CCC;
+    -moz-border-radius: 3px;
+}
+.TTWForm input[type=radio], .TTWForm input[type=checkbox] {
+    width: 12px;
+    margin: 8px 12px;
+    top: 3px;
+    position: relative;
+}
+.TTWForm .option {  
+    padding: 3px;
+    width: 40px;
+}
+.TTWForm select {
+    width: 100%;
+}
+.TTWForm textarea {
+    overflow: hidden;
+}
+.TTWForm label {
+    display: block;
+    color: black;
+    text-align: left;
+    font: 16px/24px Helvetica Neue, "Arial", Helvetica, Verdana, sans-serif;
+    line-height: 100%;
+}
+.TTWForm canvas {
+    margin: 0px;
+    height: 100%;
+}
+#preview-section.TTWForm canvas.pad {
+    cursor: url(pen.cur) 16 16, default;
+}
+.TTWForm div.field.sigPad .clearButton {
+    position: absolute;
+    z-index: 5;
+}
+
+/** Form Preview Mode **/
+.preview-mode #form-preview .field:hover {
+    border: none;
+    padding: 8px 28px 8px 8px !important;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    cursor: default;
+    background-color: rgba(255,255,255,0);
+    background-image: none;
+}
+.preview-mode #form-preview .field .option 
+{
+    border: none;
+    padding: 3px !important;
+}
+.preview-mode .field:hover .field-actions {
+    display: none;
+}
+.preview-mode .field:hover .ui-resizable-se {
+    display: none !important;
+}
+#preview-section.TTWForm input[readonly] {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+
+
+/** Field's actions --> delete field **/
+.field-actions {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    display: none;
+    background: #F9F9F9;
+    width: 16px;
+    height: 16px;
+}
+.field:hover .field-actions {
+    display: block;
+}
+.delete-field, .clearButton {
+    width: 12px;
+    height: 12px;
+    padding: 2px;
+    display: block;
+    float: right;        
+    cursor: pointer;
+}
+.delete-field, .clearButton {
+    background-image: url(images/ui-icons_454545_256x240.png);
+    background-position: -32px -192px;
+    opacity: .8;
+}
+.delete-field:hover, .clearButton:hover {
+    opacity: 1;
+}
+
+/** Resizable icon **/
+.ui-resizable-se
+{
+    width: 16px;
+    height: 16px;
+    background: transparent url(../../Images/resize.png) no-repeat 0 0 scroll;
+    display: none !important;
+    margin: 10px 0px 0px 10px;
+}
+.field:hover .ui-resizable-se, .ui-resizable-resizing .ui-resizable-se {
+    display: block !important;
+}
+
+
+
+
+
+/** Application Modal Dialogs **/
+#form-builder-dialog {
+    display: none;
+}
+/*
+.ui-widget-content { border: 1px solid #d4d4d4; background: #ffffff url(images/ui-bg_flat_75_ffffff_40x100.png) 50% 50% repeat-x; color: #222222; }
+.ui-widget-content a { color: #222222; }
+.ui-widget-header { border: 1px solid #25a1da; background: #25a1da url(images/ui-bg_flat_100_25a1da_40x100.png) 50% 50% repeat-x; color: #ffffff; font-weight: bold; }
+*/
+
+/*.ui-dialog .ui-dialog-titlebar {
+    color: white;
+    font-size: 14px;
+    height: 18px;
+    background: transparent url(../../Images/modal_header.png) 0 0 repeat-x scroll;
+    padding: 2px 12px;
+}
+.ui-dialog-titlebar.ui-corner-all {
+    border-radius: 6px 6px 0 0;
+    -moz-border-radius: 6px 6px 0 0;
+    -webkit-border-radius: 6px 6px 0 0;
+    -ms-border-radius: 6px 6px 0 0;
+}*/
+
+
+
+/** Instructions dialog box **/
+#instructions {
+    width: 648px;
+    padding: 24px;
+    display: none;
+}
+#instructions .about {
+    font-size: 16px;
+    text-shadow: 0 1px 0 #fff;
+    color: #444;
+}
+#instructions div {
+    padding: 24px 0;
+    border-bottom: 1px solid #fcfcfc;
+    border-top: 1px solid #eee;
+    clear: both;
+    float: left;
+}
+#instructions div:first-child {
+    border-top: none;
+}
+#instructions div:last-child {
+    border-bottom: none;
+}
+#instructions span {
+    display: block;
+    float: left;
+    width: 376px;
+}
+#instructions .image {
+    width: 140px;
+    padding: 0 18px;
+    text-align: center;
+}
+
+
+
+
+
+/** jQuery Templates **/
+#jQueryTemplates {
+    display: none;
+}
+
+
+
+/* tooltip styling. by default the element to be styled is .tooltip  */
+.tooltip {
+    background-color:#000;
+    border:1px solid #fff;
+    padding:10px 15px;
+    width:200px;
+    display:none;
+    color:#fff;
+    text-align:left;
+    font-size:12px;
+    z-index: 15;
+    
+    -box-shadow: 0 0 10px #000;
+    -moz-box-shadow:0 0 10px #000;
+    -webkit-box-shadow:0 0 10px #000;
+    -ms-box-shadow: 0 0 10px #000;	
+}
+
+
+
+/** Error fields class **/
+.TTWForm div.field.errorField {
+    padding: 7px 27px 7px 7px;
+}
+
+.TTWForm div.field.checkbox-group.errorField .option, .TTWForm div.field.radio-group.errorField .option {  
+    padding-top: 4px;
+    padding-left: 4px;
+}
+
+div.field.errorField input, div.field.errorField select, div.field.errorField canvas
+{
+    border: 2px solid red !important;
+}
+div.field.radio-group.errorField span, div.field.checkbox-group.errorField span
+{
+    background-image: url(images/sprite-errors.png);
+}
+.invalid
+{
+    padding: 1px;
+    border: 1px solid red;
+}
+span > input.invalid
+{
+    padding: 1px;
+    border: 1px solid red;
+}
+
+
+
+
+/* ID of the current field, when selected */
+#current-field {
+    display: none;
+}
+
+
+
+/** Loading Indicator **/
+
+#loading-indicator {
+    display: none;
+}
+
+.loading-overlay {
+    background: #ccc;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 501;
+    opacity: .5;
+}
+
+.loading-content {
+    background: transparent url(../../Images/button-overlay.png) repeat-x 0 0 scroll;
+    color: #fff;
+    background-color: #666666;
+    border-width: 1px;
+    border-style: solid;
+    display: block;
+    font-size: 16px;
+    height: 30px;
+    left: 50%;
+    margin-left: 43px;
+    position: absolute;
+    top: 25%;
+    width: 95px;
+    z-index: 600;
+    padding: 6px 0 0 0;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -ms-border-radius: 3px;
+    text-align:center;
+    border-color: rgba(0, 0, 0, 0.20);
+    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    -ms-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+
+
+
+
+/** Tabs - metro style from jquerui theme roller **/
+/* jQuery UI Tabs 1.8.18
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Tabs#theming
+ */
+.ui-tabs.ui-widget-content { border: 1px solid #25a1da; background: #ffffff url(images/ui-bg_flat_75_ffffff_40x100.png) 50% 50% repeat-x; color: #222222; }
+.ui-tabs .ui-state-default { border: 1px solid #25a1da; background: #25a1da url(images/ui-bg_flat_100_25a1da_40x100.png) 50% 50% repeat-x; font-weight: normal; color: #ffffff; }
+
+.ui-tabs { position: relative; padding: 0px; zoom: 1; } /* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed") */
+.ui-tabs .ui-tabs-nav { margin: 0; padding: 0px 9px; }
+.ui-tabs .ui-tabs-nav li { list-style: none; float: left; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bottom: 0 !important; padding: 0; white-space: nowrap; }
+.ui-tabs .ui-tabs-nav li a { float: left; padding: .5em 1em; text-decoration: none; }
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected { margin-bottom: 0; padding-bottom: 1px; }
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected a, .ui-tabs .ui-tabs-nav li.ui-state-disabled a, .ui-tabs .ui-tabs-nav li.ui-state-processing a { cursor: text; }
+.ui-tabs .ui-tabs-nav li a, .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a { cursor: pointer; } /* first selector in group seems obsolete, but required to overcome bug in Opera applying cursor: text overall if defined elsewhere... */
+.ui-tabs .ui-tabs-panel { display: block; border-width: 0; padding: 1em 1.4em; background: white; }
+.ui-tabs .ui-tabs-hide { display: none !important; }
+
+
+/** Dialogs - metro style from jquerui theme roller **/
+/*
+ * jQuery UI Dialog 1.8.18
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Datepicker#theming
+ */
+.ui-dialog.ui-widget-content { border: 1px solid #d4d4d4; background: #ffffff url(images/ui-bg_flat_75_ffffff_40x100.png) 50% 50% repeat-x; color: #222222; }
+.ui-dialog-titlebar.ui-widget-header { font-weight: normal; font-size: 14px;}
+.ui-dialog .ui-state-default { border: 1px solid #d6d4d4; background: #ffffff url(images/ui-bg_flat_100_ffffff_40x100.png) 50% 50% repeat-x; font-weight: normal; color: #000000; }
+
+.ui-dialog { position: absolute; padding: 0px; width: 300px; overflow: hidden; }
+.ui-dialog .ui-dialog-titlebar { padding: .4em 1em; position: relative;  }
+.ui-dialog .ui-dialog-title { float: left; margin: .1em 16px .1em 0; } 
+.ui-dialog .ui-dialog-titlebar-close { position: absolute; right: .3em; top: 50%; width: 19px; margin: -10px 0 0 0; padding: 1px; height: 18px; }
+.ui-dialog .ui-dialog-titlebar-close span { display: block; margin: 1px; }
+.ui-dialog .ui-dialog-titlebar-close:hover, .ui-dialog .ui-dialog-titlebar-close:focus { padding: 0; }
+.ui-dialog .ui-dialog-content { position: relative; border: 0; padding: .5em 1em; background: none; overflow: auto; zoom: 1; }
+.ui-dialog .ui-dialog-buttonpane { text-align: left; border: none; background-image: none; margin: .5em 0 0 0; padding: .3em 1em .5em .4em; }
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset { float: right; }
+.ui-dialog .ui-dialog-buttonpane button { margin: .5em .4em .5em 0; cursor: pointer; min-width: 100px;}
+.ui-dialog .ui-resizable-se { width: 14px; height: 14px; right: 3px; bottom: 3px; }
+.ui-draggable .ui-dialog-titlebar { cursor: move; }
+
+
+
+/*
+ * jQuery UI Autocomplete 1.8.18
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Datepicker#theming
+ */
+
+.ui-autocomplete.ui-widget-content {
+    border: 1px solid #D4D4D4;
+    background: white url(images/ui-bg_flat_75_ffffff_40x100.png) 50% 50% repeat-x;
+    color: #222;
+    max-height: 218px;
+    overflow-y: scroll;
+}
+
+
+
+/*
+ * jQuery UI Datepicker 1.8.18
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Datepicker#theming
+ */
+ 
+ .ui-datepicker .ui-widget-content { border: 1px solid #d4d4d4; background: #ffffff url(images/ui-bg_flat_75_ffffff_40x100.png) 50% 50% repeat-x; color: #222222; }
+ .ui-datepicker .ui-state-default { border: 1px solid #ffffff; background: #ffffff url(images/ui-bg_flat_100_ffffff_40x100.png) 50% 50% repeat-x; font-weight: normal; color: #4d4d4d; }
+
+.ui-datepicker { width: 17em; padding: .2em .2em 0; display: none; background: white;}
+.ui-datepicker .ui-datepicker-header { position:relative; padding:.2em 0; }
+.ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next { position:absolute; top: 2px; width: 1.8em; height: 1.8em; }
+.ui-datepicker .ui-datepicker-prev-hover, .ui-datepicker .ui-datepicker-next-hover { top: 1px; }
+.ui-datepicker .ui-datepicker-prev { left:2px; }
+.ui-datepicker .ui-datepicker-next { right:2px; }
+.ui-datepicker .ui-datepicker-prev-hover { left:1px; }
+.ui-datepicker .ui-datepicker-next-hover { right:1px; }
+.ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span { display: block; position: absolute; left: 50%; margin-left: -8px; top: 50%; margin-top: -8px;  }
+.ui-datepicker .ui-datepicker-title { margin: 0 2.3em; line-height: 1.8em; text-align: center; }
+.ui-datepicker .ui-datepicker-title select { font-size:1em; margin:1px 0; }
+.ui-datepicker select.ui-datepicker-month-year {width: 100%;}
+.ui-datepicker select.ui-datepicker-month, 
+.ui-datepicker select.ui-datepicker-year { width: 49%;}
+.ui-datepicker table {width: 100%; font-size: .9em; border-collapse: collapse; margin:0 0 .4em; }
+.ui-datepicker th { padding: .7em .3em; text-align: center; font-weight: bold; border: 0;  }
+.ui-datepicker td { border: 0; padding: 1px; }
+.ui-datepicker td span, .ui-datepicker td a { display: block; padding: .2em; text-align: right; text-decoration: none; }
+.ui-datepicker .ui-datepicker-buttonpane { background-image: none; margin: .7em 0 0 0; padding:0 .2em; border-left: 0; border-right: 0; border-bottom: 0; }
+.ui-datepicker .ui-datepicker-buttonpane button { float: right; margin: .5em .2em .4em; cursor: pointer; padding: .2em .6em .3em .6em; width:auto; overflow:visible; }
+.ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current { float:left; }
+
+/* with multiple calendars */
+.ui-datepicker.ui-datepicker-multi { width:auto; }
+.ui-datepicker-multi .ui-datepicker-group { float:left; }
+.ui-datepicker-multi .ui-datepicker-group table { width:95%; margin:0 auto .4em; }
+.ui-datepicker-multi-2 .ui-datepicker-group { width:50%; }
+.ui-datepicker-multi-3 .ui-datepicker-group { width:33.3%; }
+.ui-datepicker-multi-4 .ui-datepicker-group { width:25%; }
+.ui-datepicker-multi .ui-datepicker-group-last .ui-datepicker-header { border-left-width:0; }
+.ui-datepicker-multi .ui-datepicker-group-middle .ui-datepicker-header { border-left-width:0; }
+.ui-datepicker-multi .ui-datepicker-buttonpane { clear:left; }
+.ui-datepicker-row-break { clear:both; width:100%; font-size:0em; }
+
+/* RTL support */
+.ui-datepicker-rtl { direction: rtl; }
+.ui-datepicker-rtl .ui-datepicker-prev { right: 2px; left: auto; }
+.ui-datepicker-rtl .ui-datepicker-next { left: 2px; right: auto; }
+.ui-datepicker-rtl .ui-datepicker-prev:hover { right: 1px; left: auto; }
+.ui-datepicker-rtl .ui-datepicker-next:hover { left: 1px; right: auto; }
+.ui-datepicker-rtl .ui-datepicker-buttonpane { clear:right; }
+.ui-datepicker-rtl .ui-datepicker-buttonpane button { float: left; }
+.ui-datepicker-rtl .ui-datepicker-buttonpane button.ui-datepicker-current { float:right; }
+.ui-datepicker-rtl .ui-datepicker-group { float:right; }
+.ui-datepicker-rtl .ui-datepicker-group-last .ui-datepicker-header { border-right-width:0; border-left-width:1px; }
+.ui-datepicker-rtl .ui-datepicker-group-middle .ui-datepicker-header { border-right-width:0; border-left-width:1px; }
+
+/* IE6 IFRAME FIX (taken from datepicker 1.5.3 */
+.ui-datepicker-cover {
+    display: none; /*sorry for IE5*/
+    display/**/: block; /*sorry for IE5*/
+    position: absolute; /*must have*/
+    z-index: -1; /*must have*/
+    filter: mask(); /*must have*/
+    top: -4px; /*must have*/
+    left: -4px; /*must have*/
+    width: 200px; /*must have*/
+    height: 200px; /*must have*/
+}

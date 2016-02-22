@@ -31,6 +31,7 @@ namespace HRConcourse.Documents
         GetEntryDisplayFieldNamesOutput GetEntryDisplayFieldNames(GetEntryDisplayFieldNamesInput input);
         void SetEntryDisplayFieldNames(SetEntryDisplayFieldNamesInput input);
         GetEntryWithNamesOutput GetEntryWithNames(GetEntryWithNamesInput input);
+        void UpdatePageImage(UpdatePageImageDto input);
     }
 }
 

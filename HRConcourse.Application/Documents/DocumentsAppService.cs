@@ -133,7 +133,13 @@ namespace HRConcourse.Documents
 
 
 
+        public void UpdatePageImage(UpdatePageImageDto input)
+        {
+            var document = _documentRepository.Get(input.DocumentId);
+            var currentPage = document?.DraftRevision.Pages.FirstOrDefault(p => p.Id == input.PageId);
 
+            if (currentPage != null) currentPage.ImageId = input.ImageId;
+        }
 
 
 

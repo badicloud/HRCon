@@ -1,64 +1,5 @@
 define(['plugins/http', 'durandal/app', 'knockout', 'plugins/router'], function (http, app, ko, router) {
 
-
-    /** Web Resolution Detector **/
-    (function () {
-
-        $(document).ready(function() {
-            $("#screenDialog").hide();
-        });
-
-        var documentScreenSize = function () {
-            var screenWidth = screen.width;
-            var screenHeight = screen.height;
-
-            var dialogOpts = {
-                modal: true,
-                closeOnEscape: false,
-                autoOpen: false,
-                open: function(event, ui) {
-                    $(".ui-dialog-titlebar-close", ui.dialog | ui).hide();
-                },
-                close: function() {
-                    $("#screenDialog").hide();
-                    $(".ui-dialog-title").removeClass("error-title");
-                }
-            }
-
-            if (screenWidth < 1024 || screenHeight < 768) {
-                $("#screenDialog").show();
-                $(".dialog-text").text("Sorry, but this document can not be viewed on your device.  Please view it with a desktop computer.");
-                $("#screenDialog").dialog(dialogOpts);
-                $("#screenDialog").dialog("open");
-                $(".ui-dialog-title").addClass("error-title");
-
-                $("#screenDialog").dialog("option", "position", { my: "center", at: "center", of: window });
-            } else {
-                if ($(".ui-dialog").is(":visible")) {
-                    $("#screenDialog").hide();
-                    $(".ui-dialog-title").removeClass("error-title");
-                    $("#screenDialog").dialog("close");
-                }
-            }
-        };
-
-        var onRouteSuccess = function() {
-            documentScreenSize();
-            
-        };
-
-        $(window).resize(function () {
-            documentScreenSize();
-        });
-
-
-        router.on('router:navigation:composition-complete', () => {
-            onRouteSuccess();
-        });
-
-    })();
-
-    /** eof Web Resolution Detector **/
     var designDocumentVM = function () {
         var self = this;
         self.documentId = ko.observable();
@@ -67,6 +8,28 @@ define(['plugins/http', 'durandal/app', 'knockout', 'plugins/router'], function 
         self.fieldsMetadata = ko.observable();
         self.designerUrl = ko.observable('');
         self.imageId = ko.observable();
+        self.width = ko.observable();
+        self.height = ko.observable();
+        self.hasValidScreen = ko.observable(true);
+        self.imageDocuments = ko.observableArray();
+        self.documentData = {
+            file: ko.observable()
+        };
+
+        self.uploadProgress = ko.observable(0);
+
+        self.uploadPdfOptions = {
+            url: "UploadPdfToImage",
+            dataType: 'json',
+            progress: function (e, data) {
+                self.uploadProgress(parseInt(data.loaded / data.total * 100, 10));
+            }
+        };
+
+        self.selectedFileName = function () {
+            if (self.documentData.file() && self.documentData.file().files[0])
+                return self.documentData.file().files[0].name;
+        };
 
         // Set Page
         self.setPage = function (index) {
@@ -135,15 +98,37 @@ define(['plugins/http', 'durandal/app', 'knockout', 'plugins/router'], function 
             saveChanges().then(function () { abp.ui.clearBusy(); });
         };
 
-        // Refresh
-        self.refresh = function () {
+        var setFormImageOnEvent = function (imageId) {
             document.getElementById('myIFrame').contentWindow.setFieldsMetadata(self.fieldsMetadata());
-            if (self.imageId()) {
-                document.getElementById('myIFrame').contentWindow.setFormImage("/image?pageImageId=" + self.imageId());
+            if (imageId) {
+                document.getElementById('myIFrame').contentWindow.setFormImage("/image?pageImageId=" + imageId);
             } else {
                 document.getElementById('myIFrame').contentWindow.resetImage();
             }
+        }
+
+        // Refresh
+        self.refresh = function () {
+            setFormImageOnEvent(self.imageId());
         };
+
+        //Update Current Page
+        self.UpdateCurrentImage = function (item, event) {
+            var selectedDocumentInfo = self.documentInfo().pages[self.currentPage() - 1];
+            var imageId = item.imageId;
+
+            if (imageId !== null) {
+                abp.ui.setBusy();
+                $(".modal").css({ 'z-index': '1040' });
+                abp.services.hrconcourse.documents.updatePageImage({ DocumentId: self.documentId(), PageId: selectedDocumentInfo.pageId, ImageId: imageId }).then(function () {
+                    abp.ui.clearBusy();
+                    setFormImageOnEvent(item.imageId);
+                    $("#document-modal").modal('hide');
+                    $(".modal").css({ 'z-index': '1050' });
+                });
+            }
+
+        }
 
         // Clear Form
         self.clearForm = function () {
@@ -155,9 +140,13 @@ define(['plugins/http', 'durandal/app', 'knockout', 'plugins/router'], function 
         function updateCurrentDocument() {
             abp.ui.setBusy();
             // Get the document info
+
             return abp.services.hrconcourse.documents.getDocumentDesign({ DocumentId: self.documentId() }).then(function (response) {
                 // Save the document info
+
                 self.documentInfo(response);
+
+
                 abp.ui.clearBusy();
             });
         }
@@ -182,12 +171,61 @@ define(['plugins/http', 'durandal/app', 'knockout', 'plugins/router'], function 
         }
 
 
+        var documentScreenResized = function (screenWidth, screenHeight) {
+            var dialogOpts = {
+                modal: true,
+                closeOnEscape: false,
+                autoOpen: false,
+                open: function (event, ui) {
+                    $(".ui-dialog-titlebar-close", ui.dialog | ui).hide();
+                },
+                close: function () {
+                    $("#screenDialog").hide();
+                    $(".ui-dialog-title").removeClass("error-title");
+                }
+            }
+
+            if (screenWidth < 1024 || screenHeight < 768) {
+                $("#screenDialog").show();
+                $(".dialog-text").text("Sorry, but this document can not be viewed on your device.  Please view it with a desktop computer.");
+                $("#screenDialog").dialog(dialogOpts);
+                $("#screenDialog").dialog("open");
+                $(".ui-dialog-title").addClass("error-title");
+                $("#screenDialog").dialog("option", "position", { my: "center", at: "center", of: window });
+                self.hasValidScreen(false);
+            } else {
+                if ($(".ui-dialog").is(":visible")) {
+                    $("#screenDialog").hide();
+                    $(".ui-dialog-title").removeClass("error-title");
+                    $("#screenDialog").dialog("close");
+                    self.hasValidScreen(true);
+                }
+            }
+        };
+
         self.activate = function (documentId) {
+
             // Save the document Id
             self.documentId(documentId);
             // Get the document info
             updateCurrentDocument();
+            
         };
+
+        router.on('router:navigation:composition-complete', () => {
+            self.width(screen.width);
+            self.height(screen.height);
+
+            documentScreenResized(self.width(), self.height());
+        });
+
+        $(window).resize(function () {
+            self.width(screen.width);
+            self.height(screen.height);
+
+            documentScreenResized(self.width(), self.height());
+        });
+
         self.compositionComplete = function () {
             abp.ui.setBusy();
 
@@ -200,7 +238,40 @@ define(['plugins/http', 'durandal/app', 'knockout', 'plugins/router'], function 
             $('#myIFrame').load(function () {
                 self.setPage(0);
                 abp.ui.clearBusy();
+                var imgCount = $('#myIFrame').contents().find("#form-builder #form-image:has(img)").length;
+
+                if (imgCount > 0) {
+                    $("#edit-image-document").show();
+                } else {
+                    $("#edit-image-document").hide();
+                }
             });
+        };
+
+        self.updateDocumentPage = function() {
+            $("#document-modal").modal('show');
+        };
+
+        self.uploadPdfDocument = function () {
+            if (self.documentData.file()) {
+                self.imageDocuments([]);
+
+                abp.ui.setBusy();
+                $(".modal").css({ 'z-index': '1040' });
+                $(".no-file-found").hide();
+                self.documentData.file().submit().then(function (data) {
+                    data.result.forEach(function (data) {
+
+                        var imagedata = "/image?pageImageId=" + data.imageId;
+                        self.imageDocuments.push({ page: "Page "+ (data.index + 1), image: imagedata, imageId : data.imageId });
+                    });
+
+                    abp.ui.clearBusy();
+                    $(".modal").css({ 'z-index': '1050' });
+                });
+            } else {
+                $(".no-file-found").show();
+            }
         };
     };
 

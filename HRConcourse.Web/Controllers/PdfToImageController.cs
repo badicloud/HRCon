@@ -9,44 +9,45 @@ using Abp.Domain.Repositories;
 using Abp.Web.Mvc.Authorization;
 using HRConcourse.Documents;
 using HRConcourse.PdfRendering;
+
 namespace HRConcourse.Web.Controllers
 {
-  [AbpMvcAuthorize]
-  public class PdfToImageController : HRConcourseControllerBase
-  {
-    private readonly PdfToImageService _pdfToImageService;
-    private IRepository<Image> _imageRepository;
-
-    public PdfToImageController(PdfToImageService pdfToImageService, IRepository<Image> imageRepository)
+    [AbpMvcAuthorize]
+    public class PdfToImageController : HRConcourseControllerBase
     {
-      _pdfToImageService = pdfToImageService;
-      _imageRepository = imageRepository;
-    }
+        private readonly PdfToImageService _pdfToImageService;
+        private IRepository<Image> _imageRepository;
 
-    [HttpPost]
-    public ActionResult Index()
-    {
-      var file = HttpContext.Request.Files[0];
-
-      using (var reader = new BinaryReader(file.InputStream))
-      {
-    
-        file.InputStream.Seek(0, SeekOrigin.Begin);
-        var fileData = reader.ReadBytes(file.ContentLength);
-
-        var generatedImages = _pdfToImageService.ConvertPdfToImages(fileData);
-
-        foreach (var image in generatedImages)
+        public PdfToImageController(PdfToImageService pdfToImageService, IRepository<Image> imageRepository)
         {
-          _imageRepository.InsertAndGetId(image.Value);
+            _pdfToImageService = pdfToImageService;
+            _imageRepository = imageRepository;
         }
 
+        [HttpPost]
+        public ActionResult Index()
+        {
+            var file = HttpContext.Request.Files[0];
 
-        var result = generatedImages.Select(p=> new {pageNumber = p.Key, imageId = p.Value.Id});
+            using (var reader = new BinaryReader(file.InputStream))
+            {
+
+                file.InputStream.Seek(0, SeekOrigin.Begin);
+                var fileData = reader.ReadBytes(file.ContentLength);
+
+                var generatedImages = _pdfToImageService.ConvertPdfToImages(fileData);
+
+                foreach (var image in generatedImages)
+                {
+                    _imageRepository.InsertAndGetId(image.Value);
+                }
 
 
-        return Json(result);
-      }
+                var result = generatedImages.Select(p => new {pageNumber = p.Key, imageId = p.Value.Id});
+
+
+                return Json(result);
+            }
+        }
     }
-  }
 }

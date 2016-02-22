@@ -23,6 +23,7 @@ namespace HRConcourse.Documents
         public Int32 Number { get; set; }
         public String Fields { get; set; }
         public Int32? ImageId { get; set; }
-        public Int32 PageId { get; set; } 
+        public Int32 PageId { get; set; }
+        public Int32 RevistionId { get; set; }
     }
 }

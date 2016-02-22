@@ -57,7 +57,13 @@
                                         </div>
 
                                         <!-- Selected File -->
-                                        <span data-bind="text: selectedFileName()"></span>
+                                        <div>
+                                            <span data-bind="text: selectedFileName()"></span>
+                                        </div>
+                                        <div id="no-file-found" style="margin-top: 5px; display: none;">
+                                            <span style="color: red; ">No PDF file found. Please upload a PDF file</span>
+                                        </div>
+
                                     </div> <!-- /.radio -->
                                 </div>
                             </div>

@@ -38,6 +38,13 @@ define(['plugins/http', 'durandal/app', 'knockout', 'plugins/router'], function 
                 self.imageId(self.documentInfo().pages[index].imageId);
                 self.currentPage(index + 1);
                 self.refresh();
+
+                var imgCount = $('#myIFrame').contents().find("#form-builder #form-image:has(img)").length;
+                if (imgCount > 0) {
+                    $("#edit-image-document").show();
+                } else {
+                    $("#edit-image-document").hide();
+                }
             }
         };
 
@@ -53,15 +60,16 @@ define(['plugins/http', 'durandal/app', 'knockout', 'plugins/router'], function 
         }
         // Load Page
         self.loadPage = function (page) {
-          if (self.currentPage() != page.number) {
-            // Locally save changes
             var index = self.currentPage() - 1;
-            if (self.documentInfo().pages && self.documentInfo().pages[index] && self.documentInfo().pages[index].fields) {
-              self.documentInfo().pages[index].fields = document.getElementById('myIFrame').contentWindow.getFieldsMetadata();
-            }
+           
+            if (self.currentPage() !== page.number) {
+                // Locally save changes
+                if (self.documentInfo().pages && self.documentInfo().pages[index] && self.documentInfo().pages[index].fields) {
+                    self.documentInfo().pages[index].fields = document.getElementById('myIFrame').contentWindow.getFieldsMetadata();
+                }
 
-            self.setPage(page.number - 1);
-          }
+                self.setPage(page.number - 1);
+            }
         };
 
         // Add Page
@@ -82,15 +90,20 @@ define(['plugins/http', 'durandal/app', 'knockout', 'plugins/router'], function 
         };
         // Remove Page
         self.removePage = function () {
+            var previousPage = self.currentPage() - 1;
+            var index = previousPage - 1;
             app.showMessage('Are you sure you want to delete this page', 'Delete Page', [{ text: 'Delete', value: true }, { text: 'Cancel', value: false }])
              .then(function (result) {
                  abp.ui.setBusy();
-                 abp.services.hrconcourse.documents.deletePage({ DocumentId: self.documentId(), pageId: self.documentInfo().pages[self.currentPage()-1].pageId }).then(function () {
-                     abp.ui.clearBusy();
-                     updateCurrentDocument().then(function(){   self.refresh();});
+                    abp.services.hrconcourse.documents.deletePage({ DocumentId: self.documentId(), pageId: self.documentInfo().pages[self.currentPage() - 1].pageId }).then(function() {
+                        abp.ui.clearBusy();
+                        updateCurrentDocument().then(function () {
+                            self.currentPage(previousPage);
+                            self.setPage(index);
+                        });
 
-                 });
-             });
+                    });
+                });
         };
         // Save Changes
         self.saveChanges = function () {

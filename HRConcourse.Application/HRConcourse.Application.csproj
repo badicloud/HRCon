@@ -124,8 +124,8 @@
     <Compile Include="Documents\Dto\AddDocumentPagesFromPdf.cs" />
     <Compile Include="Documents\Dto\CreateDocumentOutput.cs" />
     <Compile Include="Documents\Dto\AddPageInput.cs" />
-    <Compile Include="Documents\Dto\CreateDocumentWithImagesOutput.cs" />
     <Compile Include="Documents\Dto\CreateDocumentWithImagesInput.cs" />
+    <Compile Include="Documents\Dto\CreateDocumentWithImagesOutput.cs" />
     <Compile Include="Documents\Dto\DeleteDocumentDto.cs" />
     <Compile Include="Documents\DocumentsAppService.cs" />
     <Compile Include="Documents\Dto\DocumentReadModelDto.cs" />
@@ -150,6 +150,7 @@
     <Compile Include="Documents\Dto\GetEntryWithNamesOutput.cs" />
     <Compile Include="Documents\Dto\GetFieldNamesInput.cs" />
     <Compile Include="Documents\Dto\GetFieldNamesOutput.cs" />
+    <Compile Include="Documents\Dto\UpdatePageImageDto.cs" />
     <Compile Include="Documents\IDocumentsAppService.cs" />
     <Compile Include="Documents\Dto\RevisionDto.cs" />
     <Compile Include="Documents\Dto\FieldMetadata.cs" />

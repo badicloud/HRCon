@@ -14,7 +14,7 @@
     <RootNamespace>HRConcourse.Web</RootNamespace>
     <AssemblyName>HRConcourse.Web</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -322,6 +322,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\custom-style.css" />
     <Content Include="Content\demo_style.css" />
     <Content Include="Content\durandal.css" />
     <Content Include="Content\Filler2.css" />
@@ -1921,6 +1922,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HRConcourseControllerBase.cs" />
     <Compile Include="Controllers\ImageController.cs" />
+    <Compile Include="Controllers\UploadPdfToImageController.cs" />
     <Compile Include="Controllers\PdfToImageController.cs" />
     <Compile Include="Controllers\Results\ChallengeResult.cs" />
     <Compile Include="C__RefactorLog.cs">
@@ -2278,7 +2280,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>6234</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:6234/</IISUrl>
+          <IISUrl>http://dev.hrconcourse.com</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

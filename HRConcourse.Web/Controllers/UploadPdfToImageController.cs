@@ -13,12 +13,12 @@ using HRConcourse.PdfRendering;
 namespace HRConcourse.Web.Controllers
 {
     [AbpMvcAuthorize]
-    public class PdfToImageController : HRConcourseControllerBase
+    public class UploadPdfToImageController : HRConcourseControllerBase
     {
         private readonly PdfToImageService _pdfToImageService;
-        private IRepository<Image> _imageRepository;
+        private readonly IRepository<Image> _imageRepository;
 
-        public PdfToImageController(PdfToImageService pdfToImageService, IRepository<Image> imageRepository)
+        public UploadPdfToImageController(PdfToImageService pdfToImageService, IRepository<Image> imageRepository)
         {
             _pdfToImageService = pdfToImageService;
             _imageRepository = imageRepository;
@@ -27,11 +27,12 @@ namespace HRConcourse.Web.Controllers
         [HttpPost]
         public ActionResult Index()
         {
+            var objectList = new List<object>();
+
             var file = HttpContext.Request.Files[0];
 
             using (var reader = new BinaryReader(file.InputStream))
             {
-
                 file.InputStream.Seek(0, SeekOrigin.Begin);
                 var fileData = reader.ReadBytes(file.ContentLength);
 
@@ -39,14 +40,14 @@ namespace HRConcourse.Web.Controllers
 
                 foreach (var image in generatedImages)
                 {
-                    _imageRepository.InsertAndGetId(image.Value);
+                    objectList.Add(new
+                    {
+                        index = image.Key,
+                        imageId = _imageRepository.InsertAndGetId(image.Value)
+                    });
                 }
 
-
-                var result = generatedImages.Select(p => new {pageNumber = p.Key, imageId = p.Value.Id});
-
-
-                return Json(result);
+                return Json(objectList);
             }
         }
     }

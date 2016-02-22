@@ -17,6 +17,7 @@ namespace HRConcourse.Web
                     .Include("~/Content/themes/base/all.css", new CssRewriteUrlTransform())
                     .Include("~/Content/bootstrap.min.css")
                     .Include("~/Content/durandal.css")
+                    .Include("~/Content/custom-style.css")
                     .Include("~/Content/toastr.min.css")
                     .Include("~/Scripts/sweetalert/sweet-alert.css")
                     .Include("~/Content/flags/famfamfam-flags.css", new CssRewriteUrlTransform())

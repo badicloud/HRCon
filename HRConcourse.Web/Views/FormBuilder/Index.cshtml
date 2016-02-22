@@ -364,77 +364,76 @@
     </div>
 
     <!-- Fields and actions toolbox  -->
-    <div id="toolbox">
-        @if (!ViewBag.IsReadOnly)
-        {
-            <!-- Draggable field controls -->
-            <div id="controls">
-                <ul id="form-fields">
-                    <li id="text-field">
-                        <img title="Textbox" alt="text-icon" src="@Url.Content("~/Images/field-types/ui-text-field.png")" />
-                    </li>
-                    <li id="radio-field">
-                        <img title="Radio Button" alt="radio-icon" src="@Url.Content("~/Images/field-types/ui-radio-buttons.png")" />
-                    </li>
-                    <li id="checkbox-field">
-                        <img title="Checkbox" alt="check-icon" src="@Url.Content("~/Images/field-types/ui-check-boxes.png")" />
-                    </li>
-                    <li id="password-field">
-                        <img title="Password" alt="password-icon" src="@Url.Content("~/Images/field-types/ui-text-field-password.png")" />
-                    </li>
-                    <li id="select-field">
-                        <img title="Select" alt="combo-icon" src="@Url.Content("~/Images/field-types/ui-combo-box.png")" />
-                    </li>
-                    <li id="label-field">
-                        <img title="Label" alt="label-icon" src="@Url.Content("~/Images/field-types/ui-label.png")" />
-                    </li>
-                    <li id="link-field">
-                        <img title="Link" alt="link-icon" src="@Url.Content("~/Images/field-types/chain.png")" />
-                    </li>
-                </ul>
-                <ul id="html5-fields">
-                    <li id="email-field">
-                        <img title="Email" alt="mail-icon" src="@Url.Content("~/Images/field-types/mail.png")" />
-                    </li>
-                    <li id="number-field">
-                        <img title="Number" alt="number-icon" src="@Url.Content("~/Images/field-types/counter-count-up.png")" />
-                    </li>
-                    <li id="date-field">
-                        <img title="Date" alt="calendar-icon" src="@Url.Content("~/Images/field-types/calendar.png")" />
-                    </li>
-                    <li id="signature-field">
-                        <img title="Signature" alt="signature-icon" src="@Url.Content("~/Images/field-types/signature.png")" />
-                    </li>
-                </ul>
-            </div>
-            <div class="toolboxDivider">
-            </div>
-        }
-
-        <!-- Multiple fields selection actions-->
-        <div id="actions" class="actions">
-            <ul id="align-actions">
-                <li id="align-top">
-                    <img title="Align Top" alt="align-top-icon" src="@Url.Content("~/Images/field-types/align-top.png")" />
+<div id="toolbox">
+    @if (!ViewBag.IsReadOnly)
+    {
+        <!-- Draggable field controls -->
+        <div id="controls">
+            <ul id="form-fields">
+                <li id="text-field">
+                    <img title="Textbox" alt="text-icon" src="@Url.Content("~/Images/field-types/ui-text-field.png")"/>
                 </li>
-                <li id="align-bottom">
-                    <img title="Align Bottom" alt="align-bottom-icon" src="@Url.Content("~/Images/field-types/align-bottom.png")" />
+                <li id="radio-field">
+                    <img title="Radio Button" alt="radio-icon" src="@Url.Content("~/Images/field-types/ui-radio-buttons.png")"/>
                 </li>
-                <li id="align-left">
-                    <img title="Align Left" alt="align-left-icon" src="@Url.Content("~/Images/field-types/align-left.png")" />
+                <li id="checkbox-field">
+                    <img title="Checkbox" alt="check-icon" src="@Url.Content("~/Images/field-types/ui-check-boxes.png")"/>
                 </li>
-                <li id="align-right">
-                    <img title="Align Right" alt="align-right-icon" src="@Url.Content("~/Images/field-types/align-right.png")" />
+                <li id="password-field">
+                    <img title="Password" alt="password-icon" src="@Url.Content("~/Images/field-types/ui-text-field-password.png")"/>
+                </li>
+                <li id="select-field">
+                    <img title="Select" alt="combo-icon" src="@Url.Content("~/Images/field-types/ui-combo-box.png")"/>
+                </li>
+                <li id="label-field">
+                    <img title="Label" alt="label-icon" src="@Url.Content("~/Images/field-types/ui-label.png")"/>
+                </li>
+                <li id="link-field">
+                    <img title="Link" alt="link-icon" src="@Url.Content("~/Images/field-types/chain.png")"/>
                 </li>
             </ul>
-            <ul id="duplicate-actions">
-                <li id="duplicate-field">
-                    <img title="Duplicate The Selected Field" alt="duplicate-field-icon" src="@Url.Content("~/Images/field-types/duplicate-field.png")" />
+            <ul id="html5-fields">
+                <li id="email-field">
+                    <img title="Email" alt="mail-icon" src="@Url.Content("~/Images/field-types/mail.png")"/>
+                </li>
+                <li id="number-field">
+                    <img title="Number" alt="number-icon" src="@Url.Content("~/Images/field-types/counter-count-up.png")"/>
+                </li>
+                <li id="date-field">
+                    <img title="Date" alt="calendar-icon" src="@Url.Content("~/Images/field-types/calendar.png")"/>
+                </li>
+                <li id="signature-field">
+                    <img title="Signature" alt="signature-icon" src="@Url.Content("~/Images/field-types/signature.png")"/>
                 </li>
             </ul>
         </div>
-    </div>
+        <div class="toolboxDivider">
+        </div>
+    }
 
+    <!-- Multiple fields selection actions-->
+    <div id="actions" class="actions">
+        <ul id="align-actions">
+            <li id="align-top">
+                <img title="Align Top" alt="align-top-icon" src="@Url.Content("~/Images/field-types/align-top.png")"/>
+            </li>
+            <li id="align-bottom">
+                <img title="Align Bottom" alt="align-bottom-icon" src="@Url.Content("~/Images/field-types/align-bottom.png")"/>
+            </li>
+            <li id="align-left">
+                <img title="Align Left" alt="align-left-icon" src="@Url.Content("~/Images/field-types/align-left.png")"/>
+            </li>
+            <li id="align-right">
+                <img title="Align Right" alt="align-right-icon" src="@Url.Content("~/Images/field-types/align-right.png")"/>
+            </li>
+        </ul>
+        <ul id="duplicate-actions">
+            <li id="duplicate-field">
+                <img title="Duplicate The Selected Field" alt="duplicate-field-icon" src="@Url.Content("~/Images/field-types/duplicate-field.png")"/>
+            </li>
+        </ul>
+    </div>
+</div>
 
     <!-- Actual page designer area -->
     <div id="designerArea">
@@ -450,6 +449,7 @@
             <div id="form-builder">
                 <div id="form-image">
                 </div>
+
                 <form id="form-preview" action="Index" class="TTWForm" method="post" novalidate="novalidate">
                     <span id="javascript-warning">@Index.JavaScriptWarningMessage</span>
                 </form>
